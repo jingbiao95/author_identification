@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>文本分类平台</title>
+    {% load staticfiles %}
+    <script type="text/javascript"
+            src="/static/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#submitButton').click(function () {
+                {#alert("hello")#}
+                submit();
+                return false;
+            });
+
+            function submit() {
+                var data = {
+                    "method": "cnn",
+                    "dataSet": $("#dataSet").val(),
+                    "parameters": {
+                        "text_data": $("#textFiled").get(0).value,
+                        "num_filters": $("#num_filters").val(),
+                        "keep_prob": $("#keep_prob").val(),
+                        "lr": $("#lr").val(),
+                        "num_epochs": $("#num_epochs").val(),
+                        "batch_size": $("#batch_size").val(),
+                    }
+                };
+                $.ajax({
+                    type: 'POST',
+                    url: '/classification/algorithm_submit',
+                    data: JSON.stringify(data), //json对象转化为字符串
+                    //request Header注明content-type:'application/json; charset=UTF-8'
+                    contentType: 'application/json; charset=UTF-8',
+                    dataType: 'json', // 注意：期望服务端返回json格式的数据
+                    success: function (data) { // 这里的data就是json格式的数据
+                        $("#result_text").html(data.predict.predit_label);  //显示标签文本
+                        $("#result_image").html('<img src=\"' + data.predict.image_url + '\">')
+
+                    },
+                    error: function (xhr, type) {
+                        alert("服务器异常");
+                    }
+                });
+            }
+        })
+    </script>
+    <script>
+        function AcceptData(num) {//加载完成后执行
+            //对button按钮进行监控，监控点击
+            if (num == '1') {
+                var val = document.getElementById("num_filters").value//获取页面中input的值
+                var val = parseInt(val) + parseInt('10')//input
+                document.getElementById('num_filters').value = val
+                //$('num_filters').val(val)
+                //$('num_filters').val(val);//讲改变的值重新写入input
+                return false
+            }
+            if (num == '2') {
+                var val = document.getElementById("num_filters").value//获取页面中input的值
+                //alert(val)
+                //val--//input
+                if (parseFloat(val) >= parseFloat('10')) {
+                    val = parseInt(val) - parseInt('10')
+                    document.getElementById('num_filters').value = val
+                    //$('num_filters').val(val)
+                    //$('num_filters').val(val);//讲改变的值重新写入input
+                    return false
+                }
+            }
+            if (num == '3') {
+                var val = parseFloat(document.getElementById("keep_prob").value)//获取页面中input的值
+                if (val < 1) {
+                    val = val + 0.1//input
+                    document.getElementById("keep_prob").value = val
+                }
+
+                //$('num_filters').val(val)
+                //$('num_filters').val(val);//讲改变的值重新写入input
+                return false
+            }
+            if (num == '4') {
+                var val = parseFloat(document.getElementById("keep_prob").value)//获取页面中input的值
+                if (val > 0) {
+                    val = val - 0.1
+                    document.getElementById("keep_prob").value = val
+                    //$('num_filters').val(val)
+                    //$('num_filters').val(val);//讲改变的值重新写入input
+                    return false
+                }
+            }
+            if (num == '5') {
+                var val = document.getElementById("lr").value//获取页面中input的值
+                var val = parseFloat(val) + parseFloat('0.001')//input
+                document.getElementById("lr").value = val
+                //$('num_filters').val(val)
+                //$('num_filters').val(val);//讲改变的值重新写入input
+                return false
+            }
+            if (num == '6') {
+                var val = document.getElementById("lr").value//获取页面中input的值
+                if (parseFloat(val) >= parseFloat('0.001')) {
+                    var val = parseFloat(val) - parseFloat('0.001')
+                    document.getElementById("lr").value = val
+                    //$('num_filters').val(val)
+                    //$('num_filters').val(val);//讲改变的值重新写入input
+                    return false
+                }
+            }
+            if (num == '7') {
+                var val = document.getElementById("num_epochs").value//获取页面中input的值
+                var val = parseFloat(val) + parseFloat('5')//input
+                document.getElementById("num_epochs").value = val
+                //$('num_filters').val(val)
+                //$('num_filters').val(val);//讲改变的值重新写入input
+                return false
+            }
+            if (num == '8') {
+                var val = document.getElementById("num_epochs").value//获取页面中input的值
+                if (parseFloat(val) >= parseFloat('5')) {
+                    var val = parseFloat(val) - parseFloat('5')
+                    document.getElementById("num_epochs").value = val
+                    //$('num_filters').val(val)
+                    //$('num_filters').val(val);//讲改变的值重新写入input
+                    return false
+                }
+            }
+            if (num == '9') {
+                var val = document.getElementById("batch_size").value//获取页面中input的值
+                var val = parseFloat(val) + parseFloat('4')//input
+                document.getElementById("batch_size").value = val
+                //$('num_filters').val(val)
+                //$('num_filters').val(val);//讲改变的值重新写入input
+                return false
+            }
+            if (num == '10') {
+                var val = document.getElementById("batch_size").value//获取页面中input的值
+                if (parseFloat(val) >= parseFloat('4')) {
+                    var val = parseFloat(val) - parseFloat('4')
+                    document.getElementById("batch_size").value = val
+                    //$('num_filters').val(val)
+                    //$('num_filters').val(val);//讲改变的值重新写入input
+                    return false
+                }
+            }
+
+
+        }//}
+    </script>
+</head>
+
+<body>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<h1 style="text-align: center;font-size: 50px">CNN参数设置</h1>
+<hr/>
+<div style="float:left;width: 600px; ">
+    <form>
+
+        <div align="center">卷积核数量number of convolution kernel：
+            <input id="num_filters" name="textfield4" type="text" value="128" readonly="readonly"/>
+            <input type="button" name="Submit" onClick="AcceptData('1')" value="+"/>
+            <input type="button" name="Submit" onClick="AcceptData('2')" value="-"/>
+            <br>
+            <br>
+            <br>
+            <div style="margin-left:150px">丢失率 droppout：
+                <input id="keep_prob" name="textfield6" type="text" value="0.5" readonly="readonly"/>
+                <input type="button" name="Submit" onClick="AcceptData('3')" value="+"/>
+                <input type="button" name="Submit" onClick="AcceptData('4')" value="-"/></div>
+            <br>
+            <br>
+            <br>
+            <div style="margin-left:130px">学习率 learning rate：
+                <input id="lr" name="textfield7" type="text" value="0.001" readonly="readonly"/>
+                <input type="button" name="Submit" onClick="AcceptData('5')" value="+"/>
+                <input type="button" name="Submit" onClick="AcceptData('6')" value="-"/></div>
+            <br>
+            <br>
+            <br>
+
+            <div style="margin-left:170px">批尺寸 epochs：
+                <input id="num_epochs" name="textfield10" type="text" value="5" readonly="readonly"/>
+                <input type="button" name="Submit" onClick="AcceptData('7')" value="+"/>
+                <input type="button" name="Submit" onClick="AcceptData('8')" value="-"/>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div style="margin-left:170px">轮数 batch_size：
+                <input id="batch_size" name="textfield11" type="text" value="64" readonly="readonly"/>
+                <input type="button" name="Submit" onClick="AcceptData('9')" value="+"/>
+                <input type="button" name="Submit" onClick="AcceptData('10')" value="-"/></div>
+        </div>
+        <h2 align="center" style="margin-left: 40px">数据集路径设置</h2>
+        <div align="center">
+            <select id="dataSet" style="margin-left:60px">
+
+                {% for item in dataSets %}
+
+                    <option value="{{ item.id }}" style="margin-left:80px">{{ item.title }}</option>
+
+                {% endfor %}
+
+            </select>
+        </div>
+    </form>
+
+</div>
+<div style="float:right;width:600px; ">
+    <form>
+              <textarea cols="40" id="textFiled" style="margin-left:60px;margin-top: 30px">请输入文字内容
+                    </textarea>
+        <br>
+        <br>
+        <input id="submitButton" type="submit" class="submit"
+               value="提 交">
+    </form>
+
+    <h3 align="left">分类结果: </h3>
+    <div id="result_text"></div>
+    <div id="result_image"></div>
+
+</div>
+
+
+</body>
+</html>

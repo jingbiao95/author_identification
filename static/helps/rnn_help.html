@@ -1,0 +1,493 @@
+<html>
+<head>
+    <title>Evernote Export</title>
+    <basefont face="微软雅黑" size="2"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta name="exporter-version" content="YXBJ Windows/600718 (zh-CN, DDL); Windows/6.1.1 (Win64);"/>
+    <style>
+        body, td {
+            font-family: 微软雅黑;
+            font-size: 10pt;
+        }
+    </style>
+</head>
+<body>
+<a name="2566"/>
+
+<div>
+    <span><div><br/></div><div style="font-size: 16px; min-width: 100%; position: relative;"><div
+            style="box-sizing: border-box; text-size-adjust: 100%; font-size: 10px; -webkit-tap-highlight-color: transparent;"><div
+            style="box-sizing: border-box; background-color: rgb(255, 255, 255); min-width: 768px; font-size: 17px;"><div
+            style="box-sizing:border-box;"><div style="box-sizing:border-box;"><div style="box-sizing:border-box;"><h1
+            style="box-sizing: border-box; font-size: 34px; margin: 20px 0px 0px; word-break: break-word;"><span
+            style="font-size: 34px; font-family: -apple-system, &quot;SF UI Display&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(51, 51, 51); line-height: 1.3; font-weight: 700;">深度学习之RNN、LSTM及正向反向传播原理</span></h1><div
+            style="box-sizing: border-box; font-size: 16px; word-break: break-word;"><div
+            style="box-sizing:border-box;"><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">  RNN( Recurrent Neural Network 循环(递归)神经网络) 跟人的大脑记忆差不多。我们的任何决定，想法都是根据我们之前已经学到的东西产生的。RNN通过反向传播和记忆机制，能够处理任意长度的序列，在架构上比前馈神经网络更符合生物神经网络的结构，它的产生也正是为了解决这类问题而应用而生的。</span></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    RNN及改进的LSTM等深度学习模型都是基于神经网络而发展的起来的认知计算模型。从原理来看，它们都是源于认知语言学中的“顺序像似性”原理：文字符号与其上下文构成一个“像”，这个“像”可以被认为是符号与符号的组合——词汇，也可以被认为是词汇与词汇的句法关系——依存关系。算法的训练过程，是通过正向和反馈两个过程从训练语料中学习出识别这些“像”的能力，并记录下“像”的模型数据，当输入的新的句子时，算法可以利用存储的模型数据识别出新输入中类似的“像”。</span></div><h3
+            style="box-sizing: border-box; margin: 0px 0px 15px; text-rendering: optimizeLegibility; font-size: 22px;"><span
+            style="font-size: 22px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 700;">RNN的5种不同架构</span></h3><h4
+            style="box-sizing: border-box; margin: 0px 0px 15px; text-rendering: optimizeLegibility; font-size: 20px;"><span
+            style="font-size: 20px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 700;">    one to one：</span></h4><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:99px;max-height:246px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:248.48%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-2613558880a10720.png" type="image/png" data-filename="2666154-2613558880a10720.png"
+            height="246"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="99"/></span></div></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><br
+            style="box-sizing:border-box;"/></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    一个输入（单一标签）对应一个输出（单一标签）。</span></div><h4
+            style="box-sizing: border-box; margin: 0px 0px 15px; text-rendering: optimizeLegibility; font-size: 20px;"><span
+            style="font-size: 20px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 700;">    one to many：</span></h4><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:145px;max-height:247px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:170.34%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-d8b6576a7678f686.png" type="image/png" data-filename="2666154-d8b6576a7678f686.png"
+            height="247"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="145"/></span></div></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    一个输入对应多个输出，即这个架构多用于图片的对象识别，即输入一个图片，输出一个文本序列。</span></div><h4
+            style="box-sizing: border-box; margin: 0px 0px 15px; text-rendering: optimizeLegibility; font-size: 20px;"><span
+            style="font-size: 20px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 700;">    many to one：</span></h4><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:134px;max-height:245px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:182.84%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-ff02c2e024c36084.png" type="image/png" data-filename="2666154-ff02c2e024c36084.png"
+            height="245"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="134"/></span></div></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    多个输入对应一个输出，多用于文本分类或视频分类，即输入一段文本或视频片段，输出类别。</span></div><h4
+            style="box-sizing: border-box; margin: 0px 0px 15px; text-rendering: optimizeLegibility; font-size: 20px;"><span
+            style="font-size: 20px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 700;">    many to many 1：</span></h4><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:222px;max-height:244px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:109.91%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-e403f154841f268d.png" type="image/png" data-filename="2666154-e403f154841f268d.png"
+            height="244"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="222"/></span></div></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    这种结构广泛的用于机器翻译，输入一个文本，输出另一种语言的文本。</span></div><h4
+            style="box-sizing: border-box; margin: 0px 0px 15px; text-rendering: optimizeLegibility; font-size: 20px;"><span
+            style="font-size: 20px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 700;">  many to many 2：</span></h4><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:149px;max-height:240px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:161.07%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-2db4a85151bab136.png" type="image/png" data-filename="2666154-2db4a85151bab136.png"
+            height="240"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="149"/></span></div></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">这种广泛的用于序列标注。</span></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    在众多的深度学习网络中，RNN由于能够接收序列输入，也能得到序列输出，在自然语言处理中取得了巨大的成功，并得到广泛的应用。</span></div><h3
+            style="box-sizing: border-box; margin: 0px 0px 15px; text-rendering: optimizeLegibility; font-size: 22px;"><span
+            style="font-size: 22px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 700;">Simple-RNN</span></h3><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    先介绍RNN最简单的循环神经网络，称为Simple-RNN，它是后面LSTM的基础。从网络架构上，Simple-RNN与BP神经网络一脉相承，两个网络都有前馈层和反馈层，但Simple-RNN引入的基于时间的循环机制，因此而发展了BP网络。下面从整体上考察Simple-RNN的架构和训练运行。</span></div><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:150px;max-height:191px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:127.33000000000001%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-68f7ea029d4626fe.png" type="image/png" data-filename="2666154-68f7ea029d4626fe.png"
+            height="191"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="150"/></span></div></div><div><span
+            style="box-sizing: border-box; min-width: 20%; max-width: 80%; min-height: 22px; display: inline-block; padding: 10px; margin: 0px auto; border-bottom: 1px solid rgb(217, 217, 217); font-size: 14px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(150, 150, 150); line-height: 1.7; font-weight: 400;">Simple-RNN的神经网络</span></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    神经网络为A，通过读取某个t时间(状态)的输入x_t，然后输出一个值h_t。循环可以使得从当前时间步传递到下一个时间步。</span></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    这些循环使得RNN可以被看做同一个网络在不同时间步的多次循环，每个神经元会把更新的结果传递到下一个时间步，为了更清楚的说明，将这个循环展开，放大该神经网络A，看一下网络细节：</span></div><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:348px;max-height:173px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:49.71%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-fa24f52a330198f0.png" type="image/png" data-filename="2666154-fa24f52a330198f0.png"
+            height="173"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="348"/></span></div></div><div><span
+            style="box-sizing: border-box; min-width: 20%; max-width: 80%; min-height: 22px; display: inline-block; padding: 10px; margin: 0px auto; border-bottom: 1px solid rgb(217, 217, 217); font-size: 14px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(150, 150, 150); line-height: 1.7; font-weight: 400;">RNN神经元在不同步的传递</span></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    递归网络的输入是一整个序列，也就是x=[ x_0, ... , x_t-1, x_t, x_t+1, x_T ]，对于语言模型来说，每一个x_t将代表一个词向量，一整个序列就代表一句话。h_t代表时刻t的隐含状态，y_t代表时刻t的输出。</span></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    其中：</span></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">            U：输入层到隐藏层直接的权重</span></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">            W：隐藏层到隐藏层的权重</span></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">            V： 隐藏层到输出层的权重</span></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    RNN展开以后，似乎都已经很明白了，正向传播( Forward Propagation ) 依次按照时间的顺序计算一次即可，反向传播( Back Propagation ) 从最后一个时间将累积的残差传递回来即可，跟普通的BP神经网络训练并没有本质上的不同。由于加入了时间顺序，计算的方式有所不同，这称为BPTT ( Back Propagation Through Time ) 算法。该算法的细节如下：</span></div><h4
+            style="box-sizing: border-box; margin: 0px 0px 15px; text-rendering: optimizeLegibility; font-size: 20px;"><span
+            style="font-size: 20px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 700;">    1.正向传播</span></h4><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">        首先在t=0的时刻，U、V、W都被随机初始化好了，h_0通常初始化为0，然后进行如下计算：</span></div><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:155px;max-height:54px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:34.839999999999996%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-a460042bd502dfac.png" type="image/png" data-filename="2666154-a460042bd502dfac.png"
+            height="54"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="155"/></span></div></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    其中，f ，g 是激活函数，g通常是Softmax。</span></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">     注：RNN有记忆能力，正是因为这个 W，记录了以往的输入状态，作为下次的输出。这个可以简单的理解为：</span></div><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:212px;max-height:31px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:14.62%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-d8517b50f07a44b4.png" type="image/png" data-filename="2666154-d8517b50f07a44b4.png"
+            height="31"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="212"/></span></div></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">全局误差为：</span></div><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:229px;max-height:58px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:25.330000000000002%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-0de008a7aa4fc8fd.png" type="image/png" data-filename="2666154-0de008a7aa4fc8fd.png"
+            height="58"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="229"/></span></div></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    E是全局误差，e_i是第i个时间步的误差，y是输出层预测结果，d是实际结果。误差函数f_e可以为交叉熵( Cross Entropy ) ,也可以是平方误差项等。</span></div><h4
+            style="box-sizing: border-box; margin: 0px 0px 15px; text-rendering: optimizeLegibility; font-size: 20px;"><span
+            style="font-size: 20px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 700;">    2.反向传播</span></h4><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    就是利用输出层的误差e( Cost Function ) ，求解各个权重derta_V、darta_U、derta_W，然后梯度下降更新各个权重。</span></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    各个权重的更新的递归公式：</span></div><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:183px;max-height:88px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:48.089999999999996%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-be48f94ea3d828af.png" type="image/png" data-filename="2666154-be48f94ea3d828af.png"
+            height="88"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="183"/></span></div></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    现在的问题是如何求解各个权重的梯度，即：</span></div><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:153px;max-height:139px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:90.85%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-a9ddea81e55d715a.png" type="image/png" data-filename="2666154-a9ddea81e55d715a.png"
+            height="139"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="153"/></span></div></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    求解的顺序分为如下两步，首先我们知道</span></div><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:131px;max-height:29px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:22.14%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-8ef274876ad30524.png" type="image/png" data-filename="2666154-8ef274876ad30524.png"
+            height="29"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="131"/></span></div></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    对于任何代价函数，直接求取每一时刻的</span></div><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:50px;max-height:47px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:94.0%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-f635fcca6505af09.png" type="image/png" data-filename="2666154-f635fcca6505af09.png"
+            height="47"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="50"/></span></div></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    得到derta_V，由于它不依赖之前的状态，可以直接求导获得。然后简单相加即可：</span></div><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:107px;max-height:45px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:42.059999999999995%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-5cee9cadeffef989.png" type="image/png" data-filename="2666154-5cee9cadeffef989.png"
+            height="45"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="107"/></span></div></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    但是derta_U、derta_W依赖于之前的状态，不能直接求导，需要定义中间变量：</span></div><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:70px;max-height:53px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:75.71%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-8e972c92bbe379f2.png" type="image/png" data-filename="2666154-8e972c92bbe379f2.png"
+            height="53"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="70"/></span></div></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    依次类推，知道输出层：</span></div><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:223px;max-height:36px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:16.14%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-fdde0297bb0d3cd4.png" type="image/png" data-filename="2666154-fdde0297bb0d3cd4.png"
+            height="36"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="223"/></span></div></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    这里的*表示点乘。通过下面的计算出derta_U，derta_W：</span></div><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:129px;max-height:81px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:62.79%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-382fa6270bfefb36.png" type="image/png" data-filename="2666154-382fa6270bfefb36.png"
+            height="81"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="129"/></span></div></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    到这里，Simple-RNN原理也就讲解完了。但是实际应用中并不多，原因为：</span></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">        a：如果出入越长的话，展开的网络就越深，对于“深度”网络训练的困难最常见的是“梯度爆炸( Gradient Explode )” 和 “梯度消失( Gradient Vanish )” 的问题。</span></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">        b：Simple-RNN善于基于先前的词预测下一个词，但在一些更加复杂的场景中，例如，“我出生在法国......我能将一口流利的法语。” “法国”和“法语”则需要更长时间的预测，而随着上下文之间的间隔不断增大时，Simple-RNN会丧失学习到连接如此远的信息的能力。</span></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><br
+            style="box-sizing:border-box;"/></div><h3
+            style="box-sizing: border-box; margin: 0px 0px 15px; text-rendering: optimizeLegibility; font-size: 22px;"><span
+            style="font-size: 22px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 700;">LSTM原理</span></h3><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    LSTM，即Long Short Term Memory Networks 长短时间记忆网络,是RNN的一个变种，专门用于解决Simple-RNN上述的俩问题。</span></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    LSTM通过对循环层的刻意设计来避免长期依赖和梯度消失，爆炸等问题。长期信息的记忆在LSTM中是默认行为，而无需付出代价就能获得此能力。</span></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    从网络主题上来看，RNN和LSTM是相似的，都具有一种循环神经网络的链式形式。在标准的RNN中，这个循环节点只有一个非常简单的结构，如一个tanh层。LSTM的内部要复杂得多，在循环的阶段内部拥有更多的复杂的结构，即4个不同的层来控制来控制信息的交互。</span></div><h4
+            style="box-sizing: border-box; margin: 0px 0px 15px; text-rendering: optimizeLegibility; font-size: 20px;"><span
+            style="font-size: 20px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 700;">LSTM整体架构图与图例</span></h4><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:700px;max-height:272px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:37.88%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-0cd0f54f6003bbd7.png" type="image/png" data-filename="2666154-0cd0f54f6003bbd7.png"
+            height="265"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="700"/></span></div></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">一些必要的图例：</span></div><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:688px;max-height:116px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:16.86%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-2ffc78d0d62e0541.png" type="image/png" data-filename="2666154-2ffc78d0d62e0541.png"
+            height="116"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="688"/></span></div></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">如下图，LSTM中在图上方贯穿运行的水平线指示了隐藏层中神经细胞cell的状态，类似于传送带，只与少量的线交互。数据直接在整个链上运行，信息在上面流动会很容易保持不变。状态C的变化受到控制门的影响。</span></div><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:396px;max-height:223px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:56.31%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-b18a4be852eaf66a.png" type="image/png" data-filename="2666154-b18a4be852eaf66a.png"
+            height="223"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="396"/></span></div></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">LSTM有通过精心设计的称作“门”的结构来除去或者增加信息到细胞状态的能力。门是一种让信息选择式通过的方法。</span></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">下图就是一个门，包含一个Sigmoid网络层和一个Pointwise乘法操作。LSTM拥有三个门，来保护和控制细胞状态。0代表“不允许任何量通过”，1代表“允许任何量通过”。</span></div><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:210px;max-height:246px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:117.14%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-5d94f5be49b4879b.png" type="image/png" data-filename="2666154-5d94f5be49b4879b.png"
+            height="246"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="210"/></span></div></div><div><span
+            style="box-sizing: border-box; min-width: 20%; max-width: 80%; min-height: 22px; display: inline-block; padding: 10px; margin: 0px auto; border-bottom: 1px solid rgb(217, 217, 217); font-size: 14px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(150, 150, 150); line-height: 1.7; font-weight: 400;">控制门</span></div></div><h4
+            style="box-sizing: border-box; margin: 0px 0px 15px; text-rendering: optimizeLegibility; font-size: 20px;"><span
+            style="font-size: 20px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 700;">逐渐理解LSTM</span></h4><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:685px;max-height:221px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:32.26%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-a445418b004bb931.png" type="image/png" data-filename="2666154-a445418b004bb931.png"
+            height="221"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="685"/></span></div></div><div><span
+            style="box-sizing: border-box; min-width: 20%; max-width: 80%; min-height: 22px; display: inline-block; padding: 10px; margin: 0px auto; border-bottom: 1px solid rgb(217, 217, 217); font-size: 14px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(150, 150, 150); line-height: 1.7; font-weight: 400;">遗忘门</span></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    首先，决定从细胞状态中丢弃什么信息。这个决策是通过一个称为“遗忘门”的层来完成的。该门会读取 h_t-1 和 x_t，使用sigmoid函数输出一个在0-1之间的数值，输出给在状态C_t-1中每个细胞的数值。</span></div><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:686px;max-height:221px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:32.22%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-e7fd8c1c0e8ca191.png" type="image/png" data-filename="2666154-e7fd8c1c0e8ca191.png"
+            height="221"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="686"/></span></div></div><div><span
+            style="box-sizing: border-box; min-width: 20%; max-width: 80%; min-height: 22px; display: inline-block; padding: 10px; margin: 0px auto; border-bottom: 1px solid rgb(217, 217, 217); font-size: 14px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(150, 150, 150); line-height: 1.7; font-weight: 400;">输入和更新</span></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    然后确定什么样的新信息被存放在细胞状态中。这里包含两部分：</span></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">        一部分是Sigmoid层，称为“输入门”，它决定我们将要更新什么值；</span></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">        另一部分是tanh层，创建一个新的候选值向量~C_t，它会被加入到状态中。</span></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    这样，就能用这两个信息产生对状态的更新。</span></div><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:638px;max-height:223px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:34.949999999999996%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-72a1be8cbc4793b2.png" type="image/png" data-filename="2666154-72a1be8cbc4793b2.png"
+            height="223"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="638"/></span></div></div><div><span
+            style="box-sizing: border-box; min-width: 20%; max-width: 80%; min-height: 22px; display: inline-block; padding: 10px; margin: 0px auto; border-bottom: 1px solid rgb(217, 217, 217); font-size: 14px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(150, 150, 150); line-height: 1.7; font-weight: 400;">更新细胞状态</span></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    现在是更新旧细胞状态的时间了，C_t-1 更新为 C_t 。前面的步骤已经决定了将会做什么，现在就是实际去完成。把旧状态与 f_t 相乘，丢弃掉我们确定需要丢掉的信息，接着加上i_t*~C_t。这就是新的候选值，根据更新每个状态的程度进行变化。</span></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    在语言模型的例子中，这就是我们实际根据前面的目标，丢弃旧代词的类别信息并添加新的信息的地方。</span></div><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:675px;max-height:227px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:33.629999999999995%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-aeaab02e20f8df2c.png" type="image/png" data-filename="2666154-aeaab02e20f8df2c.png"
+            height="227"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="675"/></span></div></div><div><span
+            style="box-sizing: border-box; min-width: 20%; max-width: 80%; min-height: 22px; display: inline-block; padding: 10px; margin: 0px auto; border-bottom: 1px solid rgb(217, 217, 217); font-size: 14px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(150, 150, 150); line-height: 1.7; font-weight: 400;">输出信息</span></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    最终需要确定输出什么值。这个输出将会基于细胞状态，但也是一个过滤后的版本。首先，运行一个Sigmoid层来确定细胞状态的哪个部分将输出出去。接着，把细胞状态通过tanh进行处理( 得到一个在 -1~1 之间的值 ) 并将它和Sigmoid门相乘，最终仅仅会输出我们确定输出的那部分。</span></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><br
+            style="box-sizing:border-box;"/></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    与RNN相同，都要最小化损失函数 l(t)。下面用 h(t) 表示当前时刻的隐藏层输出，y(t)表示当前时刻的输出标签，参考在后面的代码使用的是平方差损失函数，则损失函数被表示为：</span></div><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:244px;max-height:39px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:15.98%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-b2b310a605e563fb.png" type="image/png" data-filename="2666154-b2b310a605e563fb.png"
+            height="39"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="244"/></span></div></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    全局化的损失函数如下：</span></div><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:108px;max-height:65px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:60.19%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-af77c4db6f34d750.png" type="image/png" data-filename="2666154-af77c4db6f34d750.png"
+            height="65"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="108"/></span></div></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">通过梯度法，实现损失函数最小化参数估计。由于损失函数 l(t) 依赖于隐藏层 h(t) 和 输出层 y(t)，根据链式法则，得到下式：</span></div><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:197px;max-height:50px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:25.380000000000003%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-4a7731c6a65c652a.png" type="image/png" data-filename="2666154-4a7731c6a65c652a.png"
+            height="50"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="197"/></span></div></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    这里w是模型权重的标量，M是记忆单元的长度，i是隐藏层的第i个记忆单元，h_i(t) 是一个标量，表示隐藏层第i个记忆单元的输出。由于网络随时间正向传播，改变h_i(t) 将不会影响到先于时间t的损失。</span></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    引入一个变量L(t)，它表示了第i步开始到结束的损失。</span></div><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:140px;max-height:50px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:35.709999999999994%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-79dbc96093b20d5e.png" type="image/png" data-filename="2666154-79dbc96093b20d5e.png"
+            height="50"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="140"/></span></div></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    上述函数变更如下：</span></div><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:191px;max-height:48px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:25.130000000000003%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-4710bfe25ebceb0b.png" type="image/png" data-filename="2666154-4710bfe25ebceb0b.png"
+            height="48"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="191"/></span></div></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">    求解这个式子的最优化结果：</span></div><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:199px;max-height:73px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:36.68%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-fc353059dc071585.png" type="image/png" data-filename="2666154-fc353059dc071585.png"
+            height="73"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="199"/></span></div></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">联立这个式子的最优化结果：</span></div><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:189px;max-height:49px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:25.929999999999996%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-ec81feaf81ba3a23.png" type="image/png" data-filename="2666154-ec81feaf81ba3a23.png"
+            height="49"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="189"/></span></div></div></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">上式右侧的第一项来自简单的损失函数l(t)的时间t的导数。第二项的本质是一个循环项，它表明，计算当前节点的导数的信息时，需要下一节点的导数信息。这与RNN网络反向传播的过程相同，这里不再详细说明。</span></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><br
+            style="box-sizing:border-box;"/></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><br
+            style="box-sizing:border-box;"/></div><div
+            style="box-sizing: border-box; margin: 0px 0px 25px; word-break: break-word;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;">                                                           欢迎关注深度学习自然语言处理公众号</span></div><div
+            style="box-sizing:border-box;padding-bottom:25px;width:700px;margin-left:-40px;text-align:center;"><div
+            style="box-sizing:border-box;z-index:100;position:relative;background-color:transparent;transition:background-color 0.1s linear 0s;margin:0px auto;max-width:185px;max-height:184px;"><div
+            style="box-sizing:border-box;z-index:50;padding-bottom:99.46000000000001%;"></div><div
+            style="box-sizing:border-box;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;"><span
+            style="font-size: 16px; font-family: -apple-system, &quot;SF UI Text&quot;, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; color: rgb(47, 47, 47); line-height: 1.7; font-weight: 400;"><img
+            src="/static/rnn_files/2666154-b3108cb8582b31d2.jpg" type="image/png" data-filename="2666154-b3108cb8582b31d2.jpg"
+            height="184"
+            style="box-sizing:border-box;height:auto;border:0px;vertical-align:middle;max-width:100%;display:block;filter:blur(0px);z-index:100;opacity:1;transition:all 0.15s linear 0s;cursor:zoom-in;"
+            width="185"/></span></div></div></div></div></div></div></div></div></div></div></div><div><br/></div></span>
+</div>
+</body>
+</html> 

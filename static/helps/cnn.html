@@ -1,0 +1,1101 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>#right-panel {
+    background-color: #fff;
+}
+
+#right-panel .cover-top {
+    background: linear-gradient(to bottom, #fff 50%, transparent);
+}
+
+#cover-bottom #cover-bottom-background-right {
+    background: #fff;
+}
+
+@font-face {
+  font-family: octicons-link;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+#container {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #373737;
+  font-family: "Roboto", "Noto Sans", "Ubuntu", "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif, "Noto Sans CJK SC", "Source Han Sans SC", "Microsoft Yahei";
+  font-size: 14px;
+  line-height: 2;
+  word-wrap: break-word;
+  background-color: #fff;
+}
+
+#container a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+#container a:active,
+#container a:hover {
+  outline-width: 0;
+}
+
+#container strong {
+  font-weight: inherit;
+}
+
+#container strong {
+  font-weight: bolder;
+}
+
+#container h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+#container img {
+  border-style: none;
+}
+
+#container svg:not(:root) {
+  overflow: hidden;
+}
+
+#container code,
+#container kbd,
+#container pre {
+  font-family: "Roboto Mono", "Ubuntu Mono", "Menlo", "Consolas", monospace;
+  font-size: 1em;
+}
+
+#container hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+#container input {
+  font: inherit;
+  margin: 0;
+}
+
+#container input {
+  overflow: visible;
+}
+
+#container button:-moz-focusring,
+#container [type="button"]:-moz-focusring,
+#container [type="reset"]:-moz-focusring,
+#container [type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+#container [type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+#container table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+#container td,
+#container th {
+  padding: 0;
+}
+
+#container * {
+  box-sizing: border-box;
+}
+
+#container input {
+  font: 13px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+#container a {
+  color: #4078c0;
+  text-decoration: none;
+}
+
+#container a:hover,
+#container a:active {
+  text-decoration: underline;
+}
+
+#container hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+#container hr::before {
+  display: table;
+  content: "";
+}
+
+#container hr::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+#container h1,
+#container h2,
+#container h3,
+#container h4,
+#container h5,
+#container h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+#container h1 {
+  font-size: 30px;
+}
+
+#container h2 {
+  font-size: 21px;
+}
+
+#container h3 {
+  font-size: 16px;
+}
+
+#container h4 {
+  font-size: 14px;
+}
+
+#container h5 {
+  font-size: 12px;
+}
+
+#container h6 {
+  font-size: 11px;
+}
+
+#container p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+#container blockquote {
+  margin: 0;
+}
+
+#container ul,
+#container ol {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#container ol ol,
+#container ul ol {
+  list-style-type: lower-roman;
+}
+
+#container ul ul ol,
+#container ul ol ol,
+#container ol ul ol,
+#container ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+#container dd {
+  margin-left: 0;
+}
+
+#container code {
+  font-family: "Roboto Mono", "Ubuntu Mono", "Menlo", "Consolas", monospace;
+  font-size: 12px;
+}
+
+#container pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px "Roboto Mono", "Ubuntu Mono", "Menlo", "Consolas", monospace;
+}
+
+#container .pl-0 {
+  padding-left: 0 !important;
+}
+
+#container .pl-1 {
+  padding-left: 3px !important;
+}
+
+#container .pl-2 {
+  padding-left: 6px !important;
+}
+
+#container .pl-3 {
+  padding-left: 12px !important;
+}
+
+#container .pl-4 {
+  padding-left: 24px !important;
+}
+
+#container .pl-5 {
+  padding-left: 36px !important;
+}
+
+#container .pl-6 {
+  padding-left: 48px !important;
+}
+
+#container .form-select::-ms-expand {
+  opacity: 0;
+}
+
+#container:before {
+  display: table;
+  content: "";
+}
+
+#container:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+#container>*:first-child {
+  margin-top: 0 !important;
+}
+
+#container>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+#container a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+#container .anchor {
+  display: inline-block;
+  padding-right: 2px;
+  margin-left: -18px;
+}
+
+#container .anchor:focus {
+  outline: none;
+}
+
+#container h1,
+#container h2,
+#container h3,
+#container h4,
+#container h5,
+#container h6 {
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+#container h1 .octicon-link,
+#container h2 .octicon-link,
+#container h3 .octicon-link,
+#container h4 .octicon-link,
+#container h5 .octicon-link,
+#container h6 .octicon-link {
+  color: #000;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+#container h1:hover .anchor,
+#container h2:hover .anchor,
+#container h3:hover .anchor,
+#container h4:hover .anchor,
+#container h5:hover .anchor,
+#container h6:hover .anchor {
+  text-decoration: none;
+}
+
+#container h1:hover .anchor .octicon-link,
+#container h2:hover .anchor .octicon-link,
+#container h3:hover .anchor .octicon-link,
+#container h4:hover .anchor .octicon-link,
+#container h5:hover .anchor .octicon-link,
+#container h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+#container h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+#container h1 .anchor {
+  line-height: 1;
+}
+
+#container h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+#container h2 .anchor {
+  line-height: 1;
+}
+
+#container h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+#container h3 .anchor {
+  line-height: 1.2;
+}
+
+#container h4 {
+  font-size: 1.25em;
+}
+
+#container h4 .anchor {
+  line-height: 1.2;
+}
+
+#container h5 {
+  font-size: 1em;
+}
+
+#container h5 .anchor {
+  line-height: 1.1;
+}
+
+#container h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+#container h6 .anchor {
+  line-height: 1.1;
+}
+
+#container p,
+#container blockquote,
+#container ul,
+#container ol,
+#container dl,
+#container table,
+#container pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+#container hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+#container ul,
+#container ol {
+  padding-left: 2em;
+}
+
+#container ul ul,
+#container ul ol,
+#container ol ol,
+#container ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#container li>p {
+  margin-top: 16px;
+}
+
+#container dl {
+  padding: 0;
+}
+
+#container dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+#container dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+#container blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+#container blockquote>:first-child {
+  margin-top: 0;
+}
+
+#container blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+#container table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+#container table th {
+  font-weight: bold;
+}
+
+#container table th,
+#container table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+#container table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+#container table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+#container img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #fff;
+}
+
+#container code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+#container code:before,
+#container code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+#container pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+#container .highlight {
+  margin-bottom: 16px;
+}
+
+#container .highlight pre,
+#container pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+#container .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+#container pre {
+  word-wrap: normal;
+}
+
+#container pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+#container pre code:before,
+#container pre code:after {
+  content: normal;
+}
+
+#container kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+#container .pl-c {
+  color: #969896;
+}
+
+#container .pl-c1,
+#container .pl-s .pl-v {
+  color: #0086b3;
+}
+
+#container .pl-e,
+#container .pl-en {
+  color: #795da3;
+}
+
+#container .pl-s .pl-s1,
+#container .pl-smi {
+  color: #333;
+}
+
+#container .pl-ent {
+  color: #63a35c;
+}
+
+#container .pl-k {
+  color: #a71d5d;
+}
+
+#container .pl-pds,
+#container .pl-s,
+#container .pl-s .pl-pse .pl-s1,
+#container .pl-sr,
+#container .pl-sr .pl-cce,
+#container .pl-sr .pl-sra,
+#container .pl-sr .pl-sre {
+  color: #183691;
+}
+
+#container .pl-v {
+  color: #ed6a43;
+}
+
+#container .pl-id {
+  color: #b52a1d;
+}
+
+#container .pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+
+#container .pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+
+#container .pl-ml {
+  color: #693a17;
+}
+
+#container .pl-mh,
+#container .pl-mh .pl-en,
+#container .pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+
+#container .pl-mq {
+  color: #008080;
+}
+
+#container .pl-mi {
+  color: #333;
+  font-style: italic;
+}
+
+#container .pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+
+#container .pl-md {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+#container .pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+#container .pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+
+#container .pl-mo {
+  color: #1d3e81;
+}
+
+#container kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px "Roboto Mono", "Ubuntu Mono", "Menlo", "Consolas", monospace;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+#container .full-commit .btn-outline:not(:disabled):hover {
+  color: #4078c0;
+  border: 1px solid #4078c0;
+}
+
+#container :checked+.radio-label {
+  position: relative;
+  z-index: 1;
+  border-color: #4078c0;
+}
+
+#container .octicon {
+  display: inline-block;
+  vertical-align: text-top;
+  fill: currentColor;
+}
+
+#container .task-list-item {
+  list-style-type: none;
+}
+
+#container .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+#container .task-list-item input {
+  margin: 0 0.2em 0.25em -1.6em;
+  vertical-align: middle;
+}
+
+#container hr {
+  border-bottom-color: #eee;
+}
+</style><style>/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #f8f8f8;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #998;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #333;
+  font-weight: bold;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  color: #008080;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color: #d14;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color: #900;
+  font-weight: bold;
+}
+
+.hljs-subst {
+  font-weight: normal;
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #458;
+  font-weight: bold;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color: #000080;
+  font-weight: normal;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #009926;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+  color: #990073;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #0086b3;
+}
+
+.hljs-meta {
+  color: #999;
+  font-weight: bold;
+}
+
+.hljs-deletion {
+  background: #fdd;
+}
+
+.hljs-addition {
+  background: #dfd;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+</style></head><body id="container" class="export export-html"><span i="1"><h1 id="-cnn">文本分类--CNN</h1>
+</span><span i="2"><h1 id="1-txetcnn-">1.TxetCNN数据预处理</h1>
+</span><span i="3"><h2 id="1-1-">1.1 词向量</h2>
+</span><span i="4"><p>打算自己训练词向量的同学，可以使用gensim，方便快捷，当然使用tensorflow来做也是可以的。下面是使用gensim训练词向量的代码。</p>
+</span><span i="5"><pre><code>#encoding=utf-<span class="hljs-number">8</span>
+from gensim<span class="hljs-selector-class">.models</span><span class="hljs-selector-class">.word2vec</span> import Word2Vec
+<span class="hljs-selector-tag">form</span> gensim<span class="hljs-selector-class">.models</span><span class="hljs-selector-class">.word2vec</span> import LineSentence
+
+sentences = LineSentence(<span class="hljs-string">'WordSeg.text_utf-8'</span>)
+model =
+</code></pre></span><span i="13"><p>size是词向量的维度，sg=0,是用cbow进行训练，sg=1,使用sg进行训练。</p>
+</span><span i="15"><h1 id="1-2-">1.2 文本分词</h1>
+</span><span i="16"><p>有了打标签的文本，接下来当然是要处理它了啊</p>
+</span><span i="17"><pre><code><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">read_file</span><span class="hljs-params">(filename)</span>:</span>
+    <span class="hljs-string">'''中文分词：将中文句子分词词组
+    '''</span>
+    re_han = re.compile(<span class="hljs-string">u"([\u4E00-\u9FD5a-zA-Z0-9+#&amp;\._%]+)"</span>)  <span class="hljs-comment"># the method of cutting text by punctuation</span>
+    contents, labels = [], []
+    <span class="hljs-keyword">with</span> codecs.open(filename, <span class="hljs-string">'r'</span>, encoding=<span class="hljs-string">'utf-8'</span>) <span class="hljs-keyword">as</span> f:
+        <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> f:
+            <span class="hljs-keyword">try</span>:
+                line = line.rstrip()
+                <span class="hljs-keyword">assert</span> len(line.split(<span class="hljs-string">'\t'</span>)) == <span class="hljs-number">2</span>   <span class="hljs-comment"># 共有两列 第一列为标签，第二列为文本</span>
+                label, content = line.split(<span class="hljs-string">'\t'</span>)
+                labels.append(label)
+                blocks = re_han.split(content)
+                word = []
+                <span class="hljs-keyword">for</span> blk <span class="hljs-keyword">in</span> blocks:
+                    <span class="hljs-keyword">if</span> re_han.match(blk):
+                        word.extend(jieba.lcut(blk))
+                contents.append(word)
+            <span class="hljs-keyword">except</span>:
+                <span class="hljs-keyword">pass</span>
+    <span class="hljs-keyword">return</span> labels, contents  <span class="hljs-comment">#返回 标签 和 词组</span>
+</code></pre></span><span i="41"><p>这步的操作主要是对文本分词，然后得到文本列表，标签列表。举个🌰。</p>
+</span><span i="43"><p>content=[['文本','分词'],['标签','列表']；label=['A','B']</p>
+</span><span i="45"><h2 id="1-3-">1.3 建立词典，词典词向量</h2>
+</span><span i="46"><p>不能是个词我就要吧。那怎么办呢？去停用词！去了停用词之后，取文本(这个文本指的是所有文本，包括训练、测试、验证集)中前N个词，表示这N个词是比较重要的，然后保存。之前训练的词向量是个数据量很大集合。很多词，我已经不需要了，我只要这N个词的词向量。同样是上代码。</p>
+</span><span i="47"><pre><code><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">built_vocab_vector</span><span class="hljs-params">(dataSet, filenames, voc_size = <span class="hljs-number">10000</span>)</span>:</span>
+    <span class="hljs-string">'''
+    去停用词，得到前9999个词，获取对应的词 以及 词向量
+    :param filenames:
+    :param voc_size:
+    :return:
+    '''</span>
+    stopword_file = os.path.join(MEDIA_ROOT,os.path.normpath(<span class="hljs-string">'data/cnn/stopwords.txt'</span>))  <span class="hljs-comment"># 中文停用词 共用</span>
+
+    stopword = open(stopword_file, <span class="hljs-string">'r'</span>, encoding=<span class="hljs-string">'utf-8'</span>)
+    stop = [key.strip(<span class="hljs-string">' \n'</span>) <span class="hljs-keyword">for</span> key <span class="hljs-keyword">in</span> stopword]
+
+    all_data = []
+    j = <span class="hljs-number">1</span>
+    embeddings = np.zeros([<span class="hljs-number">10000</span>, <span class="hljs-number">100</span>])
+    categories = []  <span class="hljs-comment"># 类别</span>
+
+    <span class="hljs-keyword">for</span> filename <span class="hljs-keyword">in</span> filenames:
+        labels, content = read_file(filename)  <span class="hljs-comment">#在这里就开始分词了（read_file)</span>
+        <span class="hljs-keyword">if</span> labels <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> categories:
+            categories.append(labels)
+
+        <span class="hljs-keyword">for</span> eachline <span class="hljs-keyword">in</span> content:
+            line =[]
+            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(eachline)):
+                <span class="hljs-keyword">if</span> str(eachline[i]) <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> stop:<span class="hljs-comment">#去停用词</span>
+                    line.append(eachline[i])
+            all_data.extend(line)
+
+    counter = Counter(all_data)
+    count_paris = counter.most_common(voc_size<span class="hljs-number">-1</span>)
+    word, _ = list(zip(*count_paris))
+    <span class="hljs-comment"># f_file = os.path.join(MEDIA_ROOT, os.path.normpath('data/cnn/vector_word.txt'))  #产生训练集的词向量表文件</span>
+    f_file = os.path.join(MEDIA_ROOT, <span class="hljs-string">'data'</span>,<span class="hljs-string">'vector_word.txt'</span>)<span class="hljs-comment">#  词向量</span>
+    dataSet.vector_word_filename = f_file
+    f = codecs.open(f_file, <span class="hljs-string">'r'</span>, encoding=<span class="hljs-string">'utf-8'</span>)
+    <span class="hljs-comment"># vocab_word_file = os.path.join(MEDIA_ROOT, os.path.normpath('data/cnn/vocab_word.txt'))</span>
+    vocab_word_file = os.path.join(MEDIA_ROOT, <span class="hljs-string">'data'</span>,str(dataSet.id)+<span class="hljs-string">'.vocab_word.txt'</span>)
+    dataSet.vocab_filename = vocab_word_file
+    vocab_word = open(vocab_word_file, <span class="hljs-string">'w'</span>, encoding=<span class="hljs-string">'utf-8'</span>)
+    <span class="hljs-keyword">for</span> ealine <span class="hljs-keyword">in</span> f:
+        item = ealine.split(<span class="hljs-string">' '</span>)
+        key = item[<span class="hljs-number">0</span>]
+        vec = np.array(item[<span class="hljs-number">1</span>:], dtype=<span class="hljs-string">'float32'</span>)
+        <span class="hljs-keyword">if</span> key <span class="hljs-keyword">in</span> word:
+            embeddings[j] = np.array(vec)
+            vocab_word.write(key.strip(<span class="hljs-string">'\r'</span>) + <span class="hljs-string">'\n'</span>)
+            j += <span class="hljs-number">1</span>
+    <span class="hljs-comment"># np_file = os.path.join(MEDIA_ROOT, os.path.normpath('data/cnn/vector_word.npz'))</span>
+    np_file = os.path.join(MEDIA_ROOT, <span class="hljs-string">'data'</span>,str(dataSet.id)+<span class="hljs-string">'.vector_word.npz'</span>)
+    dataSet.vector_word_npz = np_file
+    np.savez_compressed(np_file, embeddings=embeddings)
+
+    <span class="hljs-keyword">return</span> categories
+</code></pre></span><span i="103"><p>我提取了文本的前9999个比较重要的词，并按顺序保存了下来。embeddings= np.zeros([10000, 100]) 表示我建立了一个10000个词，维度是100的词向量集合。然后将9999个词在大词向量中的数值，按1-9999的顺序，放入了新建的词向量中。第0项，让它保持是100个0的状态</p>
+</span><span i="105"><h2 id="1-4-">1.4  建立词典</h2>
+</span><span i="106"><pre><code><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_wordid</span><span class="hljs-params">(filename)</span>:</span>
+    key = open(filename, <span class="hljs-string">'r'</span>, encoding=<span class="hljs-string">'utf-8'</span>)
+
+    wordid = {}
+    wordid[<span class="hljs-string">'&lt;PAD&gt;'</span>] = <span class="hljs-number">0</span>
+    j = <span class="hljs-number">1</span>
+    <span class="hljs-keyword">for</span> w <span class="hljs-keyword">in</span> key:
+        w = w.strip(<span class="hljs-string">'\n'</span>)
+        w = w.strip(<span class="hljs-string">'\r'</span>)
+        wordid[w] = j
+        j += <span class="hljs-number">1</span>
+    <span class="hljs-keyword">return</span> wordid
+</code></pre></span><span i="120"><p>注意：词典里面词的顺序，要跟新建的词向量中词的顺序一致</p>
+</span><span i="122"><h2 id="1-5-">1.5 标签词典</h2>
+</span><span i="123"><pre><code>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">read_category</span><span class="hljs-params">(categories)</span>:</span>
+    <span class="hljs-comment"># categories = ['体育', '财经', '房产', '家居', '教育', '科技', '时尚', '时政', '游戏', '娱乐']  # 暂时写死</span>
+    cat_to_id = dict(zip(categories, range(len(categories))))
+    <span class="hljs-keyword">return</span> categories, cat_to_id
+</code></pre></span><span i="130"><p>将标签也词典一下。</p>
+</span><span i="132"><h2 id="1-6-padding-">1.6 Padding的过程</h2>
+</span><span i="133"><p>padding是将所有句子进行等长处理，不够的在句子最后补0；将标签转换为one-hot编码。</p>
+</span><span i="135"><pre><code><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">process</span><span class="hljs-params">(filename, word_to_id, cat_to_id, max_length=<span class="hljs-number">600</span>)</span>:</span>
+    <span class="hljs-string">"""
+    Args:
+        filename:train_filename or test_filename or val_filename
+        word_to_id:get from def read_vocab()
+        cat_to_id:get from def read_category()
+        max_length:allow max length of sentence
+    Returns:
+        x_pad: sequence data from  preprocessing sentence
+        y_pad: sequence data from preprocessing label
+
+    """</span>
+    labels, contents = read_file(filename)
+    data_id, label_id = [], []
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(contents)):
+        data_id.append([word_to_id[x] <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> contents[i] <span class="hljs-keyword">if</span> x <span class="hljs-keyword">in</span> word_to_id])
+        label_id.append(cat_to_id[labels[i]])
+    x_pad = kr.preprocessing.sequence.pad_sequences(data_id, max_length, padding=<span class="hljs-string">'post'</span>, truncating=<span class="hljs-string">'post'</span>)
+    y_pad = kr.utils.to_categorical(label_id)
+    <span class="hljs-keyword">return</span> x_pad, y_pad
+</code></pre></span><span i="157"><p>首先将句子中的词，根据词典中的索引，变成全数字的形式；标签也进行同样处理。然后，根据max_length(句子最大长度)进行padding,得到x_pad,标签转换one-hot格式。好了，到这里文本的预处理，告一段落！</p>
+</span><span i="158"><h2 id="1-7-">1.7 读取所需数据</h2>
+</span><span i="159"><p>我们保存了10000词的词向量，我们要读取它，还有处理的句子，我们也要分批，输入进模型。</p>
+</span><span i="160"><pre><code><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_word2vec</span><span class="hljs-params">(filename)</span>:</span>
+    <span class="hljs-keyword">with</span> np.load(filename) <span class="hljs-keyword">as</span> data:
+        <span class="hljs-keyword">return</span> data[<span class="hljs-string">"embeddings"</span>]
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">batch_iter</span><span class="hljs-params">(x, y, batch_size = <span class="hljs-number">64</span>)</span>:</span>
+    data_len = len(x)
+    num_batch = int((data_len - <span class="hljs-number">1</span>)/batch_size) + <span class="hljs-number">1</span>
+    indices = np.random.permutation(np.arange(data_len))
+    <span class="hljs-string">'''
+    np.arange(4) = [0,1,2,3]
+    np.random.permutation([1, 4, 9, 12, 15]) = [15,  1,  9,  4, 12]
+    '''</span>
+    x_shuff = x[indices]
+    y_shuff = y[indices]
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(num_batch):
+        start_id = i * batch_size
+        end_id = min((i+<span class="hljs-number">1</span>) * batch_size, data_len)
+        <span class="hljs-keyword">yield</span> x_shuff[start_id:end_id], y_shuff[start_id:end_id]
+</code></pre></span><span i="181"><p>在代码里，我用一个例子，解释了np.random.permutation的作用。</p>
+</span><span i="182"><h1 id="2-tensorflow-textcnn">2.tensorflow中的TextCNN</h1>
+</span><span i="183"><p><img src="cnn/textCNN.webp" alt=""><br>接下来开始搭建TextCNN在tensorflow中的实现</p>
+</span><span i="185"><h2 id="2-1-">2.1 定义占位符</h2>
+</span><span i="186"><pre><code>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, pm)</span>:</span>
+        <span class="hljs-comment"># 需要往传pm</span>
+        self.pm = pm
+        self.input_x = tf.placeholder(tf.int32, shape=[<span class="hljs-keyword">None</span>, self.pm.seq_length], name=<span class="hljs-string">'input_x'</span>)
+        self.input_y = tf.placeholder(tf.float32, shape=[<span class="hljs-keyword">None</span>, self.pm.num_classes], name=<span class="hljs-string">'input_y'</span>)
+        self.keep_pro = tf.placeholder(tf.float32, name=<span class="hljs-string">'drop_out'</span>)
+        self.global_step = tf.Variable(<span class="hljs-number">0</span>, trainable=<span class="hljs-keyword">False</span>, name=<span class="hljs-string">'global_step'</span>)
+        self.cnn()
+</code></pre></span><span i="196"><h2 id="2-2-embedding">2.2 embedding</h2>
+</span><span i="197"><pre><code>        with tf.device(<span class="hljs-string">'/cpu:0'</span>), tf.name_scope(<span class="hljs-string">'embedding'</span>):
+            <span class="hljs-keyword">self</span>.embedding = tf.get_variable(<span class="hljs-string">"embeddings"</span>, shape=[<span class="hljs-keyword">self</span>.pm.vocab_size, <span class="hljs-keyword">self</span>.pm.embedding_size],
+                                             initializer=tf.constant_initializer(<span class="hljs-keyword">self</span>.pm.pre_trianing))
+            embedding_input = tf.nn.embedding_lookup(<span class="hljs-keyword">self</span>.embedding, <span class="hljs-keyword">self</span>.input_x)
+            <span class="hljs-keyword">self</span>.embedding_expand = tf.expand_dims(embedding_input,
+                                                   -<span class="hljs-number">1</span>)  <span class="hljs-comment"># [None,seq_length,embedding_size,1] [None,600,100,1]</span>
+</code></pre></span><span i="205"><p>vocab_size:是词的个数，在这里是10000；<br>embedding_size：是词向量尺寸，这里是100；<br>embedding_lookup:我把它看成与excel vlookup类似的查找函数，是将embedding中的词向量根据input_x中的数字进行索引，然后填充。比如，input_x中的3，将input_x中的3用embedding中的第三行的100个数字进行填充，得到一个tensor:[batch_size,seq_length,embedding_size].<br>因为，卷积神经网络中的，conv2d是需要4维张量的，故用tf.expand_dims在embedding_input最后再补一维。</p>
+</span><span i="210"><h2 id="3-3-">3.3 卷积层</h2>
+</span><span i="211"><p>filte 高度设定为【2，3，4】三种，宽度与词向量等宽，卷积核数量设为num_filter。假设batch_size =1，即对一个句子进行卷积操作。每一种filter卷积后，结果输出为<br>[1,seq_length - filter_size +1,1,num_filter]的tensor。再用ksize=[1,seq_length - filter_size + 1,1,1]进行max_pooling,得到[1,1,1,num_filter]这样的tensor.将得到的三种结果进行组合,得到[1,1,1,num_filter<em>3]的tensor.最后将结果变形一下[-1,num_filter</em>3]，目的是为了下面的全连接。再次有请代码</p>
+</span><span i="213"><pre><code><span class="hljs-attr">pooled_outputs</span> = []
+        for i, filter_size <span class="hljs-keyword">in</span> enumerate(self.pm.kernel_size):
+            <span class="hljs-keyword">with</span> tf.name_scope(<span class="hljs-string">"conv-maxpool-%s"</span> % filter_size):
+                <span class="hljs-attr">filter_shape</span> = [filter_size, self.pm.embedding_size, <span class="hljs-number">1</span>, self.pm.num_filters]  <span class="hljs-comment"># [2,100,1,128]</span>
+                <span class="hljs-attr">w</span> = tf.Variable(tf.truncated_normal(filter_shape, <span class="hljs-attr">stddev=0.1),</span> <span class="hljs-attr">name='w')</span>  <span class="hljs-comment"># 卷积核</span>
+                <span class="hljs-attr">b</span> = tf.Variable(tf.constant(<span class="hljs-number">0.1</span>, <span class="hljs-attr">shape=[self.pm.num_filters]),</span> <span class="hljs-attr">name='b')</span>  <span class="hljs-comment"># [128]</span>
+                <span class="hljs-attr">conv</span> = tf.nn.conv2d(self.embedding_expand, w, <span class="hljs-attr">strides=[1,</span> <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>], <span class="hljs-attr">padding='VALID',</span>
+                                    <span class="hljs-attr">name='conv')</span>  <span class="hljs-comment"># [None,599,1,128]</span>
+                <span class="hljs-attr">h</span> = tf.nn.relu(tf.nn.bias_add(conv, b), <span class="hljs-attr">name='relu')</span>
+
+                <span class="hljs-attr">pooled</span> = tf.nn.max_pool(h, <span class="hljs-attr">ksize=[1,</span> self.pm.seq_length - filter_size + <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>], <span class="hljs-attr">strides=[1,</span> <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>],
+                                        <span class="hljs-attr">padding='VALID',</span> <span class="hljs-attr">name='pool')</span>  <span class="hljs-comment"># 池化的参数很精妙   [None,1,1,128]</span>
+                pooled_outputs.append(pooled)
+
+        <span class="hljs-attr">num_filter_total</span> = self.pm.num_filters * len(self.pm.kernel_size)  <span class="hljs-comment"># 128 * 3</span>
+        self.<span class="hljs-attr">h_pool</span> = tf.concat(pooled_outputs, <span class="hljs-number">3</span>)
+        self.<span class="hljs-attr">h_pool_flat</span> = tf.reshape(self.h_pool, [-<span class="hljs-number">1</span>, num_filter_total])  <span class="hljs-comment"># [None, 128 *3]</span>
+</code></pre></span><span i="232"><h2 id="3-4-">3.4  全连接层</h2>
+</span><span i="233"><p>在全连接层中进行dropout,通常保持率为0.5。其中num_classes为文本分类的类别数目。然后得到输出的结果scores，以及得到预测类别在标签词典中对应的数值predicitons</p>
+</span><span i="234"><pre><code>        with <span class="hljs-keyword">tf</span>.name_scope(<span class="hljs-string">'dropout'</span>):
+            self.h_drop = <span class="hljs-keyword">tf</span>.<span class="hljs-keyword">nn</span>.dropout(self.h_pool_flat, self.keep_pro)
+
+        with <span class="hljs-keyword">tf</span>.name_scope(<span class="hljs-string">'output'</span>):
+            <span class="hljs-keyword">w</span> = <span class="hljs-keyword">tf</span>.get_variable(<span class="hljs-string">"w"</span>, shape=[num_filter_total, self.pm.num_classes],
+                                initializer=<span class="hljs-keyword">tf</span>.contrib.layers.xavier_initializer())
+
+            <span class="hljs-keyword">b</span> = <span class="hljs-keyword">tf</span>.Variable(<span class="hljs-keyword">tf</span>.constant(<span class="hljs-number">0.1</span>, shape=[self.pm.num_classes]), name=<span class="hljs-string">'b'</span>)
+
+            self.scores = <span class="hljs-keyword">tf</span>.<span class="hljs-keyword">nn</span>.xw_plus_b(self.h_drop, <span class="hljs-keyword">w</span>, <span class="hljs-keyword">b</span>, name=<span class="hljs-string">'scores'</span>)
+            self.<span class="hljs-keyword">pro</span> = <span class="hljs-keyword">tf</span>.<span class="hljs-keyword">nn</span>.softmax(self.scores)  # 最大为<span class="hljs-number">1</span>，其余为<span class="hljs-number">0</span>
+            self.predicitions = <span class="hljs-keyword">tf</span>.argmax(self.<span class="hljs-keyword">pro</span>, <span class="hljs-number">1</span>, name=<span class="hljs-string">'predictions'</span>)
+</code></pre></span><span i="249"><h2 id="3-5-loss">3.5 loss</h2>
+</span><span i="250"><p>这里使用softmax交叉熵求loss, logits=self.scores 这里一定用的是未经过softmax处理的数值。</p>
+</span><span i="252"><pre><code>        <span class="hljs-keyword">with</span> tf.name_scope('loss'):
+            <span class="hljs-attr">losses</span> = tf.nn.softmax_cross_entropy_with_logits(<span class="hljs-attr">logits=self.scores,</span> <span class="hljs-attr">labels=self.input_y)</span>
+            self.<span class="hljs-attr">loss</span> = tf.reduce_mean(losses)  <span class="hljs-comment"># 对交叉熵取均值非常有必要</span>
+</code></pre></span><span i="258"><h2 id="3-6-optimizer">3.6 optimizer</h2>
+</span><span i="259"><p>这里使用了梯度裁剪。首先计算梯度，这个计算是类似L2正则化计算w的值，也就是求平方再平方根。然后与设定的clip裁剪值进行比较，如果小于等于clip,梯度不变；如果大于clip,则梯度*（clip/梯度L2值）</p>
+</span><span i="260"><pre><code>        <span class="hljs-keyword">with</span> tf.name_scope(<span class="hljs-string">'optimizer'</span>):
+            <span class="hljs-comment"># 退化学习率 learning_rate = lr*(0.9**(global_step/10);staircase=True表示每decay_steps更新梯度</span>
+            <span class="hljs-comment"># learning_rate = tf.train.exponential_decay(self.config.lr, global_step=self.global_step,</span>
+            <span class="hljs-comment"># decay_steps=10, decay_rate=self.config.lr_decay, staircase=True)</span>
+            <span class="hljs-comment"># optimizer = tf.train.AdadeltaOptimizer(learning_rate)</span>
+            <span class="hljs-comment"># self.optimizer = optimizer.minimize(self.loss, global_step=self.global_step) #global_step 自动+1</span>
+            <span class="hljs-comment"># no.2</span>
+            optimizer = tf.train.AdamOptimizer(<span class="hljs-keyword">self</span>.pm.lr)
+            gradients, variables = zip(*optimizer.compute_gradients(<span class="hljs-keyword">self</span>.loss))  <span class="hljs-comment"># 计算变量梯度，得到梯度值,变量</span>
+            gradients, _ = tf.clip_by_global_norm(gradients, <span class="hljs-keyword">self</span>.pm.clip)
+            <span class="hljs-comment"># 对g进行l2正则化计算，比较其与clip的值，如果l2后的值更大，让梯度*(clip/l2_g),得到新梯度</span>
+            <span class="hljs-keyword">self</span>.optimizer = optimizer.apply_gradients(zip(gradients, variables),
+                                                       global_step=<span class="hljs-keyword">self</span>.global_step)  <span class="hljs-comment"># global_step 自动+1</span>
+</code></pre></span><span i="275"><h2 id="3-7-accuracy">3.7 accuracy</h2>
+</span><span i="276"><p>最后，计算模型的准确度。</p>
+</span><span i="278"><pre><code>        with tf.name_scope(<span class="hljs-string">'accuracy'</span>):
+            correct_predictions = tf.equal(self<span class="hljs-selector-class">.predicitions</span>, tf.argmax(self<span class="hljs-selector-class">.input_y</span>, <span class="hljs-number">1</span>))
+            self<span class="hljs-selector-class">.accuracy</span> = tf.reduce_mean(tf.cast(correct_predictions, <span class="hljs-string">'float32'</span>), name=<span class="hljs-string">'accuracy'</span>)
+</code></pre></span><span i="283"><h2 id="3-8-">3.8 训练模型</h2>
+</span><span i="284"><pre><code><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">train</span><span class="hljs-params">(model, pm, wordid, cat_to_id, dataid)</span>:</span>
+    <span class="hljs-string">'''model: 是cnn对象'''</span>
+
+    tensorboard_dir = os.path.join(TENSORBOARD_DIR, <span class="hljs-string">'text_cnn'</span>, make_dir_string(dataid, pm))
+    save_dir = os.path.join(CHECKPOINTS, <span class="hljs-string">'text_cnn'</span>, make_dir_string(dataid, pm))
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> os.path.exists(tensorboard_dir):
+        os.makedirs(tensorboard_dir)
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> os.path.exists(save_dir):
+        os.makedirs(save_dir)
+
+    save_path = os.path.join(save_dir, <span class="hljs-string">'best_validation'</span>)  <span class="hljs-comment"># 在这里构建</span>
+
+    tf.summary.scalar(<span class="hljs-string">"loss"</span>, model.loss)
+    tf.summary.scalar(<span class="hljs-string">"accuracy"</span>, model.accuracy)
+    merged_summary = tf.summary.merge_all()
+    writer = tf.summary.FileWriter(tensorboard_dir)
+    saver = tf.train.Saver()
+    session = tf.Session()
+    session.run(tf.global_variables_initializer())
+    writer.add_graph(session.graph)
+
+    print(<span class="hljs-string">"Loading Training data..."</span>)
+    x_train, y_train = process(pm.train_filename, wordid, cat_to_id, pm.seq_length)
+    x_val, y_val = process(pm.val_filename, wordid, cat_to_id, pm.seq_length)
+    <span class="hljs-keyword">for</span> epoch <span class="hljs-keyword">in</span> range(pm.num_epochs):
+        print(<span class="hljs-string">'Epoch:'</span>, epoch + <span class="hljs-number">1</span>)
+        num_batchs = int((len(x_train) - <span class="hljs-number">1</span>) / pm.batch_size) + <span class="hljs-number">1</span>
+        batch_train = batch_iter(x_train, y_train, pm.batch_size)
+
+        <span class="hljs-comment"># 保存信息为pandas</span>
+        train_info = {<span class="hljs-string">"global_step"</span>: [], <span class="hljs-string">"loss"</span>: [], <span class="hljs-string">"accuracy"</span>: []}  <span class="hljs-comment"># 训练信息</span>
+
+        <span class="hljs-keyword">for</span> x_batch, y_batch <span class="hljs-keyword">in</span> batch_train:
+            feed_dict = model.feed_data(x_batch, y_batch, pm.keep_prob)
+            _, global_step, train_summary, train_loss, train_accuracy = session.run(
+                [model.optimizer, model.global_step, merged_summary, model.loss, model.accuracy], feed_dict=feed_dict)
+            train_info[<span class="hljs-string">"global_step"</span>].append(global_step)
+            train_info[<span class="hljs-string">"loss"</span>].append(train_loss)
+            train_info[<span class="hljs-string">"accuracy"</span>].append(train_accuracy)
+
+            <span class="hljs-keyword">if</span> global_step % <span class="hljs-number">100</span> == <span class="hljs-number">0</span>:
+                val_loss, val_accuracy = model.evaluate(session, x_val, y_val)
+                print(global_step, train_loss, train_accuracy, val_loss, val_accuracy)
+
+            <span class="hljs-keyword">if</span> (global_step + <span class="hljs-number">1</span>) % num_batchs == <span class="hljs-number">0</span>:
+                print(<span class="hljs-string">"Saving model..."</span>)
+                save_info(os.path.join(tensorboard_dir, <span class="hljs-string">"train_info.csv"</span>), train_info)
+                <span class="hljs-keyword">del</span> train_info
+                train_info = {<span class="hljs-string">"global_step"</span>: [], <span class="hljs-string">"loss"</span>: [], <span class="hljs-string">"accuracy"</span>: []}
+                saver.save(session, save_path, global_step=global_step)
+
+        pm.lr *= pm.lr_decay
+</code></pre></span><span i="339"><p>模型迭代次数为5，每完成一轮迭代，模型保存一次。当global_step为100的整数倍时，输出模型的训练结果以及在测试集上的测试结果。</p>
+</span></body>
+</html>

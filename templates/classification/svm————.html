@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>SVM</title>
+    <style type="text/css">
+        <!--
+        .STYLE3 {
+            font-size: x-large
+        }
+
+        -->
+    </style>
+    {% load staticfiles %}
+    <script type="text/javascript"
+            src="/static/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#submitButton').click(function () {
+                {#alert("hello")#}
+                submit();
+                return false;
+            });
+
+            function submit() {
+                var data = {
+                    "method": "svm",
+                    "dataSet": $("#dataSet").val(),
+                    "parameters": {
+                        "text_data": $("#text_data").get(0).value,
+                        "kernel_function": $("#kernel_function").val(),
+                    }
+                };
+                $.ajax({
+                    type: 'POST',
+                    url: '/classification/algorithm_submit',
+                    data: JSON.stringify(data), //json对象转化为字符串
+                    //request Header注明content-type:'application/json; charset=UTF-8'
+                    contentType: 'application/json; charset=UTF-8',
+                    dataType: 'json', // 注意：期望服务端返回json格式的数据
+                    success: function (data) { // 这里的data就是json格式的数据
+                        $("#result_text").html(data.predict.predit_label);  //显示标签文本
+                    },
+                    error: function (xhr, type) {
+                        alert("服务器异常");
+                    }
+                });
+            }
+        })
+    </script>
+</head>
+
+<body>
+
+<h1 style="text-align: center;font-size: 50px">SVM参数设置</h1>
+<hr/>
+<div style="float:left;width: 600px; ">
+
+    <br>
+    <br>
+    <h3 style="line-height: 15px;margin-left: 130px;font-size: 20px">核函数选择:</h3>
+    <select id="kernel_function" style="margin-left:130px">
+        <option value="linear" style="margin-left:60px" >线性核函数</option>
+        <option value="poly" style="margin-left:60px">多项式核函数</option>
+        <option value="rbf" style="margin-left:60px" selected>径像核函数/高斯核</option>
+        <option value="sigmod" style="margin-left:60px">:sigmod核函数</option>
+        <option value="precomputed" style="margin-left:60px">:核矩阵</option>
+    </select>
+    <h2 align="center" style="margin-left: 40px">数据集路径设置</h2>
+    <div align="center">
+        <select id="dataSet" style="margin-left:60px">
+
+            {% for item in dataSets %}
+
+                <option value="{{ item.id }}" style="margin-left:80px">{{ item.title }}</option>
+
+            {% endfor %}
+
+        </select>
+    </div>
+    <div style="float:right;width:600px; ">
+        <form>
+              <textarea cols="40" id="text_data" style="margin-left:60px;margin-top: 30px">请输入文字内容
+                    </textarea>
+            <br>
+            <br>
+            <input id="submitButton" type="submit" class="submit"
+                   value="提 交">
+        </form>
+
+        <h3 align="left">分类结果: </h3>
+        <div id="result_text"></div>
+        <div id="result_image"></div>
+
+    </div>
+
+
+

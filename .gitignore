@@ -1,0 +1,7 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/
+checkpoints/
+classification/methods/__pycache__/
+test/
+/static/media/
+tensorboard/

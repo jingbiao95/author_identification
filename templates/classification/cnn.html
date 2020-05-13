@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/assets/img/apple-icon.png"/>
+    <link rel="icon" type="image/png" href="/static/assets/img/favicon.png"/>
+    <title>文本分类学习平台--CNN</title>
+
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
+    <meta name="viewport" content="width=device-width"/>
+
+    <!-- CSS Files -->
+    <link href="/static/assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/static/assets/css/paper-bootstrap-wizard.css" rel="stylesheet"/>
+
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="/static/assets/css/demo.css" rel="stylesheet"/>
+
+    <!-- Fonts and Icons -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+    <link href="/static/assets/css/themify-icons.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="image-container set-full-height" style="background-image: url('/static/assets/img/paper-2.jpeg')">
+    <!--   Creative Tim Branding   -->
+    <a href="#">
+        <div class="logo-container">
+
+        </div>
+    </a>
+
+    <!--  Made With Paper Kit  -->
+    <a href="#/paper-kit?ref=paper-bootstrap-wizard" class="made-with-pk">
+        <div class="brand">PK</div>
+        <div class="made-with">Made with <strong>Paper Kit</strong></div>
+    </a>
+
+    <!--   Big container   -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+
+                <!--      Wizard container        -->
+                <div class="wizard-container">
+                    <div class="card wizard-card" data-color="green" id="wizard">
+                        <form action="" method="">
+                            <div class="wizard-header">
+                                <h3 class="wizard-title">CNN算法</h3>
+                                <p class="category">这些信息将帮助更好的学习CNN</p>
+                            </div>
+                            <div class="wizard-navigation">
+                                <div class="progress-with-circle">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="1"
+                                         aria-valuemax="4" style="width: 15%;"></div>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#help" data-toggle="tab">
+                                            <div class="icon-circle">
+                                                <i class="ti-map"></i>
+                                            </div>
+                                            帮助文档
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#parameters" data-toggle="tab">
+                                            <div class="icon-circle">
+                                                <i class="ti-direction-alt"></i>
+                                            </div>
+                                            参数设置
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#dataSet" data-toggle="tab">
+                                            <div class="icon-circle">
+                                                <i class="ti-panel"></i>
+                                            </div>
+                                            数据集选择
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#result" data-toggle="tab">
+                                            <div class="icon-circle">
+                                                <i class="ti-comments"></i>
+                                            </div>
+                                            结果
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-content">
+                                <div class="tab-pane" id="help" style="height: 650px">
+                                    <div class="main-container" id="main" style="width:99%;height:100%;">
+                                        <iframe src="/static/helps/cnn.html" width="100%" height="100%" frameborder="0">
+                                            您的浏览器不支持iframe，请升级
+                                        </iframe>
+                                    </div>
+
+                                </div>
+                                <div class="tab-pane" id="parameters">
+                                    <h5 class="info-text">设置适合的参数 </h5>
+                                    <div style="float:left;width: 600px; ">
+                                        <div class="col-sm-5 col-sm-offset-1">
+                                            <div class="input-group" style="width:350px">
+                                                <label>卷积核数量number of kernel</label>
+                                                <label>
+                                                    <input id="num_filters" name="textfield4" type="text" value="128"
+                                                           readonly="readonly" class="form-control" style="width: 55%;">
+                                                    <span class="input-group-btn">
+                                                    <input type="button" name="Submit" onClick="AcceptData('1')"
+                                                           value="+" class="btn btn-default"
+                                                           style="width: 20%;">
+                                                    <input type="button" name="Submit" onClick="AcceptData('2')"
+                                                           value="-" class="btn btn-default"
+                                                           style="width: 20%;">
+                                                </span>
+                                                </label>
+                                            </div>
+                                            <div class="input-group" style="width:350px">
+                                                <label>丢失率 droppout</label>
+                                                <label>
+                                                    <input id="keep_prob" name="textfield6" type="text" value="0.5"
+                                                           readonly="readonly" class="form-control"
+                                                           style="width: 55%;"/>
+                                                    <span class="input-group-btn">
+													 <input type="button" name="Submit" onClick="AcceptData('3')"
+                                                            value="+" style="width: 20%;" class="btn btn-default"/>
+                                                     <input type="button" name="Submit" onClick="AcceptData('4')"
+                                                            value="-" style="width: 20%;" class="btn btn-default"/>
+                                                </span>
+                                                </label>
+                                            </div>
+                                            <div class="input-group" style="width:350px">
+                                                <label>学习率 learning rate</label>
+                                                <label>
+                                                    <input id="lr" name="textfield7" type="text" value="0.001"
+                                                           readonly="readonly" class="form-control"
+                                                           style="width: 55%;"/>
+                                                    <span class="input-group-btn">
+													<input type="button" name="Submit" onClick="AcceptData('5')"
+                                                           value="+" style="width: 20%;" class="btn btn-default"/>
+                                                    <input type="button" name="Submit" onClick="AcceptData('6')"
+                                                           value="-" style="width: 20%;" class="btn btn-default"/>
+                                                </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-5" style="left:100px;">
+                                            <div class="input-group" style="width:350px">
+                                                <label>批尺寸 epochs</label>
+                                                <label>
+                                                    <input id="num_epochs" name="textfield10" type="text" value="5"
+                                                           readonly="readonly" class="form-control"
+                                                           style="width: 55%;"/>
+                                                    <span class="input-group-btn">
+													 <input type="button" name="Submit" onClick="AcceptData('7')"
+                                                            value="+" style="width: 20%;" class="btn btn-default"/>
+                                                     <input type="button" name="Submit" onClick="AcceptData('8')"
+                                                            value="-" style="width: 20%;" class="btn btn-default"/>
+                                                </span>
+                                                </label>
+                                            </div>
+                                            <div class="input-group" style="width:350px">
+                                                <label>轮数 batch_size</label>
+                                                <label>
+                                                    <input id="batch_size" name="textfield11" type="text" value="64"
+                                                           readonly="readonly" class="form-control"
+                                                           style="width: 55%;"/>
+                                                    <span class="input-group-btn">
+													 <input type="button" name="Submit" onClick="AcceptData('9')"
+                                                            value="+" style="width: 20%;" class="btn btn-default"/>
+                                                     <input type="button" name="Submit" onClick="AcceptData('10')"
+                                                            value="-" style="width: 20%;" class="btn btn-default"/>
+                                                </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="tab-pane" id="dataSet">
+                                    <h5 class="info-text">选择你所想选择的数据集路径以及输入内容</h5>
+
+                                    <div class="row">
+                                        <div class="col-sm-8 col-sm-offset-2">
+                                            <div class="col-sm-4 col-sm-offset-2">
+                                                <div class="choice" data-toggle="wizard-checkbox">
+                                                    <input type="checkbox" name="jobb" value="Design">
+                                                    <div id="data_zh" class="card card-checkboxes card-hover-effect">
+                                                        <!--<i class="ti-home"></i>-->
+                                                        <p>中文</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="choice" data-toggle="wizard-checkbox">
+                                                    <input type="checkbox" name="jobb" value="Design">
+                                                    <div id="data_en" class="card card-checkboxes card-hover-effect">
+                                                        <!-- <i class="ti-package"></i>-->
+                                                        <p>英文</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-5 col-sm-offset-1">
+                                            <div class="form-group">
+                                                <div id="select_zh">
+                                                    <select id="zh_text_select" class="form-control"
+                                                            style="text-align: center; width:625px;" align="center">
+                                                        <option disabled="" selected="">- 选择预测文本 -</option>
+                                                        <option>马晓旭意外受伤让国奥警惕 无奈大雨格外青军记者傅亚雨沈阳报道 来到沈阳，国奥队依然的困扰。</option>
+                                                        <option>众女星独特摇滚风格另类尝试有多乡有多摇滚以前总觉得 Ashlee Simpson少了一架势，因为她长。
+                                                        </option>
+                                                        <option>未来十年改变世界十大技术：虚拟人大军新浪科技讯 北京时间7月22日消息，思科畅想家戴维·埃。</option>
+                                                    </select>
+                                                </div>
+                                                <div id="select_en" hidden>
+                                                    <select id="en_text_select" class="form-control"
+                                                            style="text-align: center; width:625px;" align="center">
+                                                        <option disabled="" selected="">- select the predict text -
+                                                        </option>
+                                                        <option>Still, as I urged our leaving Ireland with such
+                                                            inquietude and impatience, my father thought it best to
+                                                            yield
+                                                        </option>
+                                                        <option>I am not sure to what limit his knowledge may extend.
+                                                        </option>
+                                                        <option>That which is not matter, is not at all unless qualities
+                                                            are things.
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>输入你想验证的文字内容</label>
+                                                    <textarea cols="40" id="textFiled" name="textFiled"
+                                                              style="width:600px;height:145px"
+                                                              class="form-control">请输入文字内容</textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane" id="result">
+                                    <div class="row" style="font-size:15px; font-weight:bold">
+                                        <h5 class="info-text" align="center">结果展示</h5>
+                                        <div>
+                                            <div class="col-sm-6 col-sm-offset-1">
+{#                                                <div class="form-group" align="center">#}
+{#                                                    训练准确度:<label id="acc"></label>#}
+{#                                                    <!--<textarea class="form-control" placeholder="" rows="9"></textarea>-->#}
+{#                                                </div>#}
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group" align="center">
+                                                    分类：<label id="predit_label"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="result_image">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wizard-footer">
+                                    <div class="pull-right">
+                                        <input type='button' class='btn btn-next btn-fill btn-success btn-wd'
+                                               name='next'
+                                               value='下一步'/>
+                                        <input id="submitButton" type='button'
+                                               class='btn btn-finish btn-fill btn-success btn-wd'
+                                               name='finish' value='提交'/>
+                                    </div>
+
+                                    <div class="pull-left">
+                                        <input type='button' class='btn btn-previous btn-default btn-wd'
+                                               name='previous'
+                                               value='上一步'/>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div> <!-- wizard container -->
+
+            </div>
+        </div> <!-- row -->
+    </div> <!--  big container -->
+
+</div>
+
+</body>
+
+<!--   Core JS Files   -->
+<script src="/static/assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+<script src="/static/assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/static/assets/js/jquery.bootstrap.wizard.js" type="text/javascript"></script>
+
+<!--  Plugin for the Wizard -->
+<script src="/static/assets/js/paper-bootstrap-wizard.js" type="text/javascript"></script>
+
+<!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
+<script src="/static/assets/js/jquery.validate.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var textType = "zh";
+        $('#data_zh').click(function () {
+            // alert(textType);
+            document.getElementById('select_zh').hidden = false;
+            document.getElementById('select_en').hidden = true;
+            textType = "zh";
+        });
+        $('#data_en').click(function () {
+
+            document.getElementById('select_zh').hidden = true;
+            document.getElementById('select_en').hidden = false;
+            textType = "en";
+        });
+        var text_data = "";
+
+
+        $('#submitButton').click(function () {
+            {#alert("hello")#}
+            submit();
+            return false;
+        });
+
+        function submit() {
+            if (textType == "en") {
+                text_data = $("#en_text_select > option:selected").val()
+            } else {
+                text_data = $("#zh_text_select > option:selected").val()
+            }
+            var data = {
+                "method": "cnn",
+                {#"dataSet": $("#dataSet").val(),#}
+                "textType": textType,
+                "text_data": $("#textFiled").get(0).value,
+                "parameters": {
+                    "num_filters": $("#num_filters").val(),
+                    "keep_prob": $("#keep_prob").val(),
+                    "lr": $("#lr").val(),
+                    "num_epochs": $("#num_epochs").val(),
+                    "batch_size": $("#batch_size").val(),
+                }
+            };
+            $.ajax({
+                type: 'POST',
+                url: '/classification/algorithm_submit',
+                data: JSON.stringify(data), //json对象转化为字符串
+                //request Header注明content-type:'application/json; charset=UTF-8'
+                contentType: 'application/json; charset=UTF-8',
+                dataType: 'json', // 注意：期望服务端返回json格式的数据
+                success: function (data) { // 这里的data就是json格式的数据
+
+                    $("#result_image").html('<img src=\"' + data.resultData.image_url + '\">')
+                    $("#predit_label").html(data.resultData.predit_label);  //显示标签文本
+                    $("#report").html(data.resultData.metric.report);
+                    $("#acc").html(data.resultData.metric.acc_socre);
+                },
+                error: function (xhr, type) {
+                    alert("服务器异常");
+                }
+            });
+        }
+    })
+</script>
+<script>
+    function AcceptData(num) {//加载完成后执行
+        //对button按钮进行监控，监控点击
+        if (num == '1') {
+            var val = document.getElementById("num_filters").value//获取页面中input的值
+            var val = parseInt(val) + parseInt('10')//input
+            document.getElementById('num_filters').value = val
+            //$('num_filters').val(val)
+            //$('num_filters').val(val);//讲改变的值重新写入input
+            return false
+        }
+        if (num == '2') {
+            var val = document.getElementById("num_filters").value//获取页面中input的值
+            //alert(val)
+            //val--//input
+            if (parseFloat(val) >= parseFloat('10')) {
+                val = parseInt(val) - parseInt('10')
+                document.getElementById('num_filters').value = val
+                //$('num_filters').val(val)
+                //$('num_filters').val(val);//讲改变的值重新写入input
+                return false
+            }
+        }
+        if (num == '3') {
+            var val = parseFloat(document.getElementById("keep_prob").value)//获取页面中input的值
+            if (val < 1) {
+                val = val + 0.1//input
+                document.getElementById("keep_prob").value = val.toFixed(1)
+            }
+
+            //$('num_filters').val(val)
+            //$('num_filters').val(val);//讲改变的值重新写入input
+            return false
+        }
+        if (num == '4') {
+            var val = parseFloat(document.getElementById("keep_prob").value)//获取页面中input的值
+            if (val > 0.1) {
+                val = val - 0.1
+                document.getElementById("keep_prob").value = val.toFixed(1)
+                //$('num_filters').val(val)
+                //$('num_filters').val(val);//讲改变的值重新写入input
+                return false
+            }
+        }
+        if (num == '5') {
+            var val = parseFloat(document.getElementById("lr").value)//获取页面中input的值
+            if (val < 1) {
+                val = parseFloat(val) + parseFloat('0.001')//input
+                document.getElementById("lr").value = val.toFixed(3)
+            }
+
+            return false
+        }
+        if (num == '6') {
+            var val = document.getElementById("lr").value//获取页面中input的值
+            if (parseFloat(val) > parseFloat('0.001')) {
+                val = parseFloat(val) - parseFloat('0.001')
+                document.getElementById("lr").value = val.toFixed(3)
+
+            }
+            return false
+        }
+        if (num == '7') {
+            var val = document.getElementById("num_epochs").value//获取页面中input的值
+            var val = parseFloat(val) + parseFloat('5')//input
+            document.getElementById("num_epochs").value = val
+            //$('num_filters').val(val)
+            //$('num_filters').val(val);//讲改变的值重新写入input
+            return false
+        }
+        if (num == '8') {
+            var val = document.getElementById("num_epochs").value//获取页面中input的值
+            if (parseFloat(val) > parseFloat('5')) {
+                var val = parseFloat(val) - parseFloat('5')
+                document.getElementById("num_epochs").value = val
+                //$('num_filters').val(val)
+                //$('num_filters').val(val);//讲改变的值重新写入input
+                return false
+            }
+        }
+        if (num == '9') {
+            var val = document.getElementById("batch_size").value//获取页面中input的值
+            var val = parseFloat(val) + parseFloat('4')//input
+            document.getElementById("batch_size").value = val
+            //$('num_filters').val(val)
+            //$('num_filters').val(val);//讲改变的值重新写入input
+            return false
+        }
+        if (num == '10') {
+            var val = document.getElementById("batch_size").value//获取页面中input的值
+            if (parseFloat(val) > parseFloat('4')) {
+                var val = parseFloat(val) - parseFloat('4')
+                document.getElementById("batch_size").value = val
+                //$('num_filters').val(val)
+                //$('num_filters').val(val);//讲改变的值重新写入input
+                return false
+            }
+        }
+
+
+    }//}
+</script>
+
+</html>

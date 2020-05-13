@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+ <body  style="overflow: hidden;background-size:cover">
+   <h1 style="font-size:55px;text-align: center">算法测试平台
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <title sytle="text-align:center;">算法测试平台</title>
+   </h1>
+   <hr/>
+   <br/>
+   <div>
+      <form action="/classification/algorithm_helps" method="post">
+        <h2 style="line-height: 30px;margin-left: 45px;font-size: 30px">帮助文档</h2>
+        <!--帮助文档中的下拉列框-->
+        <h3 style="line-height: 15px;margin-left: 60px;font-size: 20px">算法介绍:</h3>
+        <select id="helps" name="helps" style="margin-left:55px">
+                <option value="dt" style="margin-left:60px" selected>决策树</option>
+                <option value="knn"style="margin-left:60px">KNN</option>
+                <option value="svm"style="margin-left:60px">SVM</option>
+                <option value="xgboost"style="margin-left:60px">xgboost</option>
+                <option value="cnn"style="margin-left:60px">cnn</option>
+                <option value="rnn"style="margin-left:60px">rnn</option>
+        </select>
+        <input id="algorithm_helps" type="submit" value="提交" style="">
+        </form>
+   </div>
+   <hr/>
+   <div>
+     <form action="/classification/algorithm_select" method="post">
+       <!--选着应用于测试的算法-->
+       <br>
+       <h2 style="line-height: 30px;margin-left: 40px;font-size: 30px">测试算法选择</h2>
+       <select id="algorithm" name="algroithm" style="margin-left:55px">
+                <option value="dt" style="margin-left:60px" selected>决策树</option>
+                <option value="knn"style="margin-left:60px">KNN</option>
+                <option value="svm"style="margin-left:60px">SVM</option>
+                <option value="xgboost"style="margin-left:60px">xgboost</option>
+                <option value="cnn"style="margin-left:60px">cnn</option>
+                <option value="rnn"style="margin-left:60px">rnn</option>
+        </select>
+
+      <input  id="algorithm_submit" type="submit" value="提交" style="">
+      </form> 
+    </div>
+ </body>
+</html> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

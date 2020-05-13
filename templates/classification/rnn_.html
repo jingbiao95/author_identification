@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript"
+            src="/static/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            $('#submitButton').click(function () {
+                var data = {
+                    "method": "rnn",
+                    "dataSet": $("#dataSet").val(),
+
+                    "parameters": {
+                        "text_data": $("#textFiled").get(0).value,
+                        "num_layers": $("#num_layers").val(),
+                        "hidden_dim": $("#hidden_dim").val(),
+                        "keep_prob": $("#keep_prob").val(),
+                        "learning_rate": $("#learning_rate").val(),
+                        "num_epochs": $("#num_epochs").val(),
+                        "batch_size": $("#batch_size").val()
+                    }
+                };
+                algorithm_submit(data);
+                return false
+            });
+
+            function algorithm_submit(data) {
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/classification/algorithm_submit',
+                    data: JSON.stringify(data), //json对象转化为字符串
+                    //request Header注明content-type:'application/json; charset=UTF-8'
+                    contentType: 'application/json; charset=UTF-8',
+                    dataType: 'json', // 注意：期望服务端返回json格式的数据
+                    success: function (data) { // 这里的data就是json格式的数据
+                        $("#result_text").html(data.predict.predit_label)  //显示标签文本
+                        $("#result_image").html('<img src="' + data.predict.image_url + '">')
+                    },
+                    error: function (xhr, type) {
+                        alert("服务器异常");
+                    }
+                });
+            }
+        })
+    </script>
+</head>
+<body>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<h1 style="text-align: center;font-size: 50px">RNN参数设置</h1>
+<hr/>
+<div style="float:left;width: 600px; ">
+    <form>
+
+        <div align="center">隐藏层数 hidden_dim：
+            <input id="num_layers" name="textfield4" type="text" value="2"/>
+            <br>
+            <br>
+            <br>
+        </div>
+        <div style="margin-left:150px">隐藏层神经元 learning_rate：
+            <input id="hidden_dim" name="textfield6" type="text" value="100"/>
+            <br>
+            <br>
+            <br>
+        </div>
+        <div style="margin-left:50px">dropout保留比例 keep_prob：
+            <input id="keep_prob" name="textfield8" type="text" value="0.5"/>
+            <br>
+            <br>
+            <br>
+        </div>
+        <div style="margin-left:130px">学习率 num_layers：
+            <input id="learning_rate" name="textfield7" type="text" value="0.001"/>
+            <br>
+            <br>
+            <br>
+        </div>
+        <div style="margin-left:170px">批尺寸 epochs：
+            <input id="num_epochs" name="textfield10" type="text" value="5"/></div>
+        <br>
+        <br>
+        <br>
+
+        <div style="margin-left:170px">轮数 batch_size：
+            <input id="batch_size" name="textfield11" type="text" value="64"/></div>
+
+        <h2 align="center" style="margin-left: 40px">数据集路径设置</h2>
+        <div align="center">
+            <select id="dataSet" style="margin-left:60px">
+
+                {% for item in dataSets %}
+
+                    <option value="{{ item.id }}" style="margin-left:80px">{{ item.title }}</option>
+
+                {% endfor %}
+
+            </select>
+            <input type="submit" value="提交">
+        </div>
+    </form>
+
+</div>
+<div style="float:right;width:600px; ">
+    <form>
+              <textarea cols="40" id="textFiled" style="margin-left:60px;margin-top: 30px">请输入文字内容
+                    </textarea>
+        <br>
+        <br>
+        <input id="submitButton" name="提交" type="submit" style="margin-left:90px" value="提交">
+
+    </form>
+
+    <h3 align="left">分类结果: </h3>
+    <div id="result_text"></div>
+    <div id="result_image"></div>
+
+</div>
+</body>

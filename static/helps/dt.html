@@ -1,0 +1,1975 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>#right-panel {
+    background-color: #fff;
+}
+
+#right-panel .cover-top {
+    background: linear-gradient(to bottom, #fff 50%, transparent);
+}
+
+#cover-bottom #cover-bottom-background-right {
+    background: #fff;
+}
+
+@font-face {
+  font-family: octicons-link;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAZwABAAAAAACFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEU0lHAAAGaAAAAAgAAAAIAAAAAUdTVUIAAAZcAAAACgAAAAoAAQAAT1MvMgAAAyQAAABJAAAAYFYEU3RjbWFwAAADcAAAAEUAAACAAJThvmN2dCAAAATkAAAABAAAAAQAAAAAZnBnbQAAA7gAAACyAAABCUM+8IhnYXNwAAAGTAAAABAAAAAQABoAI2dseWYAAAFsAAABPAAAAZwcEq9taGVhZAAAAsgAAAA0AAAANgh4a91oaGVhAAADCAAAABoAAAAkCA8DRGhtdHgAAAL8AAAADAAAAAwGAACfbG9jYQAAAsAAAAAIAAAACABiATBtYXhwAAACqAAAABgAAAAgAA8ASm5hbWUAAAToAAABQgAAAlXu73sOcG9zdAAABiwAAAAeAAAAME3QpOBwcmVwAAAEbAAAAHYAAAB/aFGpk3jaTY6xa8JAGMW/O62BDi0tJLYQincXEypYIiGJjSgHniQ6umTsUEyLm5BV6NDBP8Tpts6F0v+k/0an2i+itHDw3v2+9+DBKTzsJNnWJNTgHEy4BgG3EMI9DCEDOGEXzDADU5hBKMIgNPZqoD3SilVaXZCER3/I7AtxEJLtzzuZfI+VVkprxTlXShWKb3TBecG11rwoNlmmn1P2WYcJczl32etSpKnziC7lQyWe1smVPy/Lt7Kc+0vWY/gAgIIEqAN9we0pwKXreiMasxvabDQMM4riO+qxM2ogwDGOZTXxwxDiycQIcoYFBLj5K3EIaSctAq2kTYiw+ymhce7vwM9jSqO8JyVd5RH9gyTt2+J/yUmYlIR0s04n6+7Vm1ozezUeLEaUjhaDSuXHwVRgvLJn1tQ7xiuVv/ocTRF42mNgZGBgYGbwZOBiAAFGJBIMAAizAFoAAABiAGIAznjaY2BkYGAA4in8zwXi+W2+MjCzMIDApSwvXzC97Z4Ig8N/BxYGZgcgl52BCSQKAA3jCV8CAABfAAAAAAQAAEB42mNgZGBg4f3vACQZQABIMjKgAmYAKEgBXgAAeNpjYGY6wTiBgZWBg2kmUxoDA4MPhGZMYzBi1AHygVLYQUCaawqDA4PChxhmh/8ODDEsvAwHgMKMIDnGL0x7gJQCAwMAJd4MFwAAAHjaY2BgYGaA4DAGRgYQkAHyGMF8NgYrIM3JIAGVYYDT+AEjAwuDFpBmA9KMDEwMCh9i/v8H8sH0/4dQc1iAmAkALaUKLgAAAHjaTY9LDsIgEIbtgqHUPpDi3gPoBVyRTmTddOmqTXThEXqrob2gQ1FjwpDvfwCBdmdXC5AVKFu3e5MfNFJ29KTQT48Ob9/lqYwOGZxeUelN2U2R6+cArgtCJpauW7UQBqnFkUsjAY/kOU1cP+DAgvxwn1chZDwUbd6CFimGXwzwF6tPbFIcjEl+vvmM/byA48e6tWrKArm4ZJlCbdsrxksL1AwWn/yBSJKpYbq8AXaaTb8AAHja28jAwOC00ZrBeQNDQOWO//sdBBgYGRiYWYAEELEwMTE4uzo5Zzo5b2BxdnFOcALxNjA6b2ByTswC8jYwg0VlNuoCTWAMqNzMzsoK1rEhNqByEyerg5PMJlYuVueETKcd/89uBpnpvIEVomeHLoMsAAe1Id4AAAAAAAB42oWQT07CQBTGv0JBhagk7HQzKxca2sJCE1hDt4QF+9JOS0nbaaYDCQfwCJ7Au3AHj+LO13FMmm6cl7785vven0kBjHCBhfpYuNa5Ph1c0e2Xu3jEvWG7UdPDLZ4N92nOm+EBXuAbHmIMSRMs+4aUEd4Nd3CHD8NdvOLTsA2GL8M9PODbcL+hD7C1xoaHeLJSEao0FEW14ckxC+TU8TxvsY6X0eLPmRhry2WVioLpkrbp84LLQPGI7c6sOiUzpWIWS5GzlSgUzzLBSikOPFTOXqly7rqx0Z1Q5BAIoZBSFihQYQOOBEdkCOgXTOHA07HAGjGWiIjaPZNW13/+lm6S9FT7rLHFJ6fQbkATOG1j2OFMucKJJsxIVfQORl+9Jyda6Sl1dUYhSCm1dyClfoeDve4qMYdLEbfqHf3O/AdDumsjAAB42mNgYoAAZQYjBmyAGYQZmdhL8zLdDEydARfoAqIAAAABAAMABwAKABMAB///AA8AAQAAAAAAAAAAAAAAAAABAAAAAA==) format('woff');
+}
+
+#container {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #373737;
+  font-family: "Roboto", "Noto Sans", "Ubuntu", "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif, "Noto Sans CJK SC", "Source Han Sans SC", "Microsoft Yahei";
+  font-size: 14px;
+  line-height: 2;
+  word-wrap: break-word;
+  background-color: #fff;
+}
+
+#container a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+#container a:active,
+#container a:hover {
+  outline-width: 0;
+}
+
+#container strong {
+  font-weight: inherit;
+}
+
+#container strong {
+  font-weight: bolder;
+}
+
+#container h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+#container img {
+  border-style: none;
+}
+
+#container svg:not(:root) {
+  overflow: hidden;
+}
+
+#container code,
+#container kbd,
+#container pre {
+  font-family: "Roboto Mono", "Ubuntu Mono", "Menlo", "Consolas", monospace;
+  font-size: 1em;
+}
+
+#container hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+#container input {
+  font: inherit;
+  margin: 0;
+}
+
+#container input {
+  overflow: visible;
+}
+
+#container button:-moz-focusring,
+#container [type="button"]:-moz-focusring,
+#container [type="reset"]:-moz-focusring,
+#container [type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+#container [type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+#container table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+#container td,
+#container th {
+  padding: 0;
+}
+
+#container * {
+  box-sizing: border-box;
+}
+
+#container input {
+  font: 13px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+#container a {
+  color: #4078c0;
+  text-decoration: none;
+}
+
+#container a:hover,
+#container a:active {
+  text-decoration: underline;
+}
+
+#container hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+#container hr::before {
+  display: table;
+  content: "";
+}
+
+#container hr::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+#container h1,
+#container h2,
+#container h3,
+#container h4,
+#container h5,
+#container h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+#container h1 {
+  font-size: 30px;
+}
+
+#container h2 {
+  font-size: 21px;
+}
+
+#container h3 {
+  font-size: 16px;
+}
+
+#container h4 {
+  font-size: 14px;
+}
+
+#container h5 {
+  font-size: 12px;
+}
+
+#container h6 {
+  font-size: 11px;
+}
+
+#container p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+#container blockquote {
+  margin: 0;
+}
+
+#container ul,
+#container ol {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#container ol ol,
+#container ul ol {
+  list-style-type: lower-roman;
+}
+
+#container ul ul ol,
+#container ul ol ol,
+#container ol ul ol,
+#container ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+#container dd {
+  margin-left: 0;
+}
+
+#container code {
+  font-family: "Roboto Mono", "Ubuntu Mono", "Menlo", "Consolas", monospace;
+  font-size: 12px;
+}
+
+#container pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px "Roboto Mono", "Ubuntu Mono", "Menlo", "Consolas", monospace;
+}
+
+#container .pl-0 {
+  padding-left: 0 !important;
+}
+
+#container .pl-1 {
+  padding-left: 3px !important;
+}
+
+#container .pl-2 {
+  padding-left: 6px !important;
+}
+
+#container .pl-3 {
+  padding-left: 12px !important;
+}
+
+#container .pl-4 {
+  padding-left: 24px !important;
+}
+
+#container .pl-5 {
+  padding-left: 36px !important;
+}
+
+#container .pl-6 {
+  padding-left: 48px !important;
+}
+
+#container .form-select::-ms-expand {
+  opacity: 0;
+}
+
+#container:before {
+  display: table;
+  content: "";
+}
+
+#container:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+#container>*:first-child {
+  margin-top: 0 !important;
+}
+
+#container>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+#container a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+#container .anchor {
+  display: inline-block;
+  padding-right: 2px;
+  margin-left: -18px;
+}
+
+#container .anchor:focus {
+  outline: none;
+}
+
+#container h1,
+#container h2,
+#container h3,
+#container h4,
+#container h5,
+#container h6 {
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+#container h1 .octicon-link,
+#container h2 .octicon-link,
+#container h3 .octicon-link,
+#container h4 .octicon-link,
+#container h5 .octicon-link,
+#container h6 .octicon-link {
+  color: #000;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+#container h1:hover .anchor,
+#container h2:hover .anchor,
+#container h3:hover .anchor,
+#container h4:hover .anchor,
+#container h5:hover .anchor,
+#container h6:hover .anchor {
+  text-decoration: none;
+}
+
+#container h1:hover .anchor .octicon-link,
+#container h2:hover .anchor .octicon-link,
+#container h3:hover .anchor .octicon-link,
+#container h4:hover .anchor .octicon-link,
+#container h5:hover .anchor .octicon-link,
+#container h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+#container h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+#container h1 .anchor {
+  line-height: 1;
+}
+
+#container h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+#container h2 .anchor {
+  line-height: 1;
+}
+
+#container h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+#container h3 .anchor {
+  line-height: 1.2;
+}
+
+#container h4 {
+  font-size: 1.25em;
+}
+
+#container h4 .anchor {
+  line-height: 1.2;
+}
+
+#container h5 {
+  font-size: 1em;
+}
+
+#container h5 .anchor {
+  line-height: 1.1;
+}
+
+#container h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+#container h6 .anchor {
+  line-height: 1.1;
+}
+
+#container p,
+#container blockquote,
+#container ul,
+#container ol,
+#container dl,
+#container table,
+#container pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+#container hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+#container ul,
+#container ol {
+  padding-left: 2em;
+}
+
+#container ul ul,
+#container ul ol,
+#container ol ol,
+#container ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#container li>p {
+  margin-top: 16px;
+}
+
+#container dl {
+  padding: 0;
+}
+
+#container dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+#container dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+#container blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+#container blockquote>:first-child {
+  margin-top: 0;
+}
+
+#container blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+#container table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+#container table th {
+  font-weight: bold;
+}
+
+#container table th,
+#container table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+#container table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+#container table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+#container img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #fff;
+}
+
+#container code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+#container code:before,
+#container code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+#container pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+#container .highlight {
+  margin-bottom: 16px;
+}
+
+#container .highlight pre,
+#container pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+#container .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+#container pre {
+  word-wrap: normal;
+}
+
+#container pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+#container pre code:before,
+#container pre code:after {
+  content: normal;
+}
+
+#container kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+#container .pl-c {
+  color: #969896;
+}
+
+#container .pl-c1,
+#container .pl-s .pl-v {
+  color: #0086b3;
+}
+
+#container .pl-e,
+#container .pl-en {
+  color: #795da3;
+}
+
+#container .pl-s .pl-s1,
+#container .pl-smi {
+  color: #333;
+}
+
+#container .pl-ent {
+  color: #63a35c;
+}
+
+#container .pl-k {
+  color: #a71d5d;
+}
+
+#container .pl-pds,
+#container .pl-s,
+#container .pl-s .pl-pse .pl-s1,
+#container .pl-sr,
+#container .pl-sr .pl-cce,
+#container .pl-sr .pl-sra,
+#container .pl-sr .pl-sre {
+  color: #183691;
+}
+
+#container .pl-v {
+  color: #ed6a43;
+}
+
+#container .pl-id {
+  color: #b52a1d;
+}
+
+#container .pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+
+#container .pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+
+#container .pl-ml {
+  color: #693a17;
+}
+
+#container .pl-mh,
+#container .pl-mh .pl-en,
+#container .pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+
+#container .pl-mq {
+  color: #008080;
+}
+
+#container .pl-mi {
+  color: #333;
+  font-style: italic;
+}
+
+#container .pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+
+#container .pl-md {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+#container .pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+#container .pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+
+#container .pl-mo {
+  color: #1d3e81;
+}
+
+#container kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px "Roboto Mono", "Ubuntu Mono", "Menlo", "Consolas", monospace;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+#container .full-commit .btn-outline:not(:disabled):hover {
+  color: #4078c0;
+  border: 1px solid #4078c0;
+}
+
+#container :checked+.radio-label {
+  position: relative;
+  z-index: 1;
+  border-color: #4078c0;
+}
+
+#container .octicon {
+  display: inline-block;
+  vertical-align: text-top;
+  fill: currentColor;
+}
+
+#container .task-list-item {
+  list-style-type: none;
+}
+
+#container .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+#container .task-list-item input {
+  margin: 0 0.2em 0.25em -1.6em;
+  vertical-align: middle;
+}
+
+#container hr {
+  border-bottom-color: #eee;
+}
+</style><style>/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #f8f8f8;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #998;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #333;
+  font-weight: bold;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  color: #008080;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color: #d14;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color: #900;
+  font-weight: bold;
+}
+
+.hljs-subst {
+  font-weight: normal;
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #458;
+  font-weight: bold;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color: #000080;
+  font-weight: normal;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #009926;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+  color: #990073;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #0086b3;
+}
+
+.hljs-meta {
+  color: #999;
+  font-weight: bold;
+}
+
+.hljs-deletion {
+  background: #fdd;
+}
+
+.hljs-addition {
+  background: #dfd;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+</style></head><body id="container" class="export export-html"><span i="1"><p></p><h1 id="0"> 决策树算法梳理 </h1> <p></p>
+</span><span i="2"><h2 id="1"> 1. 信息论基础（熵 联合熵 条件熵 信息增益 基尼不纯度） </h2>
+
+</span><span i="4"><h3 id="2"> 1.1 熵 （entropy） </h3>
+
+</span><span i="6"><p>在信息论与概率统计中，熵表示随机变量不确定性的度量。设X是一个取有限个值得离散随机变量，其概率分布为</p>
+</span><span i="8"><span id="math-1"><div style="width: 100%; text-align: center"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="28.426ex" height="6.843ex" style="vertical-align: -3.005ex;" viewBox="0 -1652.5 12238.9 2946.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<path stroke-width="1" id="E1-MJMATHI-45" d="M492 213Q472 213 472 226Q472 230 477 250T482 285Q482 316 461 323T364 330H312Q311 328 277 192T243 52Q243 48 254 48T334 46Q428 46 458 48T518 61Q567 77 599 117T670 248Q680 270 683 272Q690 274 698 274Q718 274 718 261Q613 7 608 2Q605 0 322 0H133Q31 0 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H757Q764 676 764 669Q764 664 751 557T737 447Q735 440 717 440H705Q698 445 698 453L701 476Q704 500 704 528Q704 558 697 578T678 609T643 625T596 632T532 634H485Q397 633 392 631Q388 629 386 622Q385 619 355 499T324 377Q347 376 372 376H398Q464 376 489 391T534 472Q538 488 540 490T557 493Q562 493 565 493T570 492T572 491T574 487T577 483L544 351Q511 218 508 216Q505 213 492 213Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-6E" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-74" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-72" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-6F" d="M201 -11Q126 -11 80 38T34 156Q34 221 64 279T146 380Q222 441 301 441Q333 441 341 440Q354 437 367 433T402 417T438 387T464 338T476 268Q476 161 390 75T201 -11ZM121 120Q121 70 147 48T206 26Q250 26 289 58T351 142Q360 163 374 216T388 308Q388 352 370 375Q346 405 306 405Q243 405 195 347Q158 303 140 230T121 120Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-70" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-79" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path>
+<path stroke-width="1" id="E1-MJSZ2-2211" d="M60 948Q63 950 665 950H1267L1325 815Q1384 677 1388 669H1348L1341 683Q1320 724 1285 761Q1235 809 1174 838T1033 881T882 898T699 902H574H543H251L259 891Q722 258 724 252Q725 250 724 246Q721 243 460 -56L196 -356Q196 -357 407 -357Q459 -357 548 -357T676 -358Q812 -358 896 -353T1063 -332T1204 -283T1307 -196Q1328 -170 1348 -124H1388Q1388 -125 1381 -145T1356 -210T1325 -294L1267 -449L666 -450Q64 -450 61 -448Q55 -446 55 -439Q55 -437 57 -433L590 177Q590 178 557 222T452 366T322 544L56 909L55 924Q55 945 60 948Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-69" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-6C" d="M117 59Q117 26 142 26Q179 26 205 131Q211 151 215 152Q217 153 225 153H229Q238 153 241 153T246 151T248 144Q247 138 245 128T234 90T214 43T183 6T137 -11Q101 -11 70 11T38 85Q38 97 39 102L104 360Q167 615 167 623Q167 626 166 628T162 632T157 634T149 635T141 636T132 637T122 637Q112 637 109 637T101 638T95 641T94 647Q94 649 96 661Q101 680 107 682T179 688Q194 689 213 690T243 693T254 694Q266 694 266 686Q266 675 193 386T118 83Q118 81 118 75T117 65V59Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-67" d="M311 43Q296 30 267 15T206 0Q143 0 105 45T66 160Q66 265 143 353T314 442Q361 442 401 394L404 398Q406 401 409 404T418 412T431 419T447 422Q461 422 470 413T480 394Q480 379 423 152T363 -80Q345 -134 286 -169T151 -205Q10 -205 10 -137Q10 -111 28 -91T74 -71Q89 -71 102 -80T116 -111Q116 -121 114 -130T107 -144T99 -154T92 -162L90 -164H91Q101 -167 151 -167Q189 -167 211 -155Q234 -144 254 -122T282 -75Q288 -56 298 -13Q311 35 311 43ZM384 328L380 339Q377 350 375 354T369 368T359 382T346 393T328 402T306 405Q262 405 221 352Q191 313 171 233T151 117Q151 38 213 38Q269 38 323 108L331 118L384 328Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+ <use xlink:href="#E1-MJMATHI-45" x="0" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-6E" x="764" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-74" x="1365" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-72" x="1726" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-6F" x="2178" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-70" x="2663" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-79" x="3167" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-3D" x="3942" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2212" x="4998" y="0"></use>
+<g transform="translate(5943,0)">
+ <use xlink:href="#E1-MJSZ2-2211" x="0" y="0"></use>
+<g transform="translate(147,-1090)">
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-69" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMAIN-3D" x="345" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMAIN-31" x="1124" y="0"></use>
+</g>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-6E" x="721" y="1627"></use>
+</g>
+<g transform="translate(7554,0)">
+ <use xlink:href="#E1-MJMATHI-70" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-69" x="712" y="-213"></use>
+</g>
+ <use xlink:href="#E1-MJMAIN-2217" x="8624" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-6C" x="9347" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-6F" x="9646" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-67" x="10131" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-28" x="10612" y="0"></use>
+<g transform="translate(11001,0)">
+ <use xlink:href="#E1-MJMATHI-70" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-69" x="712" y="-213"></use>
+</g>
+ <use xlink:href="#E1-MJMAIN-29" x="11849" y="0"></use>
+</g>
+</svg></div></span></span><span i="10"><p>则随机变量X的熵定义为</p>
+</span><span i="11"><span id="math-2"><div style="width: 100%; text-align: center"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0.343ex" style="vertical-align: -0.171ex;" viewBox="0 -73.8 0 147.5" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg">
+<defs></defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"></g>
+</svg></div></span></span><span i="13"><p>若pi等于0，定义0log0=0，熵的单位为比特或者纳特。</p>
+</span><span i="15"><h3 id="3"> 1.2 联合熵 </h3>
+
+</span><span i="17"><p><span id="math-3"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="53.492ex" height="4.176ex" style="vertical-align: -1.838ex;" viewBox="0 -1006.6 23031.4 1798" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<path stroke-width="1" id="E1-MJMATHI-48" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 219 683Q260 681 355 681Q389 681 418 681T463 682T483 682Q499 682 499 672Q499 670 497 658Q492 641 487 638H485Q483 638 480 638T473 638T464 637T455 637Q416 636 405 634T387 623Q384 619 355 500Q348 474 340 442T328 395L324 380Q324 378 469 378H614L615 381Q615 384 646 504Q674 619 674 627T617 637Q594 637 587 639T580 648Q580 650 582 660Q586 677 588 679T604 682Q609 682 646 681T740 680Q802 680 835 681T871 682Q888 682 888 672Q888 645 876 638H874Q872 638 869 638T862 638T853 637T844 637Q805 636 794 634T776 623Q773 618 704 340T634 58Q634 51 638 51Q646 48 692 46H723Q729 38 729 37T726 19Q722 6 716 0H701Q664 2 567 2Q533 2 504 2T458 2T437 1Q420 1 420 10Q420 15 423 24Q428 43 433 45Q437 46 448 46H454Q481 46 514 49Q520 50 522 50T528 55T534 64T540 82T547 110T558 153Q565 181 569 198Q602 330 602 331T457 332H312L279 197Q245 63 245 58Q245 51 253 49T303 46H334Q340 38 340 37T337 19Q333 6 327 0H312Q275 2 178 2Q144 2 115 2T69 2T48 1Q31 1 31 10Q31 12 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-58" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-59" d="M66 637Q54 637 49 637T39 638T32 641T30 647T33 664T42 682Q44 683 56 683Q104 680 165 680Q288 680 306 683H316Q322 677 322 674T320 656Q316 643 310 637H298Q242 637 242 624Q242 619 292 477T343 333L346 336Q350 340 358 349T379 373T411 410T454 461Q546 568 561 587T577 618Q577 634 545 637Q528 637 528 647Q528 649 530 661Q533 676 535 679T549 683Q551 683 578 682T657 680Q684 680 713 681T746 682Q763 682 763 673Q763 669 760 657T755 643Q753 637 734 637Q662 632 617 587Q608 578 477 424L348 273L322 169Q295 62 295 57Q295 46 363 46Q379 46 384 45T390 35Q390 33 388 23Q384 6 382 4T366 1Q361 1 324 1T232 2Q170 2 138 2T102 1Q84 1 84 9Q84 14 87 24Q88 27 89 30T90 35T91 39T93 42T96 44T101 45T107 45T116 46T129 46Q168 47 180 50T198 63Q201 68 227 171L252 274L129 623Q128 624 127 625T125 627T122 629T118 631T113 633T105 634T96 635T83 636T66 637Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path>
+<path stroke-width="1" id="E1-MJSZ1-2211" d="M61 748Q64 750 489 750H913L954 640Q965 609 976 579T993 533T999 516H979L959 517Q936 579 886 621T777 682Q724 700 655 705T436 710H319Q183 710 183 709Q186 706 348 484T511 259Q517 250 513 244L490 216Q466 188 420 134T330 27L149 -187Q149 -188 362 -188Q388 -188 436 -188T506 -189Q679 -189 778 -162T936 -43Q946 -27 959 6H999L913 -249L489 -250Q65 -250 62 -248Q56 -246 56 -239Q56 -234 118 -161Q186 -81 245 -11L428 206Q428 207 242 462L57 717L56 728Q56 744 61 748Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-69" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-6E" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-79" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-70" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-45" d="M492 213Q472 213 472 226Q472 230 477 250T482 285Q482 316 461 323T364 330H312Q311 328 277 192T243 52Q243 48 254 48T334 46Q428 46 458 48T518 61Q567 77 599 117T670 248Q680 270 683 272Q690 274 698 274Q718 274 718 261Q613 7 608 2Q605 0 322 0H133Q31 0 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H757Q764 676 764 669Q764 664 751 557T737 447Q735 440 717 440H705Q698 445 698 453L701 476Q704 500 704 528Q704 558 697 578T678 609T643 625T596 632T532 634H485Q397 633 392 631Q388 629 386 622Q385 619 355 499T324 377Q347 376 372 376H398Q464 376 489 391T534 472Q538 488 540 490T557 493Q562 493 565 493T570 492T572 491T574 487T577 483L544 351Q511 218 508 216Q505 213 492 213Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-6C" d="M117 59Q117 26 142 26Q179 26 205 131Q211 151 215 152Q217 153 225 153H229Q238 153 241 153T246 151T248 144Q247 138 245 128T234 90T214 43T183 6T137 -11Q101 -11 70 11T38 85Q38 97 39 102L104 360Q167 615 167 623Q167 626 166 628T162 632T157 634T149 635T141 636T132 637T122 637Q112 637 109 637T101 638T95 641T94 647Q94 649 96 661Q101 680 107 682T179 688Q194 689 213 690T243 693T254 694Q266 694 266 686Q266 675 193 386T118 83Q118 81 118 75T117 65V59Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-6F" d="M201 -11Q126 -11 80 38T34 156Q34 221 64 279T146 380Q222 441 301 441Q333 441 341 440Q354 437 367 433T402 417T438 387T464 338T476 268Q476 161 390 75T201 -11ZM121 120Q121 70 147 48T206 26Q250 26 289 58T351 142Q360 163 374 216T388 308Q388 352 370 375Q346 405 306 405Q243 405 195 347Q158 303 140 230T121 120Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-67" d="M311 43Q296 30 267 15T206 0Q143 0 105 45T66 160Q66 265 143 353T314 442Q361 442 401 394L404 398Q406 401 409 404T418 412T431 419T447 422Q461 422 470 413T480 394Q480 379 423 152T363 -80Q345 -134 286 -169T151 -205Q10 -205 10 -137Q10 -111 28 -91T74 -71Q89 -71 102 -80T116 -111Q116 -121 114 -130T107 -144T99 -154T92 -162L90 -164H91Q101 -167 151 -167Q189 -167 211 -155Q234 -144 254 -122T282 -75Q288 -56 298 -13Q311 35 311 43ZM384 328L380 339Q377 350 375 354T369 368T359 382T346 393T328 402T306 405Q262 405 221 352Q191 313 171 233T151 117Q151 38 213 38Q269 38 323 108L331 118L384 328Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-5D" d="M22 710V750H159V-250H22V-210H119V710H22Z"></path>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+ <use xlink:href="#E1-MJMATHI-48" x="0" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-28" x="888" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-58" x="1278" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2C" x="2130" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-59" x="2575" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-29" x="3339" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-3D" x="4006" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2212" x="5062" y="0"></use>
+<g transform="translate(6007,0)">
+ <use xlink:href="#E1-MJSZ1-2211" x="0" y="0"></use>
+<g transform="translate(1056,-287)">
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-78" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMAIN-2212" x="572" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-69" x="1351" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-6E" x="1696" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMAIN-2212" x="2297" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-58" x="3075" y="0"></use>
+</g>
+</g>
+<g transform="translate(10108,0)">
+ <use xlink:href="#E1-MJSZ1-2211" x="0" y="0"></use>
+<g transform="translate(1056,-287)">
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-79" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMAIN-2212" x="497" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-69" x="1276" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-6E" x="1621" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMAIN-2212" x="2222" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-59" x="3000" y="0"></use>
+</g>
+</g>
+ <use xlink:href="#E1-MJMATHI-70" x="14093" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-28" x="14596" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-78" x="14986" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2C" x="15558" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-79" x="16003" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-29" x="16501" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-3D" x="17168" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-45" x="18225" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-5B" x="18989" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-6C" x="19268" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-6F" x="19566" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-67" x="20052" y="0"></use>
+<g transform="translate(20532,0)">
+<g transform="translate(120,0)">
+<rect stroke="none" width="1980" height="60" x="0" y="220"></rect>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMAIN-31" x="1150" y="629"></use>
+<g transform="translate(60,-476)">
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-70" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMAIN-28" x="503" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-78" x="892" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMAIN-2C" x="1465" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-79" x="1743" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMAIN-29" x="2241" y="0"></use>
+</g>
+</g>
+</g>
+ <use xlink:href="#E1-MJMAIN-5D" x="22752" y="0"></use>
+</g>
+</svg></span></p>
+</span><span i="19"><p>举个例子，更容易理解一些，比如天气是晴天还是阴天，和我穿短袖还是长袖这两个事件其可以组成联合信息熵H(X,Y)H(X,Y)，而对于H(x)H(x)就是天气单独一个事件的信息熵，因为两个事件组合起来的信息量肯定是大于单一一个事件的信息量的。 </p>
+</span><span i="21"><p>而今天天气和我今天穿衣服这两个随机概率事件并不是独立分布的，所以如果已知今天天气的情况下，我的穿衣与天气的联合信息量/不确定程度是减少了的，也就相当于两者联合信息量已知了今天下雨，那么H(x)H(x)的信息量就应该被减去，得到当前的新联合信息量，也相当于条件信息量。 </p>
+</span><span i="23"><p>所以当已知H(x)H(x)这个信息量的时候，联合分布H(X,Y)H(X,Y)剩余的信息量就是条件熵。</p>
+</span><span i="25"><p>Ref：<a href="https://blog.csdn.net/gangyin5071/article/details/82228827#5%E8%81%94%E5%90%88%E4%BF%A1%E6%81%AF%E7%86%B5%E5%92%8C%E6%9D%A1%E4%BB%B6%E4%BF%A1%E6%81%AF%E7%86%B5">https://blog.csdn.net/gangyin5071/article/details/82228827#5%E8%81%94%E5%90%88%E4%BF%A1%E6%81%AF%E7%86%B5%E5%92%8C%E6%9D%A1%E4%BB%B6%E4%BF%A1%E6%81%AF%E7%86%B5</a></p>
+</span><span i="27"><h3 id="4"> 1.3 条件熵 (Conditional Entropy) </h3>
+
+</span><span i="29"><p>H(Y|X)表示在已知随机变量X的条件下随机变量Y的不确定性定义为X给定条件下Y的条件概率分布的熵对X的数学期望</p>
+</span><span i="30"><span id="math-4"><div style="width: 100%; text-align: center"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="34.318ex" height="3.843ex" style="vertical-align: -1.338ex;" viewBox="0 -1078.4 14775.9 1654.5" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<path stroke-width="1" id="E1-MJMATHI-48" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 219 683Q260 681 355 681Q389 681 418 681T463 682T483 682Q499 682 499 672Q499 670 497 658Q492 641 487 638H485Q483 638 480 638T473 638T464 637T455 637Q416 636 405 634T387 623Q384 619 355 500Q348 474 340 442T328 395L324 380Q324 378 469 378H614L615 381Q615 384 646 504Q674 619 674 627T617 637Q594 637 587 639T580 648Q580 650 582 660Q586 677 588 679T604 682Q609 682 646 681T740 680Q802 680 835 681T871 682Q888 682 888 672Q888 645 876 638H874Q872 638 869 638T862 638T853 637T844 637Q805 636 794 634T776 623Q773 618 704 340T634 58Q634 51 638 51Q646 48 692 46H723Q729 38 729 37T726 19Q722 6 716 0H701Q664 2 567 2Q533 2 504 2T458 2T437 1Q420 1 420 10Q420 15 423 24Q428 43 433 45Q437 46 448 46H454Q481 46 514 49Q520 50 522 50T528 55T534 64T540 82T547 110T558 153Q565 181 569 198Q602 330 602 331T457 332H312L279 197Q245 63 245 58Q245 51 253 49T303 46H334Q340 38 340 37T337 19Q333 6 327 0H312Q275 2 178 2Q144 2 115 2T69 2T48 1Q31 1 31 10Q31 12 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-59" d="M66 637Q54 637 49 637T39 638T32 641T30 647T33 664T42 682Q44 683 56 683Q104 680 165 680Q288 680 306 683H316Q322 677 322 674T320 656Q316 643 310 637H298Q242 637 242 624Q242 619 292 477T343 333L346 336Q350 340 358 349T379 373T411 410T454 461Q546 568 561 587T577 618Q577 634 545 637Q528 637 528 647Q528 649 530 661Q533 676 535 679T549 683Q551 683 578 682T657 680Q684 680 713 681T746 682Q763 682 763 673Q763 669 760 657T755 643Q753 637 734 637Q662 632 617 587Q608 578 477 424L348 273L322 169Q295 62 295 57Q295 46 363 46Q379 46 384 45T390 35Q390 33 388 23Q384 6 382 4T366 1Q361 1 324 1T232 2Q170 2 138 2T102 1Q84 1 84 9Q84 14 87 24Q88 27 89 30T90 35T91 39T93 42T96 44T101 45T107 45T116 46T129 46Q168 47 180 50T198 63Q201 68 227 171L252 274L129 623Q128 624 127 625T125 627T122 629T118 631T113 633T105 634T96 635T83 636T66 637Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-58" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path>
+<path stroke-width="1" id="E1-MJSZ2-2211" d="M60 948Q63 950 665 950H1267L1325 815Q1384 677 1388 669H1348L1341 683Q1320 724 1285 761Q1235 809 1174 838T1033 881T882 898T699 902H574H543H251L259 891Q722 258 724 252Q725 250 724 246Q721 243 460 -56L196 -356Q196 -357 407 -357Q459 -357 548 -357T676 -358Q812 -358 896 -353T1063 -332T1204 -283T1307 -196Q1328 -170 1348 -124H1388Q1388 -125 1381 -145T1356 -210T1325 -294L1267 -449L666 -450Q64 -450 61 -448Q55 -446 55 -439Q55 -437 57 -433L590 177Q590 178 557 222T452 366T322 544L56 909L55 924Q55 945 60 948Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-70" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+ <use xlink:href="#E1-MJMATHI-48" x="0" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-28" x="888" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-59" x="1278" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-7C" x="2041" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-58" x="2320" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-29" x="3172" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-3D" x="3839" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2212" x="4896" y="0"></use>
+ <use xlink:href="#E1-MJSZ2-2211" x="5841" y="0"></use>
+<g transform="translate(7452,0)">
+ <use xlink:href="#E1-MJMATHI-70" x="0" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-28" x="503" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-78" x="893" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-29" x="1465" y="0"></use>
+</g>
+ <use xlink:href="#E1-MJMATHI-48" x="9307" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-28" x="10195" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-59" x="10585" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-7C" x="11348" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-58" x="11627" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-3D" x="12757" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-78" x="13813" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-29" x="14386" y="0"></use>
+</g>
+</svg></div></span></span><span i="30"><span id="math-5"><div style="width: 100%; text-align: center"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="31.987ex" height="5.843ex" style="vertical-align: -3.338ex;" viewBox="0 -1078.4 13771.9 2515.6" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path>
+<path stroke-width="1" id="E1-MJSZ2-2211" d="M60 948Q63 950 665 950H1267L1325 815Q1384 677 1388 669H1348L1341 683Q1320 724 1285 761Q1235 809 1174 838T1033 881T882 898T699 902H574H543H251L259 891Q722 258 724 252Q725 250 724 246Q721 243 460 -56L196 -356Q196 -357 407 -357Q459 -357 548 -357T676 -358Q812 -358 896 -353T1063 -332T1204 -283T1307 -196Q1328 -170 1348 -124H1388Q1388 -125 1381 -145T1356 -210T1325 -294L1267 -449L666 -450Q64 -450 61 -448Q55 -446 55 -439Q55 -437 57 -433L590 177Q590 178 557 222T452 366T322 544L56 909L55 924Q55 945 60 948Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-70" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-79" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-6C" d="M117 59Q117 26 142 26Q179 26 205 131Q211 151 215 152Q217 153 225 153H229Q238 153 241 153T246 151T248 144Q247 138 245 128T234 90T214 43T183 6T137 -11Q101 -11 70 11T38 85Q38 97 39 102L104 360Q167 615 167 623Q167 626 166 628T162 632T157 634T149 635T141 636T132 637T122 637Q112 637 109 637T101 638T95 641T94 647Q94 649 96 661Q101 680 107 682T179 688Q194 689 213 690T243 693T254 694Q266 694 266 686Q266 675 193 386T118 83Q118 81 118 75T117 65V59Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-6F" d="M201 -11Q126 -11 80 38T34 156Q34 221 64 279T146 380Q222 441 301 441Q333 441 341 440Q354 437 367 433T402 417T438 387T464 338T476 268Q476 161 390 75T201 -11ZM121 120Q121 70 147 48T206 26Q250 26 289 58T351 142Q360 163 374 216T388 308Q388 352 370 375Q346 405 306 405Q243 405 195 347Q158 303 140 230T121 120Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-67" d="M311 43Q296 30 267 15T206 0Q143 0 105 45T66 160Q66 265 143 353T314 442Q361 442 401 394L404 398Q406 401 409 404T418 412T431 419T447 422Q461 422 470 413T480 394Q480 379 423 152T363 -80Q345 -134 286 -169T151 -205Q10 -205 10 -137Q10 -111 28 -91T74 -71Q89 -71 102 -80T116 -111Q116 -121 114 -130T107 -144T99 -154T92 -162L90 -164H91Q101 -167 151 -167Q189 -167 211 -155Q234 -144 254 -122T282 -75Q288 -56 298 -13Q311 35 311 43ZM384 328L380 339Q377 350 375 354T369 368T359 382T346 393T328 402T306 405Q262 405 221 352Q191 313 171 233T151 117Q151 38 213 38Q269 38 323 108L331 118L384 328Z"></path>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+ <use xlink:href="#E1-MJMAIN-3D" x="0" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2212" x="1056" y="0"></use>
+ <use xlink:href="#E1-MJSZ2-2211" x="2001" y="0"></use>
+<g transform="translate(3612,0)">
+ <use xlink:href="#E1-MJMATHI-70" x="0" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-28" x="503" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-78" x="893" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-29" x="1465" y="0"></use>
+</g>
+<g transform="translate(5634,0)">
+ <use xlink:href="#E1-MJSZ2-2211" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-79" x="772" y="-1487"></use>
+</g>
+ <use xlink:href="#E1-MJMATHI-70" x="7245" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-28" x="7748" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-79" x="8138" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-7C" x="8635" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-78" x="8914" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-29" x="9486" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-6C" x="9876" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-6F" x="10174" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-67" x="10660" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-70" x="11140" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-28" x="11644" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-79" x="12033" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-7C" x="12531" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-78" x="12809" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-29" x="13382" y="0"></use>
+</g>
+</svg></div></span></span><span i="30"><span id="math-6"><div style="width: 100%; text-align: center"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="27.678ex" height="5.843ex" style="vertical-align: -3.338ex;" viewBox="0 -1078.4 11916.9 2515.6" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path>
+<path stroke-width="1" id="E1-MJSZ2-2211" d="M60 948Q63 950 665 950H1267L1325 815Q1384 677 1388 669H1348L1341 683Q1320 724 1285 761Q1235 809 1174 838T1033 881T882 898T699 902H574H543H251L259 891Q722 258 724 252Q725 250 724 246Q721 243 460 -56L196 -356Q196 -357 407 -357Q459 -357 548 -357T676 -358Q812 -358 896 -353T1063 -332T1204 -283T1307 -196Q1328 -170 1348 -124H1388Q1388 -125 1381 -145T1356 -210T1325 -294L1267 -449L666 -450Q64 -450 61 -448Q55 -446 55 -439Q55 -437 57 -433L590 177Q590 178 557 222T452 366T322 544L56 909L55 924Q55 945 60 948Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-79" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-70" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-6C" d="M117 59Q117 26 142 26Q179 26 205 131Q211 151 215 152Q217 153 225 153H229Q238 153 241 153T246 151T248 144Q247 138 245 128T234 90T214 43T183 6T137 -11Q101 -11 70 11T38 85Q38 97 39 102L104 360Q167 615 167 623Q167 626 166 628T162 632T157 634T149 635T141 636T132 637T122 637Q112 637 109 637T101 638T95 641T94 647Q94 649 96 661Q101 680 107 682T179 688Q194 689 213 690T243 693T254 694Q266 694 266 686Q266 675 193 386T118 83Q118 81 118 75T117 65V59Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-6F" d="M201 -11Q126 -11 80 38T34 156Q34 221 64 279T146 380Q222 441 301 441Q333 441 341 440Q354 437 367 433T402 417T438 387T464 338T476 268Q476 161 390 75T201 -11ZM121 120Q121 70 147 48T206 26Q250 26 289 58T351 142Q360 163 374 216T388 308Q388 352 370 375Q346 405 306 405Q243 405 195 347Q158 303 140 230T121 120Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-67" d="M311 43Q296 30 267 15T206 0Q143 0 105 45T66 160Q66 265 143 353T314 442Q361 442 401 394L404 398Q406 401 409 404T418 412T431 419T447 422Q461 422 470 413T480 394Q480 379 423 152T363 -80Q345 -134 286 -169T151 -205Q10 -205 10 -137Q10 -111 28 -91T74 -71Q89 -71 102 -80T116 -111Q116 -121 114 -130T107 -144T99 -154T92 -162L90 -164H91Q101 -167 151 -167Q189 -167 211 -155Q234 -144 254 -122T282 -75Q288 -56 298 -13Q311 35 311 43ZM384 328L380 339Q377 350 375 354T369 368T359 382T346 393T328 402T306 405Q262 405 221 352Q191 313 171 233T151 117Q151 38 213 38Q269 38 323 108L331 118L384 328Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+ <use xlink:href="#E1-MJMAIN-3D" x="0" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2212" x="1056" y="0"></use>
+<g transform="translate(2001,0)">
+ <use xlink:href="#E1-MJSZ2-2211" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-78" x="735" y="-1487"></use>
+</g>
+<g transform="translate(3612,0)">
+ <use xlink:href="#E1-MJSZ2-2211" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-79" x="772" y="-1487"></use>
+</g>
+ <use xlink:href="#E1-MJMATHI-70" x="5223" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-28" x="5727" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-78" x="6116" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2C" x="6689" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-79" x="7134" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-29" x="7631" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-6C" x="8021" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-6F" x="8319" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-67" x="8805" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-70" x="9285" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-28" x="9789" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-79" x="10178" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-7C" x="10676" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-78" x="10954" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-29" x="11527" y="0"></use>
+</g>
+</svg></div></span></span><span i="30"><span id="math-7"><div style="width: 100%; text-align: center"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="23.936ex" height="5.843ex" style="vertical-align: -3.338ex;" viewBox="0 -1078.4 10305.8 2515.6" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path>
+<path stroke-width="1" id="E1-MJSZ2-2211" d="M60 948Q63 950 665 950H1267L1325 815Q1384 677 1388 669H1348L1341 683Q1320 724 1285 761Q1235 809 1174 838T1033 881T882 898T699 902H574H543H251L259 891Q722 258 724 252Q725 250 724 246Q721 243 460 -56L196 -356Q196 -357 407 -357Q459 -357 548 -357T676 -358Q812 -358 896 -353T1063 -332T1204 -283T1307 -196Q1328 -170 1348 -124H1388Q1388 -125 1381 -145T1356 -210T1325 -294L1267 -449L666 -450Q64 -450 61 -448Q55 -446 55 -439Q55 -437 57 -433L590 177Q590 178 557 222T452 366T322 544L56 909L55 924Q55 945 60 948Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-79" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-70" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-6C" d="M117 59Q117 26 142 26Q179 26 205 131Q211 151 215 152Q217 153 225 153H229Q238 153 241 153T246 151T248 144Q247 138 245 128T234 90T214 43T183 6T137 -11Q101 -11 70 11T38 85Q38 97 39 102L104 360Q167 615 167 623Q167 626 166 628T162 632T157 634T149 635T141 636T132 637T122 637Q112 637 109 637T101 638T95 641T94 647Q94 649 96 661Q101 680 107 682T179 688Q194 689 213 690T243 693T254 694Q266 694 266 686Q266 675 193 386T118 83Q118 81 118 75T117 65V59Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-6F" d="M201 -11Q126 -11 80 38T34 156Q34 221 64 279T146 380Q222 441 301 441Q333 441 341 440Q354 437 367 433T402 417T438 387T464 338T476 268Q476 161 390 75T201 -11ZM121 120Q121 70 147 48T206 26Q250 26 289 58T351 142Q360 163 374 216T388 308Q388 352 370 375Q346 405 306 405Q243 405 195 347Q158 303 140 230T121 120Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-67" d="M311 43Q296 30 267 15T206 0Q143 0 105 45T66 160Q66 265 143 353T314 442Q361 442 401 394L404 398Q406 401 409 404T418 412T431 419T447 422Q461 422 470 413T480 394Q480 379 423 152T363 -80Q345 -134 286 -169T151 -205Q10 -205 10 -137Q10 -111 28 -91T74 -71Q89 -71 102 -80T116 -111Q116 -121 114 -130T107 -144T99 -154T92 -162L90 -164H91Q101 -167 151 -167Q189 -167 211 -155Q234 -144 254 -122T282 -75Q288 -56 298 -13Q311 35 311 43ZM384 328L380 339Q377 350 375 354T369 368T359 382T346 393T328 402T306 405Q262 405 221 352Q191 313 171 233T151 117Q151 38 213 38Q269 38 323 108L331 118L384 328Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+ <use xlink:href="#E1-MJMAIN-3D" x="0" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2212" x="1056" y="0"></use>
+<g transform="translate(2001,0)">
+ <use xlink:href="#E1-MJSZ2-2211" x="0" y="0"></use>
+<g transform="translate(245,-1051)">
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-78" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMAIN-2C" x="572" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-79" x="851" y="0"></use>
+</g>
+</g>
+ <use xlink:href="#E1-MJMATHI-70" x="3612" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-28" x="4116" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-78" x="4505" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2C" x="5078" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-79" x="5523" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-29" x="6020" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-6C" x="6410" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-6F" x="6708" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-67" x="7194" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-70" x="7674" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-28" x="8178" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-79" x="8567" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-7C" x="9065" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-78" x="9343" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-29" x="9916" y="0"></use>
+</g>
+</svg></div></span></span><span i="32"><p>经验熵和经验条件熵：当熵和条件熵中的概率由数据估计（特别是极大似然估计）得到时，所对应的熵与条件熵分别称为经验熵和条件经验熵。</p>
+</span><span i="34"><h3 id="5"> 1.4 信息增益（Information Gain） </h3>
+
+</span><span i="36"><p>信息增益表示得知特征X的信息而使得类Y的信息的不确定性减少的程度。特征A对训练数据集D的信息增益g(D,A)，定义为集合D的经验熵H(D)与特征A给定条件下D的经验条件熵H(D|A)之差，即</p>
+</span><span i="37"><span id="math-8"><div style="width: 100%; text-align: center"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="27.937ex" height="2.843ex" style="vertical-align: -0.838ex;" viewBox="0 -863.1 12028.3 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<path stroke-width="1" id="E1-MJMATHI-67" d="M311 43Q296 30 267 15T206 0Q143 0 105 45T66 160Q66 265 143 353T314 442Q361 442 401 394L404 398Q406 401 409 404T418 412T431 419T447 422Q461 422 470 413T480 394Q480 379 423 152T363 -80Q345 -134 286 -169T151 -205Q10 -205 10 -137Q10 -111 28 -91T74 -71Q89 -71 102 -80T116 -111Q116 -121 114 -130T107 -144T99 -154T92 -162L90 -164H91Q101 -167 151 -167Q189 -167 211 -155Q234 -144 254 -122T282 -75Q288 -56 298 -13Q311 35 311 43ZM384 328L380 339Q377 350 375 354T369 368T359 382T346 393T328 402T306 405Q262 405 221 352Q191 313 171 233T151 117Q151 38 213 38Q269 38 323 108L331 118L384 328Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-44" d="M287 628Q287 635 230 637Q207 637 200 638T193 647Q193 655 197 667T204 682Q206 683 403 683Q570 682 590 682T630 676Q702 659 752 597T803 431Q803 275 696 151T444 3L430 1L236 0H125H72Q48 0 41 2T33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM703 469Q703 507 692 537T666 584T629 613T590 629T555 636Q553 636 541 636T512 636T479 637H436Q392 637 386 627Q384 623 313 339T242 52Q242 48 253 48T330 47Q335 47 349 47T373 46Q499 46 581 128Q617 164 640 212T683 339T703 469Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-41" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-48" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 219 683Q260 681 355 681Q389 681 418 681T463 682T483 682Q499 682 499 672Q499 670 497 658Q492 641 487 638H485Q483 638 480 638T473 638T464 637T455 637Q416 636 405 634T387 623Q384 619 355 500Q348 474 340 442T328 395L324 380Q324 378 469 378H614L615 381Q615 384 646 504Q674 619 674 627T617 637Q594 637 587 639T580 648Q580 650 582 660Q586 677 588 679T604 682Q609 682 646 681T740 680Q802 680 835 681T871 682Q888 682 888 672Q888 645 876 638H874Q872 638 869 638T862 638T853 637T844 637Q805 636 794 634T776 623Q773 618 704 340T634 58Q634 51 638 51Q646 48 692 46H723Q729 38 729 37T726 19Q722 6 716 0H701Q664 2 567 2Q533 2 504 2T458 2T437 1Q420 1 420 10Q420 15 423 24Q428 43 433 45Q437 46 448 46H454Q481 46 514 49Q520 50 522 50T528 55T534 64T540 82T547 110T558 153Q565 181 569 198Q602 330 602 331T457 332H312L279 197Q245 63 245 58Q245 51 253 49T303 46H334Q340 38 340 37T337 19Q333 6 327 0H312Q275 2 178 2Q144 2 115 2T69 2T48 1Q31 1 31 10Q31 12 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+ <use xlink:href="#E1-MJMATHI-67" x="0" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-28" x="480" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-44" x="870" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2C" x="1698" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-41" x="2143" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-29" x="2894" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-3D" x="3561" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-48" x="4617" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-28" x="5506" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-44" x="5895" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-29" x="6724" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2212" x="7335" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-48" x="8336" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-28" x="9225" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-44" x="9614" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2C" x="10443" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-41" x="10888" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-29" x="11638" y="0"></use>
+</g>
+</svg></div></span></span><span i="39"><p>一般地，熵H(Y)与条件熵H(Y|X)之差称为互信息。决策树学习中的信息增益等价于训练数据集中类与特征的互信息。</p>
+</span><span i="40"><pre><code><span class="hljs-keyword">from</span> numpy <span class="hljs-keyword">import</span> *
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+<span class="hljs-keyword">from</span> math <span class="hljs-keyword">import</span> log
+<span class="hljs-keyword">import</span> operator
+<span class="hljs-keyword">from</span> sklearn.datasets <span class="hljs-keyword">import</span> load_iris
+
+
+<span class="hljs-comment"># 计算数据集的香农熵</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">calcShannonEnt</span><span class="hljs-params">(dataSet)</span>:</span>
+    numEntries = len(dataSet)
+    labelCounts = {}
+    <span class="hljs-comment"># 给所有可能分类创建字典</span>
+    <span class="hljs-keyword">for</span> featVec <span class="hljs-keyword">in</span> dataSet:
+        currentLabel = featVec[<span class="hljs-number">-1</span>]
+        <span class="hljs-keyword">if</span> currentLabel <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> labelCounts.keys():
+            labelCounts[currentLabel] = <span class="hljs-number">0</span>
+        labelCounts[currentLabel] += <span class="hljs-number">1</span>
+    shannonEnt = <span class="hljs-number">0.0</span>
+    <span class="hljs-comment"># 以2为底数计算香农熵</span>
+    <span class="hljs-keyword">for</span> key <span class="hljs-keyword">in</span> labelCounts:
+        prob = float(labelCounts[key]) / numEntries
+        shannonEnt -= prob * log(prob, <span class="hljs-number">2</span>)
+    <span class="hljs-keyword">return</span> shannonEnt
+
+
+<span class="hljs-comment"># 对离散变量划分数据集，取出该特征取值为value的所有样本</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">splitDataSet</span><span class="hljs-params">(dataSet, axis, value)</span>:</span>
+    retDataSet = []
+    <span class="hljs-keyword">for</span> featVec <span class="hljs-keyword">in</span> dataSet:
+        <span class="hljs-keyword">if</span> featVec[axis] == value:
+            reducedFeatVec = featVec[:axis]
+            reducedFeatVec.extend(featVec[axis + <span class="hljs-number">1</span>:])
+            retDataSet.append(reducedFeatVec)
+    <span class="hljs-keyword">return</span> retDataSet
+
+
+<span class="hljs-comment"># 对连续变量划分数据集，direction规定划分的方向，</span>
+<span class="hljs-comment"># 决定是划分出小于value的数据样本还是大于value的数据样本集</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">splitContinuousDataSet</span><span class="hljs-params">(dataSet, axis, value, direction)</span>:</span>
+    retDataSet = []
+    <span class="hljs-keyword">for</span> featVec <span class="hljs-keyword">in</span> dataSet:
+        <span class="hljs-keyword">if</span> direction == <span class="hljs-number">0</span>:
+            <span class="hljs-keyword">if</span> featVec[axis] &gt; value:
+                reducedFeatVec = featVec[:axis]
+                reducedFeatVec.extend(featVec[axis + <span class="hljs-number">1</span>:])
+                retDataSet.append(reducedFeatVec)
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">if</span> featVec[axis] &lt;= value:
+                reducedFeatVec = featVec[:axis]
+                reducedFeatVec.extend(featVec[axis + <span class="hljs-number">1</span>:])
+                retDataSet.append(reducedFeatVec)
+    <span class="hljs-keyword">return</span> retDataSet
+
+
+<span class="hljs-comment"># 选择最好的数据集划分方式</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">chooseBestFeatureToSplit</span><span class="hljs-params">(dataSet, labels)</span>:</span>
+    numFeatures = len(dataSet[<span class="hljs-number">0</span>]) - <span class="hljs-number">1</span>
+    baseEntropy = calcShannonEnt(dataSet)
+    bestInfoGain = <span class="hljs-number">0.0</span>
+    bestFeature = <span class="hljs-number">-1</span>
+    bestSplitDict = {}
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(numFeatures):
+        featList = [example[i] <span class="hljs-keyword">for</span> example <span class="hljs-keyword">in</span> dataSet]
+        <span class="hljs-comment"># 对连续型特征进行处理</span>
+        <span class="hljs-keyword">if</span> type(featList[<span class="hljs-number">0</span>]).__name__ == <span class="hljs-string">'float'</span> <span class="hljs-keyword">or</span> type(featList[<span class="hljs-number">0</span>]).__name__ == <span class="hljs-string">'int'</span>:
+            <span class="hljs-comment"># 产生n-1个候选划分点</span>
+            sortfeatList = sorted(featList)
+            splitList = []  <span class="hljs-comment"># 划分点集合</span>
+            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(len(sortfeatList) - <span class="hljs-number">1</span>):
+                splitList.append((sortfeatList[j] + sortfeatList[j + <span class="hljs-number">1</span>]) / <span class="hljs-number">2.0</span>)
+
+            bestSplitEntropy = <span class="hljs-number">10000</span>
+            slen = len(splitList)
+            <span class="hljs-comment"># 求用第j个候选划分点划分时，得到的信息熵，并记录最佳划分点</span>
+            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(slen):
+                value = splitList[j]
+                newEntropy = <span class="hljs-number">0.0</span>
+                subDataSet0 = splitContinuousDataSet(dataSet, i, value, <span class="hljs-number">0</span>)  <span class="hljs-comment"># 大于value的集合</span>
+                subDataSet1 = splitContinuousDataSet(dataSet, i, value, <span class="hljs-number">1</span>)  <span class="hljs-comment"># 小于value的集合</span>
+                prob0 = len(subDataSet0) / float(len(dataSet))
+                newEntropy += prob0 * calcShannonEnt(subDataSet0)
+                prob1 = len(subDataSet1) / float(len(dataSet))
+                newEntropy += prob1 * calcShannonEnt(subDataSet1)
+                <span class="hljs-keyword">if</span> newEntropy &lt; bestSplitEntropy:
+                    bestSplitEntropy = newEntropy
+                    bestSplit = j
+            <span class="hljs-comment"># 用字典记录当前特征的最佳划分点</span>
+            bestSplitDict[labels[i]] = splitList[bestSplit]
+            infoGain = baseEntropy - bestSplitEntropy
+        <span class="hljs-comment"># 对离散型特征进行处理</span>
+        <span class="hljs-keyword">else</span>:
+            uniqueVals = set(featList)
+            newEntropy = <span class="hljs-number">0.0</span>
+            <span class="hljs-comment"># 计算该特征下每种划分的信息熵</span>
+            <span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> uniqueVals:
+                subDataSet = splitDataSet(dataSet, i, value)
+                prob = len(subDataSet) / float(len(dataSet))
+                newEntropy += prob * calcShannonEnt(subDataSet)
+            infoGain = baseEntropy - newEntropy
+
+        <span class="hljs-keyword">if</span> infoGain &gt; bestInfoGain:
+            bestInfoGain = infoGain
+            bestFeature = i
+    <span class="hljs-comment"># 若当前节点的最佳划分特征为连续特征，则将其以之前记录的划分点为界进行二值化处理</span>
+    <span class="hljs-comment"># 即是否小于等于bestSplitValue</span>
+    <span class="hljs-keyword">if</span> type(dataSet[<span class="hljs-number">0</span>][bestFeature]).__name__ == <span class="hljs-string">'float'</span> <span class="hljs-keyword">or</span> type(dataSet[<span class="hljs-number">0</span>][bestFeature]).__name__ == <span class="hljs-string">'int'</span>:
+        bestSplitValue = bestSplitDict[labels[bestFeature]]
+        labels[bestFeature] = labels[bestFeature] + <span class="hljs-string">'&lt;='</span> + str(bestSplitValue)
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(shape(dataSet)[<span class="hljs-number">0</span>]):
+            <span class="hljs-keyword">if</span> dataSet[i][bestFeature] &lt;= bestSplitValue:
+                dataSet[i][bestFeature] = <span class="hljs-number">1</span>
+            <span class="hljs-keyword">else</span>:
+                dataSet[i][bestFeature] = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">return</span> bestFeature
+
+
+<span class="hljs-comment"># 特征若已经划分完，节点下的样本还没有统一取值，则需要进行投票</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">majorityCnt</span><span class="hljs-params">(classList)</span>:</span>
+    classCount = {}
+
+    <span class="hljs-keyword">for</span> vote <span class="hljs-keyword">in</span> classList:
+        <span class="hljs-keyword">if</span> vote <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> classCount.keys():
+            classCount[vote] = <span class="hljs-number">0</span>
+            classCount[vote] += <span class="hljs-number">1</span>
+    <span class="hljs-keyword">return</span> max(classCount)
+
+
+<span class="hljs-comment"># 主程序，递归产生决策树</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">createTree</span><span class="hljs-params">(dataSet, labels, data_full, labels_full)</span>:</span>
+    classList = [example[<span class="hljs-number">-1</span>] <span class="hljs-keyword">for</span> example <span class="hljs-keyword">in</span> dataSet]  <span class="hljs-comment"># 获取类别</span>
+
+    <span class="hljs-keyword">if</span> classList.count(classList[<span class="hljs-number">0</span>]) == len(classList):  <span class="hljs-comment"># 如果只有一个类</span>
+        <span class="hljs-keyword">return</span> classList[<span class="hljs-number">0</span>]
+    <span class="hljs-keyword">if</span> len(dataSet[<span class="hljs-number">0</span>]) == <span class="hljs-number">1</span>:  <span class="hljs-comment"># 如果只有一个数据</span>
+        <span class="hljs-keyword">return</span> majorityCnt(classList)
+
+    bestFeat = chooseBestFeatureToSplit(dataSet, labels) <span class="hljs-comment">#获取选取的特征下标</span>
+    bestFeatLabel = labels[bestFeat]  <span class="hljs-comment"># 下标容易变，但标签不容易变</span>
+    myTree = {bestFeatLabel: {}}  <span class="hljs-comment"># 树根root</span>
+    featValues = [example[bestFeat] <span class="hljs-keyword">for</span> example <span class="hljs-keyword">in</span> dataSet]  <span class="hljs-comment">#该标签下的所有值</span>
+    uniqueVals = set(featValues)    <span class="hljs-comment">#将值去重</span>
+
+    <span class="hljs-keyword">if</span> type(dataSet[<span class="hljs-number">0</span>][bestFeat]).__name__ == <span class="hljs-string">'str'</span>:  <span class="hljs-comment"># 若第一行是标签则更新当前的标签信息</span>
+        currentlabel = labels_full.index(labels[bestFeat])
+        featValuesFull = [example[currentlabel] <span class="hljs-keyword">for</span> example <span class="hljs-keyword">in</span> data_full]
+        uniqueValsFull = set(featValuesFull)
+
+    <span class="hljs-keyword">del</span> (labels[bestFeat])  <span class="hljs-comment">#删除label中的改特征名</span>
+    <span class="hljs-comment"># 针对bestFeat的每个取值，划分出一个子树。</span>
+    <span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> uniqueVals:
+        subLabels = labels[:]
+        <span class="hljs-keyword">if</span> type(dataSet[<span class="hljs-number">0</span>][bestFeat]).__name__ == <span class="hljs-string">'str'</span>:
+            uniqueValsFull.remove(value)
+        myTree[bestFeatLabel][value] = createTree(splitDataSet(dataSet, bestFeat, value), subLabels, data_full,
+                                                  labels_full)
+    <span class="hljs-keyword">if</span> type(dataSet[<span class="hljs-number">0</span>][bestFeat]).__name__ == <span class="hljs-string">'str'</span>:
+        <span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> uniqueValsFull:
+            myTree[bestFeatLabel][value] = majorityCnt(classList)
+    <span class="hljs-keyword">return</span> myTree
+
+
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+
+decisionNode = dict(boxstyle=<span class="hljs-string">"sawtooth"</span>, fc=<span class="hljs-string">"0.8"</span>)
+leafNode = dict(boxstyle=<span class="hljs-string">"round4"</span>, fc=<span class="hljs-string">"0.8"</span>)
+arrow_args = dict(arrowstyle=<span class="hljs-string">"&lt;-"</span>)
+
+
+<span class="hljs-comment"># 计算树的叶子节点数量</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getNumLeafs</span><span class="hljs-params">(myTree)</span>:</span>
+    numLeafs = <span class="hljs-number">0</span>
+    firstStr = list(myTree.keys())[<span class="hljs-number">0</span>]  <span class="hljs-comment"># python3中 'dict_keys' 返回的是dict_keys对象，支持iterable但不支持indexable  需要手动list</span>
+    secondDict = myTree[firstStr]
+    <span class="hljs-keyword">for</span> key <span class="hljs-keyword">in</span> secondDict.keys():
+        <span class="hljs-keyword">if</span> type(secondDict[key]).__name__ == <span class="hljs-string">'dict'</span>:
+            numLeafs += getNumLeafs(secondDict[key])
+        <span class="hljs-keyword">else</span>:
+            numLeafs += <span class="hljs-number">1</span>
+    <span class="hljs-keyword">return</span> numLeafs
+
+
+<span class="hljs-comment"># 计算树的最大深度</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getTreeDepth</span><span class="hljs-params">(myTree)</span>:</span>
+    maxDepth = <span class="hljs-number">0</span>
+    firstStr = list(myTree.keys())[<span class="hljs-number">0</span>]
+    secondDict = myTree[firstStr]
+    <span class="hljs-keyword">for</span> key <span class="hljs-keyword">in</span> secondDict.keys():
+        <span class="hljs-keyword">if</span> type(secondDict[key]).__name__ == <span class="hljs-string">'dict'</span>:
+            thisDepth = <span class="hljs-number">1</span> + getTreeDepth(secondDict[key])
+        <span class="hljs-keyword">else</span>:
+            thisDepth = <span class="hljs-number">1</span>
+        <span class="hljs-keyword">if</span> thisDepth &gt; maxDepth:
+            maxDepth = thisDepth
+    <span class="hljs-keyword">return</span> maxDepth
+
+
+<span class="hljs-comment"># 画节点</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plotNode</span><span class="hljs-params">(nodeTxt, centerPt, parentPt, nodeType)</span>:</span>
+    createPlot.ax1.annotate(nodeTxt, xy=parentPt, xycoords=<span class="hljs-string">'axes fraction'</span>, xytext=centerPt, textcoords=<span class="hljs-string">'axes fraction'</span>,
+                            va=<span class="hljs-string">"center"</span>, ha=<span class="hljs-string">"center"</span>, bbox=nodeType, arrowprops=arrow_args)
+
+
+<span class="hljs-comment"># 画箭头上的文字</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plotMidText</span><span class="hljs-params">(cntrPt, parentPt, txtString)</span>:</span>
+    lens = len(txtString)
+    xMid = (parentPt[<span class="hljs-number">0</span>] + cntrPt[<span class="hljs-number">0</span>]) / <span class="hljs-number">2.0</span> - lens * <span class="hljs-number">0.002</span>
+    yMid = (parentPt[<span class="hljs-number">1</span>] + cntrPt[<span class="hljs-number">1</span>]) / <span class="hljs-number">2.0</span>
+    createPlot.ax1.text(xMid, yMid, txtString)
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plotTree</span><span class="hljs-params">(myTree, parentPt, nodeTxt)</span>:</span>
+    numLeafs = getNumLeafs(myTree)
+    depth = getTreeDepth(myTree)
+    firstStr = list(myTree.keys())[<span class="hljs-number">0</span>]
+    cntrPt = (plotTree.x0ff + (<span class="hljs-number">1.0</span> + float(numLeafs)) / <span class="hljs-number">2.0</span> / plotTree.totalW, plotTree.y0ff)
+    plotMidText(cntrPt, parentPt, nodeTxt)
+    plotNode(firstStr, cntrPt, parentPt, decisionNode)
+    secondDict = myTree[firstStr]
+    plotTree.y0ff = plotTree.y0ff - <span class="hljs-number">1.0</span> / plotTree.totalD
+    <span class="hljs-keyword">for</span> key <span class="hljs-keyword">in</span> secondDict.keys():
+        <span class="hljs-keyword">if</span> type(secondDict[key]).__name__ == <span class="hljs-string">'dict'</span>:
+            plotTree(secondDict[key], cntrPt, str(key))
+        <span class="hljs-keyword">else</span>:
+            plotTree.x0ff = plotTree.x0ff + <span class="hljs-number">1.0</span> / plotTree.totalW
+            plotNode(secondDict[key], (plotTree.x0ff, plotTree.y0ff), cntrPt, leafNode)
+            plotMidText((plotTree.x0ff, plotTree.y0ff), cntrPt, str(key))
+    plotTree.y0ff = plotTree.y0ff + <span class="hljs-number">1.0</span> / plotTree.totalD
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">createPlot</span><span class="hljs-params">(inTree)</span>:</span>
+    fig = plt.figure(<span class="hljs-number">1</span>, facecolor=<span class="hljs-string">'white'</span>)
+    fig.clf()
+    axprops = dict(xticks=[], yticks=[])
+    createPlot.ax1 = plt.subplot(<span class="hljs-number">111</span>, frameon=<span class="hljs-keyword">False</span>, **axprops)
+    plotTree.totalW = float(getNumLeafs(inTree))
+    plotTree.totalD = float(getTreeDepth(inTree))
+    plotTree.x0ff = <span class="hljs-number">-0.5</span> / plotTree.totalW
+    plotTree.y0ff = <span class="hljs-number">1.0</span>
+    plotTree(inTree, (<span class="hljs-number">0.5</span>, <span class="hljs-number">1.0</span>), <span class="hljs-string">''</span>)
+    plt.show()
+
+
+<span class="hljs-comment"># 输入三个变量（决策树，属性特征标签，测试的数据）</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">classify</span><span class="hljs-params">(inputTree, featLables, testVec)</span>:</span>
+    firstStr = list(inputTree.keys())[<span class="hljs-number">0</span>]  <span class="hljs-comment"># 获取树的第一个特征属性</span>
+    secondDict = inputTree[firstStr]  <span class="hljs-comment"># 树的分支，子集合Dict</span>
+    featIndex = featLables.index(firstStr)  <span class="hljs-comment"># 获取决策树第一层在featLables中的位置</span>
+    preLabel =[]
+    <span class="hljs-keyword">for</span> test <span class="hljs-keyword">in</span> testVec:
+        <span class="hljs-keyword">for</span> key <span class="hljs-keyword">in</span> secondDict.keys():
+            <span class="hljs-keyword">if</span> test[featIndex] == key:
+                <span class="hljs-keyword">if</span> type(secondDict[key]).__name__ == <span class="hljs-string">'dict'</span>:
+                    classLabel = classify(secondDict[key], featLables, testVec)
+                <span class="hljs-keyword">else</span>:
+                    classLabel = secondDict[key]
+    <span class="hljs-keyword">return</span> classLabel
+
+
+<span class="hljs-keyword">from</span> sklearn.model_selection <span class="hljs-keyword">import</span> train_test_split
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:
+    dataSet = load_iris()
+    x_train, x_test, y_trian, y_test = train_test_split(dataSet.data, dataSet.target, test_size=<span class="hljs-number">0.2</span>)
+    data = np.c_[x_train, y_trian].tolist()
+    data_full = data[:]
+    labels = [<span class="hljs-string">"Calyx length"</span>, <span class="hljs-string">"calyx width"</span>, <span class="hljs-string">"petal length"</span>, <span class="hljs-string">"petal width"</span>]
+    labels_full = labels[:]
+    myTree = createTree(data, labels, data_full, labels_full)
+
+    createPlot(myTree)
+    <span class="hljs-comment"># classify(myTree,labels, x_test)</span>
+<span class="hljs-comment"># 参考：https://blog.csdn.net/wzmsltw/article/details/51039928</span>
+<span class="hljs-comment"># 参考：https://blog.csdn.net/shenxiaoming77/article/details/51602976</span>
+</code></pre></span><span i="317"><p>于是我们可以应用信息增益准则来选择特征，信息增益表示由于特征A而使得对数据集D的分类的不确定性减少的程度。对数据集D而言，信息增益依赖于特征，不同的特征往往具有不同的信息增益。信息增益大的特征具有更强的分类能力。</p>
+</span><span i="319"><h2 id="-">信息增益比：</h2>
+</span><span i="320"><span id="math-9"><div style="width: 100%; text-align: center"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="20.66ex" height="6.509ex" style="vertical-align: -2.671ex;" viewBox="0 -1652.5 8895.4 2802.6" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<path stroke-width="1" id="E1-MJMATHI-67" d="M311 43Q296 30 267 15T206 0Q143 0 105 45T66 160Q66 265 143 353T314 442Q361 442 401 394L404 398Q406 401 409 404T418 412T431 419T447 422Q461 422 470 413T480 394Q480 379 423 152T363 -80Q345 -134 286 -169T151 -205Q10 -205 10 -137Q10 -111 28 -91T74 -71Q89 -71 102 -80T116 -111Q116 -121 114 -130T107 -144T99 -154T92 -162L90 -164H91Q101 -167 151 -167Q189 -167 211 -155Q234 -144 254 -122T282 -75Q288 -56 298 -13Q311 35 311 43ZM384 328L380 339Q377 350 375 354T369 368T359 382T346 393T328 402T306 405Q262 405 221 352Q191 313 171 233T151 117Q151 38 213 38Q269 38 323 108L331 118L384 328Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-52" d="M230 637Q203 637 198 638T193 649Q193 676 204 682Q206 683 378 683Q550 682 564 680Q620 672 658 652T712 606T733 563T739 529Q739 484 710 445T643 385T576 351T538 338L545 333Q612 295 612 223Q612 212 607 162T602 80V71Q602 53 603 43T614 25T640 16Q668 16 686 38T712 85Q717 99 720 102T735 105Q755 105 755 93Q755 75 731 36Q693 -21 641 -21H632Q571 -21 531 4T487 82Q487 109 502 166T517 239Q517 290 474 313Q459 320 449 321T378 323H309L277 193Q244 61 244 59Q244 55 245 54T252 50T269 48T302 46H333Q339 38 339 37T336 19Q332 6 326 0H311Q275 2 180 2Q146 2 117 2T71 2T50 1Q33 1 33 10Q33 12 36 24Q41 43 46 45Q50 46 61 46H67Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628Q287 635 230 637ZM630 554Q630 586 609 608T523 636Q521 636 500 636T462 637H440Q393 637 386 627Q385 624 352 494T319 361Q319 360 388 360Q466 361 492 367Q556 377 592 426Q608 449 619 486T630 554Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-44" d="M287 628Q287 635 230 637Q207 637 200 638T193 647Q193 655 197 667T204 682Q206 683 403 683Q570 682 590 682T630 676Q702 659 752 597T803 431Q803 275 696 151T444 3L430 1L236 0H125H72Q48 0 41 2T33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM703 469Q703 507 692 537T666 584T629 613T590 629T555 636Q553 636 541 636T512 636T479 637H436Q392 637 386 627Q384 623 313 339T242 52Q242 48 253 48T330 47Q335 47 349 47T373 46Q499 46 581 128Q617 164 640 212T683 339T703 469Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-41" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-48" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 219 683Q260 681 355 681Q389 681 418 681T463 682T483 682Q499 682 499 672Q499 670 497 658Q492 641 487 638H485Q483 638 480 638T473 638T464 637T455 637Q416 636 405 634T387 623Q384 619 355 500Q348 474 340 442T328 395L324 380Q324 378 469 378H614L615 381Q615 384 646 504Q674 619 674 627T617 637Q594 637 587 639T580 648Q580 650 582 660Q586 677 588 679T604 682Q609 682 646 681T740 680Q802 680 835 681T871 682Q888 682 888 672Q888 645 876 638H874Q872 638 869 638T862 638T853 637T844 637Q805 636 794 634T776 623Q773 618 704 340T634 58Q634 51 638 51Q646 48 692 46H723Q729 38 729 37T726 19Q722 6 716 0H701Q664 2 567 2Q533 2 504 2T458 2T437 1Q420 1 420 10Q420 15 423 24Q428 43 433 45Q437 46 448 46H454Q481 46 514 49Q520 50 522 50T528 55T534 64T540 82T547 110T558 153Q565 181 569 198Q602 330 602 331T457 332H312L279 197Q245 63 245 58Q245 51 253 49T303 46H334Q340 38 340 37T337 19Q333 6 327 0H312Q275 2 178 2Q144 2 115 2T69 2T48 1Q31 1 31 10Q31 12 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+ <use xlink:href="#E1-MJMATHI-67" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-52" x="675" y="-213"></use>
+ <use xlink:href="#E1-MJMAIN-28" x="1114" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-44" x="1504" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2C" x="2332" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-41" x="2777" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-29" x="3528" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-3D" x="4195" y="0"></use>
+<g transform="translate(4973,0)">
+<g transform="translate(397,0)">
+<rect stroke="none" width="3403" height="60" x="0" y="220"></rect>
+<g transform="translate(60,770)">
+ <use xlink:href="#E1-MJMATHI-67" x="0" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-28" x="480" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-44" x="870" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2C" x="1698" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-41" x="2143" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-29" x="2894" y="0"></use>
+</g>
+<g transform="translate(166,-771)">
+ <use xlink:href="#E1-MJMATHI-48" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-41" x="1175" y="-230"></use>
+ <use xlink:href="#E1-MJMAIN-28" x="1462" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-44" x="1851" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-29" x="2680" y="0"></use>
+</g>
+</g>
+</g>
+</g>
+</svg></div></span></span><span i="322"><pre><code><span class="hljs-keyword">from</span> numpy <span class="hljs-keyword">import</span> *
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+<span class="hljs-keyword">from</span> math <span class="hljs-keyword">import</span> log
+<span class="hljs-keyword">import</span> operator
+<span class="hljs-keyword">from</span> sklearn.datasets <span class="hljs-keyword">import</span> load_iris
+
+
+<span class="hljs-comment"># 计算数据集的香农熵</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">calcShannonEnt</span><span class="hljs-params">(dataSet)</span>:</span>
+    numEntries = len(dataSet)
+    labelCounts = {}
+    <span class="hljs-comment"># 给所有可能分类创建字典</span>
+    <span class="hljs-keyword">for</span> featVec <span class="hljs-keyword">in</span> dataSet:
+        currentLabel = featVec[<span class="hljs-number">-1</span>]
+        <span class="hljs-keyword">if</span> currentLabel <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> labelCounts.keys():
+            labelCounts[currentLabel] = <span class="hljs-number">0</span>
+        labelCounts[currentLabel] += <span class="hljs-number">1</span>
+    shannonEnt = <span class="hljs-number">0.0</span>
+    <span class="hljs-comment"># 以2为底数计算香农熵</span>
+    <span class="hljs-keyword">for</span> key <span class="hljs-keyword">in</span> labelCounts:
+        prob = float(labelCounts[key]) / numEntries
+        shannonEnt -= prob * log(prob, <span class="hljs-number">2</span>)
+    <span class="hljs-keyword">return</span> shannonEnt
+
+
+<span class="hljs-comment"># 对离散变量划分数据集，取出该特征取值为value的所有样本</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">splitDataSet</span><span class="hljs-params">(dataSet, axis, value)</span>:</span>
+    retDataSet = []
+    <span class="hljs-keyword">for</span> featVec <span class="hljs-keyword">in</span> dataSet:
+        <span class="hljs-keyword">if</span> featVec[axis] == value:
+            reducedFeatVec = featVec[:axis]
+            reducedFeatVec.extend(featVec[axis + <span class="hljs-number">1</span>:])
+            retDataSet.append(reducedFeatVec)
+    <span class="hljs-keyword">return</span> retDataSet
+
+
+<span class="hljs-comment"># 对连续变量划分数据集，direction规定划分的方向，</span>
+<span class="hljs-comment"># 决定是划分出小于value的数据样本还是大于value的数据样本集</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">splitContinuousDataSet</span><span class="hljs-params">(dataSet, axis, value, direction)</span>:</span>
+    retDataSet = []
+    <span class="hljs-keyword">for</span> featVec <span class="hljs-keyword">in</span> dataSet:
+        <span class="hljs-keyword">if</span> direction == <span class="hljs-number">0</span>:
+            <span class="hljs-keyword">if</span> featVec[axis] &gt; value:
+                reducedFeatVec = featVec[:axis]
+                reducedFeatVec.extend(featVec[axis + <span class="hljs-number">1</span>:])
+                retDataSet.append(reducedFeatVec)
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">if</span> featVec[axis] &lt;= value:
+                reducedFeatVec = featVec[:axis]
+                reducedFeatVec.extend(featVec[axis + <span class="hljs-number">1</span>:])
+                retDataSet.append(reducedFeatVec)
+    <span class="hljs-keyword">return</span> retDataSet
+
+
+<span class="hljs-comment"># 选择最好的数据集划分方式</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">chooseBestFeatureToSplit</span><span class="hljs-params">(dataSet, labels)</span>:</span>
+    numFeatures = len(dataSet[<span class="hljs-number">0</span>]) - <span class="hljs-number">1</span>
+    baseEntropy = calcShannonEnt(dataSet)
+    bestInfoGain = <span class="hljs-number">0.0</span>
+    bestFeature = <span class="hljs-number">-1</span>
+    bestSplitDict = {}
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(numFeatures):
+        featList = [example[i] <span class="hljs-keyword">for</span> example <span class="hljs-keyword">in</span> dataSet]
+        <span class="hljs-comment"># 对连续型特征进行处理</span>
+        <span class="hljs-keyword">if</span> type(featList[<span class="hljs-number">0</span>]).__name__ == <span class="hljs-string">'float'</span> <span class="hljs-keyword">or</span> type(featList[<span class="hljs-number">0</span>]).__name__ == <span class="hljs-string">'int'</span>:
+            <span class="hljs-comment"># 产生n-1个候选划分点</span>
+            sortfeatList = sorted(featList)
+            splitList = []  <span class="hljs-comment"># 划分点集合</span>
+            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(len(sortfeatList) - <span class="hljs-number">1</span>):
+                splitList.append((sortfeatList[j] + sortfeatList[j + <span class="hljs-number">1</span>]) / <span class="hljs-number">2.0</span>)
+
+            bestSplitEntropy = <span class="hljs-number">10000</span>
+
+            featureEntropy = <span class="hljs-number">0.0</span>  <span class="hljs-comment"># 训练数据集关于特征的商H_A(D)</span>
+            slen = len(splitList)
+            <span class="hljs-comment"># 求用第j个候选划分点划分时，得到的信息熵，并记录最佳划分点</span>
+            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(slen):
+                value = splitList[j]
+                newEntropy = <span class="hljs-number">0.0</span>
+                subDataSet0 = splitContinuousDataSet(dataSet, i, value, <span class="hljs-number">0</span>)  <span class="hljs-comment"># 大于value的集合</span>
+                subDataSet1 = splitContinuousDataSet(dataSet, i, value, <span class="hljs-number">1</span>)  <span class="hljs-comment"># 小于value的集合</span>
+                prob0 = len(subDataSet0) / float(len(dataSet))
+                newEntropy += prob0 * calcShannonEnt(subDataSet0)
+                prob1 = len(subDataSet1) / float(len(dataSet))
+                newEntropy += prob1 * calcShannonEnt(subDataSet1)
+
+                <span class="hljs-keyword">if</span> newEntropy &lt; bestSplitEntropy:
+                    bestSplitEntropy = newEntropy
+                    bestSplit = j
+                    featureEntropy = <span class="hljs-number">-1.0</span>*(prob0 * log(prob0, <span class="hljs-number">2</span>)+prob1 * log(prob1, <span class="hljs-number">2</span>))  <span class="hljs-comment"># 计算</span>
+            <span class="hljs-comment"># 用字典记录当前特征的最佳划分点</span>
+            bestSplitDict[labels[i]] = splitList[bestSplit]
+            infoGain = baseEntropy - bestSplitEntropy  <span class="hljs-comment"># 信息增益</span>
+            infoGain = infoGain / float(featureEntropy) <span class="hljs-comment"># 信息增益比</span>
+
+        <span class="hljs-comment"># 对离散型特征进行处理</span>
+        <span class="hljs-keyword">else</span>:
+            uniqueVals = set(featList)
+            newEntropy = <span class="hljs-number">0.0</span>
+            featureEntropy = <span class="hljs-number">0.0</span>  <span class="hljs-comment"># 训练数据集关于特征的商H_A(D)</span>
+            <span class="hljs-comment"># 计算该特征下每种划分的信息熵</span>
+            <span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> uniqueVals:
+                subDataSet = splitDataSet(dataSet, i, value)
+                prob = len(subDataSet) / float(len(dataSet))
+                newEntropy += prob * calcShannonEnt(subDataSet)
+                featureEntropy -= prob * log(prob, <span class="hljs-number">2</span>)
+            infoGain = baseEntropy - newEntropy  <span class="hljs-comment"># 信息增益</span>
+            infoGain = infoGain / float(featureEntropy)  <span class="hljs-comment">#信息增益比</span>
+
+        <span class="hljs-keyword">if</span> infoGain &gt; bestInfoGain:
+            bestInfoGain = infoGain
+            bestFeature = i
+    <span class="hljs-comment"># 若当前节点的最佳划分特征为连续特征，则将其以之前记录的划分点为界进行二值化处理</span>
+    <span class="hljs-comment"># 即是否小于等于bestSplitValue</span>
+    <span class="hljs-keyword">if</span> type(dataSet[<span class="hljs-number">0</span>][bestFeature]).__name__ == <span class="hljs-string">'float'</span> <span class="hljs-keyword">or</span> type(dataSet[<span class="hljs-number">0</span>][bestFeature]).__name__ == <span class="hljs-string">'int'</span>:
+        bestSplitValue = bestSplitDict[labels[bestFeature]]
+        labels[bestFeature] = labels[bestFeature] + <span class="hljs-string">'&lt;='</span> + str(bestSplitValue)
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(shape(dataSet)[<span class="hljs-number">0</span>]):
+            <span class="hljs-keyword">if</span> dataSet[i][bestFeature] &lt;= bestSplitValue:
+                dataSet[i][bestFeature] = <span class="hljs-number">1</span>
+            <span class="hljs-keyword">else</span>:
+                dataSet[i][bestFeature] = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">return</span> bestFeature
+
+
+<span class="hljs-comment"># 特征若已经划分完，节点下的样本还没有统一取值，则需要进行投票</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">majorityCnt</span><span class="hljs-params">(classList)</span>:</span>
+    classCount = {}
+
+    <span class="hljs-keyword">for</span> vote <span class="hljs-keyword">in</span> classList:
+        <span class="hljs-keyword">if</span> vote <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> classCount.keys():
+            classCount[vote] = <span class="hljs-number">0</span>
+            classCount[vote] += <span class="hljs-number">1</span>
+    <span class="hljs-keyword">return</span> max(classCount)
+
+
+<span class="hljs-comment"># 主程序，递归产生决策树</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">createTree</span><span class="hljs-params">(dataSet, labels, data_full, labels_full)</span>:</span>
+    classList = [example[<span class="hljs-number">-1</span>] <span class="hljs-keyword">for</span> example <span class="hljs-keyword">in</span> dataSet]  <span class="hljs-comment"># 获取类别</span>
+
+    <span class="hljs-keyword">if</span> classList.count(classList[<span class="hljs-number">0</span>]) == len(classList):  <span class="hljs-comment"># 如果每个类只有一个实例对象则返回</span>
+        <span class="hljs-keyword">return</span> classList[<span class="hljs-number">0</span>]
+    <span class="hljs-keyword">if</span> len(dataSet[<span class="hljs-number">0</span>]) == <span class="hljs-number">1</span>:  <span class="hljs-comment"># 如果只有一个数据</span>
+        <span class="hljs-keyword">return</span> majorityCnt(classList)
+
+    bestFeat = chooseBestFeatureToSplit(dataSet, labels)
+    bestFeatLabel = labels[bestFeat]
+    myTree = {bestFeatLabel: {}}
+    featValues = [example[bestFeat] <span class="hljs-keyword">for</span> example <span class="hljs-keyword">in</span> dataSet]
+    uniqueVals = set(featValues)
+
+    <span class="hljs-keyword">if</span> type(dataSet[<span class="hljs-number">0</span>][bestFeat]).__name__ == <span class="hljs-string">'str'</span>:  <span class="hljs-comment"># 若第一行是标签则跟新当前的标签信息</span>
+        currentlabel = labels_full.index(labels[bestFeat])
+        featValuesFull = [example[currentlabel] <span class="hljs-keyword">for</span> example <span class="hljs-keyword">in</span> data_full]
+        uniqueValsFull = set(featValuesFull)
+
+    <span class="hljs-keyword">del</span> (labels[bestFeat])
+    <span class="hljs-comment"># 针对bestFeat的每个取值，划分出一个子树。</span>
+    <span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> uniqueVals:
+        subLabels = labels[:]
+        <span class="hljs-keyword">if</span> type(dataSet[<span class="hljs-number">0</span>][bestFeat]).__name__ == <span class="hljs-string">'str'</span>:
+            uniqueValsFull.remove(value)
+        myTree[bestFeatLabel][value] = createTree(splitDataSet(dataSet, bestFeat, value), subLabels, data_full,
+                                                  labels_full)
+    <span class="hljs-keyword">if</span> type(dataSet[<span class="hljs-number">0</span>][bestFeat]).__name__ == <span class="hljs-string">'str'</span>:
+        <span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> uniqueValsFull:
+            myTree[bestFeatLabel][value] = majorityCnt(classList)
+    <span class="hljs-keyword">return</span> myTree
+
+
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+
+decisionNode = dict(boxstyle=<span class="hljs-string">"sawtooth"</span>, fc=<span class="hljs-string">"0.8"</span>)
+leafNode = dict(boxstyle=<span class="hljs-string">"round4"</span>, fc=<span class="hljs-string">"0.8"</span>)
+arrow_args = dict(arrowstyle=<span class="hljs-string">"&lt;-"</span>)
+
+
+<span class="hljs-comment"># 计算树的叶子节点数量</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getNumLeafs</span><span class="hljs-params">(myTree)</span>:</span>
+    numLeafs = <span class="hljs-number">0</span>
+    firstStr = list(myTree.keys())[<span class="hljs-number">0</span>]  <span class="hljs-comment"># python3中 'dict_keys' 返回的是dict_keys对象，支持iterable但不支持indexable  需要手动list</span>
+    secondDict = myTree[firstStr]
+    <span class="hljs-keyword">for</span> key <span class="hljs-keyword">in</span> secondDict.keys():
+        <span class="hljs-keyword">if</span> type(secondDict[key]).__name__ == <span class="hljs-string">'dict'</span>:
+            numLeafs += getNumLeafs(secondDict[key])
+        <span class="hljs-keyword">else</span>:
+            numLeafs += <span class="hljs-number">1</span>
+    <span class="hljs-keyword">return</span> numLeafs
+
+
+<span class="hljs-comment"># 计算树的最大深度</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getTreeDepth</span><span class="hljs-params">(myTree)</span>:</span>
+    maxDepth = <span class="hljs-number">0</span>
+    firstStr = list(myTree.keys())[<span class="hljs-number">0</span>]
+    secondDict = myTree[firstStr]
+    <span class="hljs-keyword">for</span> key <span class="hljs-keyword">in</span> secondDict.keys():
+        <span class="hljs-keyword">if</span> type(secondDict[key]).__name__ == <span class="hljs-string">'dict'</span>:
+            thisDepth = <span class="hljs-number">1</span> + getTreeDepth(secondDict[key])
+        <span class="hljs-keyword">else</span>:
+            thisDepth = <span class="hljs-number">1</span>
+        <span class="hljs-keyword">if</span> thisDepth &gt; maxDepth:
+            maxDepth = thisDepth
+    <span class="hljs-keyword">return</span> maxDepth
+
+
+<span class="hljs-comment"># 画节点</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plotNode</span><span class="hljs-params">(nodeTxt, centerPt, parentPt, nodeType)</span>:</span>
+    createPlot.ax1.annotate(nodeTxt, xy=parentPt, xycoords=<span class="hljs-string">'axes fraction'</span>, xytext=centerPt, textcoords=<span class="hljs-string">'axes fraction'</span>,
+                            va=<span class="hljs-string">"center"</span>, ha=<span class="hljs-string">"center"</span>, bbox=nodeType, arrowprops=arrow_args)
+
+
+<span class="hljs-comment"># 画箭头上的文字</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plotMidText</span><span class="hljs-params">(cntrPt, parentPt, txtString)</span>:</span>
+    lens = len(txtString)
+    xMid = (parentPt[<span class="hljs-number">0</span>] + cntrPt[<span class="hljs-number">0</span>]) / <span class="hljs-number">2.0</span> - lens * <span class="hljs-number">0.002</span>
+    yMid = (parentPt[<span class="hljs-number">1</span>] + cntrPt[<span class="hljs-number">1</span>]) / <span class="hljs-number">2.0</span>
+    createPlot.ax1.text(xMid, yMid, txtString)
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plotTree</span><span class="hljs-params">(myTree, parentPt, nodeTxt)</span>:</span>
+    numLeafs = getNumLeafs(myTree)
+    depth = getTreeDepth(myTree)
+    firstStr = list(myTree.keys())[<span class="hljs-number">0</span>]
+    cntrPt = (plotTree.x0ff + (<span class="hljs-number">1.0</span> + float(numLeafs)) / <span class="hljs-number">2.0</span> / plotTree.totalW, plotTree.y0ff)
+    plotMidText(cntrPt, parentPt, nodeTxt)
+    plotNode(firstStr, cntrPt, parentPt, decisionNode)
+    secondDict = myTree[firstStr]
+    plotTree.y0ff = plotTree.y0ff - <span class="hljs-number">1.0</span> / plotTree.totalD
+    <span class="hljs-keyword">for</span> key <span class="hljs-keyword">in</span> secondDict.keys():
+        <span class="hljs-keyword">if</span> type(secondDict[key]).__name__ == <span class="hljs-string">'dict'</span>:
+            plotTree(secondDict[key], cntrPt, str(key))
+        <span class="hljs-keyword">else</span>:
+            plotTree.x0ff = plotTree.x0ff + <span class="hljs-number">1.0</span> / plotTree.totalW
+            plotNode(secondDict[key], (plotTree.x0ff, plotTree.y0ff), cntrPt, leafNode)
+            plotMidText((plotTree.x0ff, plotTree.y0ff), cntrPt, str(key))
+    plotTree.y0ff = plotTree.y0ff + <span class="hljs-number">1.0</span> / plotTree.totalD
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">createPlot</span><span class="hljs-params">(inTree)</span>:</span>
+    fig = plt.figure(<span class="hljs-number">1</span>, facecolor=<span class="hljs-string">'white'</span>)
+    fig.clf()
+    axprops = dict(xticks=[], yticks=[])
+    createPlot.ax1 = plt.subplot(<span class="hljs-number">111</span>, frameon=<span class="hljs-keyword">False</span>, **axprops)
+    plotTree.totalW = float(getNumLeafs(inTree))
+    plotTree.totalD = float(getTreeDepth(inTree))
+    plotTree.x0ff = <span class="hljs-number">-0.5</span> / plotTree.totalW
+    plotTree.y0ff = <span class="hljs-number">1.0</span>
+    plotTree(inTree, (<span class="hljs-number">0.5</span>, <span class="hljs-number">1.0</span>), <span class="hljs-string">''</span>)
+    plt.show()
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:
+    dataSet = load_iris()
+
+    data = np.c_[dataSet.data, dataSet.target].tolist()
+    data_full = data[:]
+    labels = [<span class="hljs-string">"Calyx length"</span>, <span class="hljs-string">"calyx width"</span>, <span class="hljs-string">"petal length"</span>, <span class="hljs-string">"petal width"</span>, <span class="hljs-string">"target"</span>]
+    labels_full = labels[:]
+    myTree = createTree(data, labels, data_full, labels_full)
+
+    createPlot(myTree)
+
+<span class="hljs-comment">#参考：https://blog.csdn.net/wzmsltw/article/details/51039928</span>
+<span class="hljs-comment">#参考：https://blog.csdn.net/shenxiaoming77/article/details/51602976</span>
+</code></pre></span><span i="590"><h3 id="6"> 1.5 基尼不纯度 (Gini impurity) </h3>
+
+</span><span i="592"><p>将来自集合中的某种结果随机应用于集合中某一数据项的预期误差率。</p>
+</span><span i="594"><p>在CART(Classification and Regression Tree)算法中利用基尼不纯度构造二叉决策树。 </p>
+</span><span i="596"><p>假设这个数据集里有k种不同标签，第i个标签所占的比重为pi，那么Gini impurity为</p>
+</span><span i="599"><p><img src="https://img-blog.csdn.net/2018063013424597?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1Nha3VyYTU1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="基尼不纯度">
+它描述了一个数据集中标签分布的不纯度，类似于entropy。</p>
+</span><span i="602"><h2 id="7"> 2.决策树的不同分类算法（ID3算法、C4.5、CART分类树）的原理及应用场景 </h2>
+
+</span><span i="604"><h3 id="8"> 2.1 ID3算法 原理及应用场景 </h3>
+
+</span><span i="606"><p>核心思想：以信息增益为度量，选择分裂后信息增益最大的特征进行分裂</p>
+</span><span i="608"><p>遍历所有特征，对于特征A：</p>
+</span><span i="610"><pre><code><span class="hljs-number">1.</span>计算特征A对数据集D的经验条件熵H<span class="hljs-comment">(D|A)</span>v
+<span class="hljs-number">2.</span>计算特征A的信息增益：
+g<span class="hljs-comment">(D,A)</span>=H<span class="hljs-comment">(D)</span> – H<span class="hljs-comment">(D|A)</span>
+<span class="hljs-number">3.</span>选择信息增益最大的特征作为当前的分裂特征
+<span class="hljs-number">4.</span>迭代
+</code></pre></span><span i="616"><p>ID3优点是理论清晰、方法简单、学习能力较强，但也在应用中存在限制：</p>
+</span><span i="618"><pre><code>（<span class="hljs-number">1</span>）只能处理分类属性的数据，不能处理连续的数据；
+（<span class="hljs-number">2</span>）划分过程会由于子集规模过小而造成统计特征不充分而停止；
+（<span class="hljs-number">3</span>）ID3算法在选择根节点和各内部节点中的分支属性时，采用信息增益作为评价标准。信息增益的缺点是倾向于选
+择取值较多的属性，在有些情况下这类属性可能不会提供太多有价值的信息。
+</code></pre></span><span i="623"><p>Ref：<a href="https://blog.csdn.net/u010089444/article/details/53241218">https://blog.csdn.net/u010089444/article/details/53241218</a></p>
+</span><span i="625"><h3 id="9"> 2.2 C4.5 原理及应用场景 </h3>
+
+</span><span i="627"><p>C4.5算法是ID3算法的改进，区别有：</p>
+</span><span i="629"><pre><code><span class="hljs-number">1.</span> C4<span class="hljs-number">.5</span>算法中使用信息增益比率来作为选择分支的准则。信息增益比率通过引入一个被称作分裂信息的项来惩罚取值
+较多的特征，克服了用信息增益选择属性时偏向选择取值多的属性的不足。
+<span class="hljs-number">2.</span> 在树构造过程中进行剪枝。合并相邻的无法产生大量信息增益的叶节点，消除过渡匹配问题。
+<span class="hljs-number">3.</span> C4<span class="hljs-number">.5</span>算法既能处理标称型数据，又能连续型数据。能够处理具有缺失属性值的训练数据。
+</code></pre></span><span i="634"><p>缺点：</p>
+</span><span i="636"><pre><code><span class="hljs-bullet">1. </span>算法低效，在构造树的过程中，需要对数据集进行多次的顺序扫描和排序，因而导致算法的低效
+<span class="hljs-bullet">2. </span>内存受限，只适合于能够驻留于内存的数据集，当训练集大得无法在内存容纳时程序无法运行。
+</code></pre></span><span i="639"><h3 id="10"> 2.3 CART中的分类树 原理及应用场景 </h3>
+
+</span><span i="641"><p>CART（Classification And Regression Tree）算法既可以用于创建分类树，也可以用于创建回归树。CART算法的重要特点包含以下三个方面：</p>
+</span><span i="643"><pre><code><span class="hljs-number">1.</span> 二分(Binary Split)：在每次判断过程中，都是对样本数据进行二分。<span class="hljs-built_in">CART</span>算法是一种二分递归分割技术，把当前样
+本划分为两个子样本，使得生成的每个非叶子结点都有两个分支，因此<span class="hljs-built_in">CART</span>算法生成的决策树是结构简洁的二叉树。
+由于<span class="hljs-built_in">CART</span>算法构成的是一个二叉树，它在每一步的决策时只能是“是”或者“否”，即使一个feature有多个取值，也是把数据分为两部分
+<span class="hljs-number">2.</span> 单变量分割(Split Based on One Variable)：每次最优划分都是针对单个变量。
+<span class="hljs-number">3.</span> 剪枝策略：<span class="hljs-built_in">CART</span>算法的关键点，也是整个Tree-Based算法的关键步骤。剪枝过程特别重要，所以在最优决策树生成过程中占有重要地位。
+有研究表明，剪枝过程的重要性要比树生成过程更为重要，对于不同的划分标准生成的最大树(Maximum Tree)，在剪枝之后都能够
+保留最重要的属性划分，差别不大。反而是剪枝方法对于最优树的生成更为关键。
+
+如果待预测分类是离散型数据，则<span class="hljs-built_in">CART</span>生成分类决策树。
+如果待预测分类是连续性数据，则<span class="hljs-built_in">CART</span>生成回归决策树。
+</code></pre></span><span i="654"><p>Ref：<a href="https://blog.csdn.net/u010089444/article/details/53241218">https://blog.csdn.net/u010089444/article/details/53241218</a></p>
+</span><span i="656"><p>实例：<a href="https://zhuanlan.zhihu.com/p/30155789">https://zhuanlan.zhihu.com/p/30155789</a></p>
+</span><span i="658"><h2 id="11"> 3. CART中的回归树原理（Regression tree） </h2>
+
+</span><span i="660"><p>实际上，回归树总体流程类似于分类树，分枝时穷举每一个特征的每一个阈值，来寻找最优切分特征j和最优切分点s，衡量的方法是平方误差最小化。
+分枝直到达到预设的终止条件(如叶子个数上限)就停止。</p>
+</span><span i="663"><p>当然，处理具体问题时，单一的回归树肯定是不够用的。可以利用集成学习中的boosting框架，对回归树进行改良升级，得到的新模型就是
+提升树（Boosting Decision Tree），在进一步，可以得到梯度提升树（Gradient Boosting Decision Tree，GBDT），再进一步可以升级到XGBoost。</p>
+</span><span i="666"><p>Ref：<a href="https://juejin.im/post/5a7eb1f06fb9a0636108710a">https://juejin.im/post/5a7eb1f06fb9a0636108710a</a></p>
+</span><span i="668"><p>  <a href="https://plushunter.github.io/2017/01/15/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%B3%BB%E5%88%97%EF%BC%884%EF%BC%89%EF%BC%9A%E5%86%B3%E7%AD%96%E6%A0%91/">https://plushunter.github.io/2017/01/15/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%B3%BB%E5%88%97%EF%BC%884%EF%BC%89%EF%BC%9A%E5%86%B3%E7%AD%96%E6%A0%91/</a></p>
+</span><span i="670"><h2 id="12"> 4. 决策树防止过拟合手段 </h2>
+
+</span><span i="672"><p>产生过度拟合问题的原因：</p>
+</span><span i="674"><pre><code>样本问题
+构建决策树的方法问题
+</code></pre></span><span i="677"><p>如何解决过度拟合数据问题的发生：</p>
+</span><span i="679"><pre><code>合理、有效地抽样，用相对能够反映业务逻辑的训练集去产生决策树
+剪枝：提前停止树的增长或者对已经生成的树按照一定的规则进行后剪枝。
+</code></pre></span><span i="682"><p>剪枝是一个简化过拟合决策树的过程。有两种常用的剪枝方法：</p>
+</span><span i="684"><pre><code>先剪枝（prepruning）：通过提前停止树的构建而对树“剪枝”，一旦停止，节点就成为树叶。该树叶可以持有子集元组中最频繁的类
+后剪枝（postpruning）：它首先构造完整的决策树，允许树过度拟合训练数据，然后对那些置信度不够的结点子树用叶子结点来代替，
+该叶子的类标号用该结点子树中最频繁的类标记。后剪枝的剪枝过程是删除一些子树，然后用其叶子节点代替，这个叶子节点所标识的类
+别通过大多数原则(majority <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">criterion</span>)确定。</span>
+</code></pre></span><span i="689"><h2 id="13"> 5. 模型评估 </h2>
+
+</span><span i="691"><p>自助法（bootstrap）：
+训练集是对于原数据集的有放回抽样，如果原始数据集N，可以证明，大小为N的自助样本大约包含原数据63.2%的记录。当N充分大的时候，1-（1-1/N）^(N) 概率逼近 1-e^(-1)=0.632。抽样 b 次，产生 b 个bootstrap样本，则，总准确率为（accs为包含所有样本计算的准确率）：</p>
+</span><span i="693"><span id="math-10"><div style="width: 100%; text-align: center"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="40.171ex" height="7.343ex" style="vertical-align: -3.005ex;" viewBox="0 -1867.7 17296 3161.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<path stroke-width="1" id="E1-MJMATHI-61" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-63" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-62" d="M73 647Q73 657 77 670T89 683Q90 683 161 688T234 694Q246 694 246 685T212 542Q204 508 195 472T180 418L176 399Q176 396 182 402Q231 442 283 442Q345 442 383 396T422 280Q422 169 343 79T173 -11Q123 -11 82 27T40 150V159Q40 180 48 217T97 414Q147 611 147 623T109 637Q104 637 101 637H96Q86 637 83 637T76 640T73 647ZM336 325V331Q336 405 275 405Q258 405 240 397T207 376T181 352T163 330L157 322L136 236Q114 150 114 114Q114 66 138 42Q154 26 178 26Q211 26 245 58Q270 81 285 114T318 219Q336 291 336 325Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-6F" d="M201 -11Q126 -11 80 38T34 156Q34 221 64 279T146 380Q222 441 301 441Q333 441 341 440Q354 437 367 433T402 417T438 387T464 338T476 268Q476 161 390 75T201 -11ZM121 120Q121 70 147 48T206 26Q250 26 289 58T351 142Q360 163 374 216T388 308Q388 352 370 375Q346 405 306 405Q243 405 195 347Q158 303 140 230T121 120Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-74" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path>
+<path stroke-width="1" id="E1-MJSZ2-2211" d="M60 948Q63 950 665 950H1267L1325 815Q1384 677 1388 669H1348L1341 683Q1320 724 1285 761Q1235 809 1174 838T1033 881T882 898T699 902H574H543H251L259 891Q722 258 724 252Q725 250 724 246Q721 243 460 -56L196 -356Q196 -357 407 -357Q459 -357 548 -357T676 -358Q812 -358 896 -353T1063 -332T1204 -283T1307 -196Q1328 -170 1348 -124H1388Q1388 -125 1381 -145T1356 -210T1325 -294L1267 -449L666 -450Q64 -450 61 -448Q55 -446 55 -439Q55 -437 57 -433L590 177Q590 178 557 222T452 366T322 544L56 909L55 924Q55 945 60 948Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-69" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-3B5" d="M190 -22Q124 -22 76 11T27 107Q27 174 97 232L107 239L99 248Q76 273 76 304Q76 364 144 408T290 452H302Q360 452 405 421Q428 405 428 392Q428 381 417 369T391 356Q382 356 371 365T338 383T283 392Q217 392 167 368T116 308Q116 289 133 272Q142 263 145 262T157 264Q188 278 238 278H243Q308 278 308 247Q308 206 223 206Q177 206 142 219L132 212Q68 169 68 112Q68 39 201 39Q253 39 286 49T328 72T345 94T362 105Q376 103 376 88Q376 79 365 62T334 26T275 -8T190 -22Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-38" d="M70 417T70 494T124 618T248 666Q319 666 374 624T429 515Q429 485 418 459T392 417T361 389T335 371T324 363L338 354Q352 344 366 334T382 323Q457 264 457 174Q457 95 399 37T249 -22Q159 -22 101 29T43 155Q43 263 172 335L154 348Q133 361 127 368Q70 417 70 494ZM286 386L292 390Q298 394 301 396T311 403T323 413T334 425T345 438T355 454T364 471T369 491T371 513Q371 556 342 586T275 624Q268 625 242 625Q201 625 165 599T128 534Q128 511 141 492T167 463T217 431Q224 426 228 424L286 386ZM250 21Q308 21 350 55T392 137Q392 154 387 169T375 194T353 216T330 234T301 253T274 270Q260 279 244 289T218 306L210 311Q204 311 181 294T133 239T107 157Q107 98 150 60T250 21Z"></path>
+<path stroke-width="1" id="E1-MJMATHI-73" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+ <use xlink:href="#E1-MJMATHI-61" x="0" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-63" x="529" y="0"></use>
+<g transform="translate(963,0)">
+ <use xlink:href="#E1-MJMATHI-63" x="0" y="0"></use>
+<g transform="translate(433,-150)">
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-62" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-6F" x="429" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-6F" x="915" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-74" x="1400" y="0"></use>
+</g>
+</g>
+ <use xlink:href="#E1-MJMAIN-3D" x="3020" y="0"></use>
+<g transform="translate(3798,0)">
+<g transform="translate(397,0)">
+<rect stroke="none" width="620" height="60" x="0" y="220"></rect>
+ <use xlink:href="#E1-MJMAIN-31" x="60" y="676"></use>
+ <use xlink:href="#E1-MJMATHI-62" x="95" y="-715"></use>
+</g>
+</g>
+<g transform="translate(5103,0)">
+ <use xlink:href="#E1-MJSZ2-2211" x="0" y="0"></use>
+<g transform="translate(147,-1090)">
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-69" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMAIN-3D" x="345" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMAIN-31" x="1124" y="0"></use>
+</g>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-62" x="806" y="1627"></use>
+</g>
+ <use xlink:href="#E1-MJMAIN-28" x="6548" y="0"></use>
+<g transform="translate(6937,0)">
+ <use xlink:href="#E1-MJMAIN-30"></use>
+ <use xlink:href="#E1-MJMAIN-2E" x="500" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-36" x="779" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-33" x="1279" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-32" x="1780" y="0"></use>
+</g>
+ <use xlink:href="#E1-MJMAIN-2217" x="9440" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-3B5" x="10163" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2B" x="10851" y="0"></use>
+<g transform="translate(11852,0)">
+ <use xlink:href="#E1-MJMAIN-30"></use>
+ <use xlink:href="#E1-MJMAIN-2E" x="500" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-33" x="779" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-36" x="1279" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-38" x="1780" y="0"></use>
+</g>
+ <use xlink:href="#E1-MJMAIN-2217" x="14355" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-61" x="15077" y="0"></use>
+ <use xlink:href="#E1-MJMATHI-63" x="15607" y="0"></use>
+<g transform="translate(16040,0)">
+ <use xlink:href="#E1-MJMATHI-63" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#E1-MJMATHI-73" x="613" y="-213"></use>
+</g>
+ <use xlink:href="#E1-MJMAIN-29" x="16906" y="0"></use>
+</g>
+</svg></div></span></span><span i="695"><p>准确度的区间估计：</p>
+</span><span i="697"><p>将分类问题看做二项分布，则有： 
+令 X 为模型正确分类，p 为准确率，X 服从均值 Np、方差 Np（1-p）的二项分布。acc=X/N为均值 p，方差 p（1-p）/N 的二项分布。acc 的置信区间： </p>
+</span><span i="700"><p>  <img src="images/Capture7.JPG" alt="equation1"></p>
+</span><span i="702"><h2 id="14"> 6. sklearn参数详解，Python绘制决策树 </h2>
+
+</span><span i="704"><h3 id="15"> 6.1 sklearn参数详解 </h3>
+
+</span><span i="706"><p>DecisionTreeClassifier(criterion=’gini’, splitter=’best’, max_depth=None, min_samples_split=2, min_samples_leaf=1, min_weight_fraction_leaf=0.0, max_features=None, random_state=None, max_leaf_nodes=None, min_impurity_decrease=0.0, min_impurity_split=None, class_weight=None, presort=False)</p>
+</span><span i="708"><p>参数含义：</p>
+</span><span i="710"><p>criterion:string类型，可选（默认为"gini"）</p>
+</span><span i="712"><pre><code>衡量分类的质量。支持的标准有<span class="hljs-string">"gini"</span>代表的是Gini impurity(不纯度)与<span class="hljs-string">"entropy"</span>代表的是information gain（信息增益）。
+</code></pre></span><span i="714"><p>splitter:string类型，可选（默认为"best"）</p>
+</span><span i="716"><pre><code>一种用来在节点中选择分类的策略。支持的策略有<span class="hljs-string">"best"</span>，选择最好的分类，<span class="hljs-string">"random"</span>选择最好的随机分类。
+</code></pre></span><span i="718"><p>max_features:int,float,string or None 可选（默认为None）</p>
+</span><span i="720"><p>在进行分类时需要考虑的特征数。</p>
+</span><span i="722"><pre><code><span class="hljs-number">1.</span>如果是<span class="hljs-type">int</span>，在每次分类是都要考虑max_features个特征。
+<span class="hljs-number">2.</span>如果是<span class="hljs-type">float</span>,那么max_features是一个百分率并且分类时需要考虑的特征数是<span class="hljs-type">int</span>(max_features*n_features,其中n_features是训练完成时发特征数)。
+<span class="hljs-number">3.</span>如果是auto,max_features=<span class="hljs-built_in">sqrt</span>(n_features)
+<span class="hljs-number">4.</span>如果是<span class="hljs-built_in">sqrt</span>,max_features=<span class="hljs-built_in">sqrt</span>(n_features)
+<span class="hljs-number">5.</span>如果是<span class="hljs-built_in">log2</span>,max_features=<span class="hljs-built_in">log2</span>(n_features)
+<span class="hljs-number">6.</span>如果是None，max_features=n_features
+</code></pre></span><span i="729"><p>注意：至少找到一个样本点有效的被分类时，搜索分类才会停止。</p>
+</span><span i="731"><p>max_depth:int or None,可选（默认为"None"）</p>
+</span><span i="733"><pre><code>表示树的最大深度。如果是<span class="hljs-string">"None"</span>,则节点会一直扩展直到所有的叶子都是纯的或者所有的叶子节点都包含少于min_samples_split个样本点。忽视max_leaf_nodes是不是为<span class="hljs-literal">None</span>。
+</code></pre></span><span i="735"><p>min_samples_split:int,float,可选（默认为2）</p>
+</span><span i="737"><pre><code>区分一个内部节点需要的最少的样本数。
+<span class="hljs-number">1.</span>如果是<span class="hljs-keyword">int</span>，将其最为最小的样本数。
+<span class="hljs-number">2.</span>如果是<span class="hljs-keyword">float</span>，min_samples_split是一个百分率并且<span class="hljs-built_in">ceil</span>(min_samples_split*n_samples)是每个分类需要的样本数。<span class="hljs-built_in">ceil</span>是取大于或等于指定表达式的最小整数。
+</code></pre></span><span i="741"><p>min_samples_leaf:int,float,可选（默认为1）</p>
+</span><span i="743"><pre><code>一个叶节点所需要的最小样本数：
+<span class="hljs-number">1.</span>如果是<span class="hljs-keyword">int</span>，则其为最小样本数
+<span class="hljs-number">2.</span>如果是<span class="hljs-keyword">float</span>，则它是一个百分率并且<span class="hljs-built_in">ceil</span>(min_samples_leaf*n_samples)是每个节点所需的样本数。
+</code></pre></span><span i="747"><p>min_weight_fraction_leaf:float,可选（默认为0）</p>
+</span><span i="749"><pre><code>一个叶节点的输入样本所需要的最小的加权分数。
+</code></pre></span><span i="751"><p>max_leaf_nodes:int,None 可选（默认为None）</p>
+</span><span i="753"><pre><code>在最优方法中使用max_leaf_nodes构建一个树。最好的节点是在杂质相对减少。如果是<span class="hljs-keyword">None</span>则对叶节点的数目没有限制。如果不是<span class="hljs-keyword">None</span>则不考虑max_depth.
+</code></pre></span><span i="755"><p>class_weight:dict,list of dicts,“Banlanced” or None,可选（默认为None）</p>
+</span><span i="757"><pre><code>表示在表{class_label:weight}中的类的关联权值。如果没有指定，所有类的权值都为<span class="hljs-number">1</span>。对于多输出问题，一列字典的顺序可以与一列y的次序相同。
+<span class="hljs-string">"balanced"</span>模型使用y的值去自动适应权值，并且是以输入数据中类的频率的反比例。如：n_samples/(n_classes*np.<span class="hljs-keyword">bincount(y))。
+</span>对于多输出，每列y的权值都会想乘。
+如果sample_weight已经指定了，这些权值将于samples以合适的方法相乘。
+</code></pre></span><span i="762"><p>random_state:int,RandomState instance or None</p>
+</span><span i="764"><pre><code>如果是<span class="hljs-keyword">int</span>,random_state 是随机数字发生器的种子；如果是RandomState，random_state是随机数字发生器，如果是None，随机数字发生器是np.<span class="hljs-built_in">random</span>使用的RandomState instance.
+</code></pre></span><span i="766"><p>persort:bool,可选（默认为False）</p>
+</span><span i="768"><pre><code>是否预分类数据以加速训练时最好分类的查找。在有大数据集的决策树中，如果设为<span class="hljs-literal">true</span>可能会减慢训练的过程。当使用一个小数据集或者一个深度受限的决策树中，可以减速训练的过程。
+</code></pre></span><span i="770"><p>属性：</p>
+</span><span i="772"><p>feature<em>importances</em> : array of shape = [n_features]</p>
+</span><span i="774"><pre><code>特征重要性。该值越高，该特征越重要。
+
+特征的重要性为该特征导致的评价准则的（标准化的）总减少量。它也被称为基尼的重要性
+</code></pre></span><span i="778"><p>max<em>feature</em>:int</p>
+</span><span i="780"><pre><code>max_features推断值。
+</code></pre></span><span i="782"><p>n<em>features</em>：int</p>
+</span><span i="784"><pre><code>执行<span class="hljs-keyword">fit</span>的时候，特征的数量。
+</code></pre></span><span i="786"><p>n<em>outputs</em> : int</p>
+</span><span i="788"><pre><code>执行<span class="hljs-keyword">fit</span>的时候，输出的数量。
+</code></pre></span><span i="790"><p>tree_ : 底层的Tree对象</p>
+</span><span i="792"><p>Ref：官方文档：<a href="http://scikit-learn.org/stable/modules/tree.html">http://scikit-learn.org/stable/modules/tree.html</a></p>
+</span><span i="794"><h3 id="16"> 6.2 Python的实现 </h3>
+
+</span><span i="796"><p>Ref：<a href="https://zhuanlan.zhihu.com/p/30744760">https://zhuanlan.zhihu.com/p/30744760</a></p>
+</span></body>
+</html>
